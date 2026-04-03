@@ -289,7 +289,7 @@ border-left: 3px solid;
   <div class="verdict ok" id="verdict">
     <div>
       <div class="verdict-label ok" id="v-label">争冠竞争者</div>
-      <div class="verdict-sub">WSL预测 · 赛季末积分</div>
+      <div class="verdict-sub">模拟目标 · 赛季末积分</div>
     </div>
     <div class="verdict-pts" id="v-pts">— PTS</div>
   </div>
@@ -433,11 +433,12 @@ function render(){
   document.getElementById('h-l').textContent=s.losses;
   const gd=s.gf-s.ga;
   document.getElementById('h-gd').textContent=(gd>=0?'+':'')+gd;
-  const v=verdict(s.proj);
+  const fin=s.actual+sim.w*3+sim.d;
+  const v=verdict(fin);
   document.getElementById('verdict').className='verdict '+v.cls;
   const lbl=document.getElementById('v-label');
   lbl.className='verdict-label '+v.cls; lbl.textContent=v.label;
-  document.getElementById('v-pts').textContent=s.proj+' PTS';
+  document.getElementById('v-pts').textContent=fin+' PTS';
   renderBars(s);renderGaps(s);renderSim(s);renderHistory(s);
 }
 function renderBars(s){
