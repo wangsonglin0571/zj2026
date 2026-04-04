@@ -44,14 +44,14 @@
   -webkit-font-smoothing: antialiased;
   }
   #app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
-  .safe-top { height: max(var(–safe-top), 44px); background: #132B15; flex-shrink: 0; }
+  .safe-top { height: 0; background: #132B15; flex-shrink: 0; }
 
 /* NAV */
 .nav {
 flex-shrink: 0;
 background: #132B15;
 border-bottom: 2px solid #C8A84B;
-padding: 11px 18px 12px;
+padding: max(env(safe-area-inset-top), 11px) 18px 12px;
 display: flex; justify-content: space-between; align-items: center;
 }
 .nav-left { display: flex; align-items: center; gap: 10px; }
