@@ -254,7 +254,7 @@ border-left: 3px solid;
         <div class="nav-sub">2026 CSL · 争冠追踪</div>
       </div>
     </div>
-    <div class="nav-badge" id="round-badge">R3</div>
+    <div class="nav-badge" id="round-badge">R4</div>
   </div>
   <div class="tabs">
     <button class="tab active" onclick="go('dashboard')">总览</button>
@@ -395,16 +395,17 @@ border-left: 3px solid;
 <script>
 const TOTAL=30,PEN=-5,KEY='zj2026_green';
 const RIVALS=[
-  {name:'成都蓉城',penalty:0,  basePts:7, color:'#3b82f6'},
-  {name:'北京国安',penalty:-5, basePts:4, color:'#a855f7'},
-  {name:'上海海港',penalty:-5, basePts:3, color:'#06b6d4'},
-  {name:'山东泰山',penalty:-6, basePts:6, color:'#eab308'},
-  {name:'上海申花',penalty:-10,basePts:6, color:'#6b7280'},
+  {name:'成都蓉城',penalty:0,  basePts:10, color:'#3b82f6'},
+  {name:'北京国安',penalty:-5, basePts:4,  color:'#a855f7'},
+  {name:'上海海港',penalty:-5, basePts:6,  color:'#06b6d4'},
+  {name:'山东泰山',penalty:-6, basePts:6,  color:'#eab308'},
+  {name:'上海申花',penalty:-10,basePts:5,  color:'#6b7280'},
 ];
 const DEF=[
   {round:1,opp:'青岛西海岸',gf:0,ga:0,result:'draw',pts:1},
   {round:2,opp:'武汉三镇',  gf:3,ga:1,result:'win', pts:3},
   {round:3,opp:'青岛海牛',  gf:4,ga:1,result:'win', pts:3},
+  {round:4,opp:'重庆铜梁龙',gf:0,ga:1,result:'loss',pts:0},
 ];
 let matches=ld(),selRes=null,sim={w:22,d:1,l:4};
 function ld(){try{const r=localStorage.getItem(KEY);return r?JSON.parse(r):[...DEF]}catch{return[...DEF]}}
@@ -534,7 +535,7 @@ function addMatch(){
   render();go('dashboard');
 }
 function del(i){if(confirm('删除 R'+matches[i].round+' 记录？')){matches.splice(i,1);render()}}
-function clearAll(){if(confirm('重置为前3轮默认数据？')){matches=[...DEF];render()}}
+function clearAll(){if(confirm('重置为前4轮默认数据？')){matches=[...DEF];render()}}
 function adj(k,d){sim[k]=Math.max(0,sim[k]+d);document.getElementById('sim-'+k).textContent=sim[k];renderSim(calc())}
 render();
 </script>
