@@ -259,7 +259,6 @@ border-left: 3px solid;
   <div class="tabs">
     <button class="tab active" onclick="go('dashboard')">总览</button>
     <button class="tab" onclick="go('record')">录入</button>
-    <button class="tab" onclick="go('sim')">模拟</button>
     <button class="tab" onclick="go('history')">记录</button>
   </div>
   <div class="scroll">
@@ -282,7 +281,7 @@ border-left: 3px solid;
     <div class="hero-stats">
       <div class="hstat"><div class="hstat-val" id="h-w">2</div><div class="hstat-lbl">胜</div></div>
       <div class="hstat"><div class="hstat-val" id="h-d">1</div><div class="hstat-lbl">平</div></div>
-      <div class="hstat"><div class="hstat-val" id="h-l">0</div><div class="hstat-lbl">负</div></div>
+      <div class="hstat"><div class="hstat-val" id="h-l">1</div><div class="hstat-lbl">负</div></div>
       <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
     </div>
   </div>
@@ -315,6 +314,12 @@ border-left: 3px solid;
         <button class="quick-btn" onclick="setOpp('重庆铜梁龙')">重庆铜梁龙</button>
         <button class="quick-btn" onclick="setOpp('河南队')">河南队</button>
         <button class="quick-btn" onclick="setOpp('青岛海牛')">青岛海牛</button>
+        <button class="quick-btn" onclick="setOpp('大连英博')">大连英博</button>
+        <button class="quick-btn" onclick="setOpp('辽宁铁人')">辽宁铁人</button>
+        <button class="quick-btn" onclick="setOpp('云南玉昆')">云南玉昆</button>
+        <button class="quick-btn" onclick="setOpp('深圳新鹏城')">深圳新鹏城</button>
+        <button class="quick-btn" onclick="setOpp('青岛西海岸')">青岛西海岸</button>
+        <button class="quick-btn" onclick="setOpp('天津津门虎')">天津津门虎</button>
       </div>
     </div>
     <div class="rec-sec">
@@ -371,7 +376,7 @@ border-left: 3px solid;
     <div class="sim-check" id="sim-check"></div>
     <div id="sim-res"></div>
   </div>
-  <div class="sec">成都蓉城对比（同战绩假设）</div>
+  <div class="sec">与主要对手差距（对手当前积分）</div>
   <div class="sim-card" style="margin-top:0"><div id="sim-rival"></div></div>
   <div style="height:20px"></div>
 </div>
@@ -393,7 +398,7 @@ border-left: 3px solid;
   </div>
 </div>
 <script>
-const TOTAL=30,PEN=-5,KEY='zj2026_green';
+const TOTAL=30,PEN=-5,KEY='zj2026_r4';
 const RIVALS=[
   {name:'成都蓉城',penalty:0,  basePts:10, color:'#3b82f6'},
   {name:'北京国安',penalty:-5, basePts:4,  color:'#a855f7'},
@@ -402,13 +407,13 @@ const RIVALS=[
   {name:'上海申花',penalty:-10,basePts:5,  color:'#6b7280'},
 ];
 const DEF=[
-  {round:1,opp:'青岛西海岸',gf:0,ga:0,result:'draw',pts:1},
-  {round:2,opp:'武汉三镇',  gf:3,ga:1,result:'win', pts:3},
+  {round:1,opp:'青岛西海岸',gf:2,ga:0,result:'win', pts:3},
+  {round:2,opp:'上海申花',  gf:1,ga:1,result:'draw',pts:1},
   {round:3,opp:'青岛海牛',  gf:4,ga:1,result:'win', pts:3},
   {round:4,opp:'重庆铜梁龙',gf:0,ga:1,result:'loss',pts:0},
 ];
 let matches=ld(),selRes=null,sim={w:22,d:1,l:4};
-function ld(){try{const r=localStorage.getItem(KEY);return r?JSON.parse(r):[...DEF]}catch{return[...DEF]}}
+function ld(){try{const r=localStorage.getItem(KEY);if(r){const d=JSON.parse(r);if(d.length>=DEF.length)return d;}return[...DEF]}catch{return[...DEF]}}
 function sv(){try{localStorage.setItem(KEY,JSON.stringify(matches))}catch{}}
 function calc(){
   const played=matches.length,gp=matches.reduce((s,m)=>s+m.pts,0),actual=gp+PEN,remain=TOTAL-played;
@@ -473,13 +478,20 @@ function renderSim(s){
     <div class="sim-row"><span class="sim-lbl">当前积分</span><span class="sim-val">${s.actual}</span></div>
     <div class="sim-row"><span class="sim-lbl">赛季末预测</span><span class="sim-val big">${fin} PTS</span></div>
     <div class="sim-row"><span class="sim-lbl">争冠评估</span><span class="sim-val">${v.label}</span></div>`;
-  const cf=7+add,diff=fin-cf,bw=Math.max(0,Math.ceil((fin-7-sim.d)/3));
-  const dEl=diff>0?`<span class="sim-val green">浙江领先 +${diff}分</span>`:diff<0?`<span class="sim-val red">蓉城领先 ${Math.abs(diff)}分</span>`:`<span class="sim-val" style="color:#C8A84B">同分，靠净胜球</span>`;
+  // 对手模拟：同等剩余场次按同战绩(22w1d4l)预测
+  const rivalRows=RIVALS.map(r=>{
+    const ra=r.basePts+r.penalty; // 对手当前实际积分
+    const diff=fin-ra;
+    const diffEl=diff>0?`<span style="color:#34C759">浙江领先+${diff}</span>`:diff<0?`<span style="color:#E74C3C">落后${Math.abs(diff)}</span>`:`<span style="color:#C8A84B">同分</span>`;
+    return`<div class="sim-row">
+      <span class="sim-lbl">${r.name}<span style="color:rgba(234,242,234,0.45);font-size:11px;margin-left:4px">${ra>=0?'+':''}${ra}分</span></span>
+      <span class="sim-val">${diffEl}</span>
+    </div>`;
+  }).join('');
   document.getElementById('sim-rival').innerHTML=`
-    <div class="sim-row"><span class="sim-lbl">蓉城当前积分</span><span class="sim-val">+7</span></div>
-    <div class="sim-row"><span class="sim-lbl">蓉城同战绩预测</span><span class="sim-val gold">${cf} PTS</span></div>
-    <div class="sim-row"><span class="sim-lbl">浙江 vs 蓉城</span>${dEl}</div>
-    <div class="sim-row"><span class="sim-lbl">蓉城需≥${bw}胜才压过浙江</span><span class="sim-val" style="color:rgba(234,242,234,0.45)">同平负比</span></div>`;
+    <div class="sim-row"><span class="sim-lbl" style="color:#C8A84B">赛季末浙江预测</span><span class="sim-val big" style="color:#C8A84B">${fin} PTS</span></div>
+    <div class="sim-row"><span class="sim-lbl">vs 各对手当前差距</span><span class="sim-val" style="font-size:11px;color:rgba(234,242,234,0.45)">对手未加剩余赛程</span></div>
+    ${rivalRows}`;
 }
 function renderHistory(s){
   const list=document.getElementById('hist-list');
