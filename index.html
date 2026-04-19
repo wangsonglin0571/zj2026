@@ -230,7 +230,14 @@ html, body {
         <div class="nav-sub">2026 CSL · 争冠追踪</div>
       </div>
     </div>
-    <div class="nav-badge" id="round-badge">R6</div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="nav-badge" id="round-badge">R6</div>
+      <button id="refresh-btn" onclick="manualRefresh()" style="
+        background:none;border:1px solid rgba(200,168,75,0.4);border-radius:6px;
+        color:#C8A84B;font-size:16px;width:32px;height:32px;cursor:pointer;
+        display:flex;align-items:center;justify-content:center;
+        transition:all .2s;">↻</button>
+    </div>
   </div>
   <div class="tabs">
     <button class="tab active" onclick="go('dashboard')">总览</button>
@@ -355,6 +362,18 @@ async function loadData(){
     if(el&&d.updated)el.textContent='对手积分更新：'+d.updated;
     render();
   }catch(e){render();}
+}
+async function manualRefresh(){
+  const btn=document.getElementById('refresh-btn');
+  btn.style.transform='rotate(360deg)';
+  btn.style.transition='transform 0.6s ease';
+  btn.disabled=true;
+  await loadData();
+  setTimeout(()=>{
+    btn.style.transform='';
+    btn.style.transition='';
+    btn.disabled=false;
+  },800);
 }
 const DEF=[
   {round:1,opp:'青岛西海岸',gf:2,ga:0,result:'win', pts:3},
