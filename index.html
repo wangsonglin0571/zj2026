@@ -193,28 +193,6 @@ border-left: 3px solid;
 .submit-btn:disabled { background: #1A3A1D; color: rgba(234,242,234,0.45); }
 .tip { margin: 10px 16px 0; background: rgba(200,168,75,0.05); border: 1px solid rgba(200,168,75,0.15); border-radius: 8px; padding: 9px 13px; font-size: 11px; color: rgba(234,242,234,0.45); }
 
-/* SIM */
-.sim-card { margin: 14px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
-.sim-ctrl-row { display: flex; border-bottom: 1px solid rgba(200,168,75,0.08); }
-.sim-ctrl { flex: 1; text-align: center; padding: 14px 8px; border-right: 1px solid rgba(200,168,75,0.08); }
-.sim-ctrl:last-child { border-right: none; }
-.sim-ctrl-lbl { font-size: 10px; font-weight: 700; letter-spacing: 1px; text-transform: uppercase; margin-bottom: 10px; }
-.sim-ctrl-lbl.w { color: #34C759; } .sim-ctrl-lbl.d { color: #C8A84B; } .sim-ctrl-lbl.l { color: #E74C3C; }
-.stepper { display: flex; align-items: center; justify-content: center; gap: 8px; }
-.step-btn { width: 28px; height: 28px; border-radius: 4px; background: #0C1F0E; border: 1px solid rgba(200,168,75,0.28); font-size: 16px; color: rgba(234,242,234,0.45); cursor: pointer; display: flex; align-items: center; justify-content: center; }
-.step-btn:active { background: #C8A84B; color: #0C1F0E; }
-.step-val { font-size: 28px; font-weight: 700; min-width: 36px; text-align: center; color: #FFFFFF; }
-.sim-check { padding: 7px 16px; font-size: 11px; text-align: center; border-bottom: 1px solid rgba(200,168,75,0.08); }
-.sim-check.ok   { color: #34C759; background: rgba(52,199,89,0.05); }
-.sim-check.warn { color: #F1C40F; background: rgba(241,196,15,0.05); }
-.sim-row { display: flex; justify-content: space-between; align-items: center; padding: 11px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
-.sim-row:last-child { border-bottom: none; }
-.sim-lbl { font-size: 12px; color: rgba(234,242,234,0.45); }
-.sim-val { font-size: 13px; font-weight: 600; color: #EAF2EA; }
-.sim-val.big  { font-size: 26px; font-weight: 700; color: #E2C46A; }
-.sim-val.gold { font-size: 26px; font-weight: 700; color: #C8A84B; }
-.sim-val.green { color: #34C759; } .sim-val.red { color: #E74C3C; }
-
 /* HISTORY */
 .hist-card { margin: 14px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
 .hist-hdr { padding: 12px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); display: flex; justify-content: space-between; align-items: center; }
@@ -254,7 +232,7 @@ border-left: 3px solid;
         <div class="nav-sub">2026 CSL · 争冠追踪</div>
       </div>
     </div>
-    <div class="nav-badge" id="round-badge">R4</div>
+    <div class="nav-badge" id="round-badge">R6</div>
   </div>
   <div class="tabs">
     <button class="tab active" onclick="go('dashboard')">总览</button>
@@ -344,43 +322,6 @@ border-left: 3px solid;
   <div style="height:20px"></div>
 </div>
 
-<!-- SIM -->
-<div class="page" id="page-sim">
-  <div class="sim-card" style="margin-top:14px">
-    <div class="sim-ctrl-row">
-      <div class="sim-ctrl">
-        <div class="sim-ctrl-lbl w">胜场</div>
-        <div class="stepper">
-          <button class="step-btn" onclick="adj('w',-1)">−</button>
-          <div class="step-val" id="sim-w">22</div>
-          <button class="step-btn" onclick="adj('w',1)">+</button>
-        </div>
-      </div>
-      <div class="sim-ctrl">
-        <div class="sim-ctrl-lbl d">平场</div>
-        <div class="stepper">
-          <button class="step-btn" onclick="adj('d',-1)">−</button>
-          <div class="step-val" id="sim-d">1</div>
-          <button class="step-btn" onclick="adj('d',1)">+</button>
-        </div>
-      </div>
-      <div class="sim-ctrl">
-        <div class="sim-ctrl-lbl l">负场</div>
-        <div class="stepper">
-          <button class="step-btn" onclick="adj('l',-1)">−</button>
-          <div class="step-val" id="sim-l">4</div>
-          <button class="step-btn" onclick="adj('l',1)">+</button>
-        </div>
-      </div>
-    </div>
-    <div class="sim-check" id="sim-check"></div>
-    <div id="sim-res"></div>
-  </div>
-  <div class="sec">与主要对手差距（对手当前积分）</div>
-  <div class="sim-card" style="margin-top:0"><div id="sim-rival"></div></div>
-  <div style="height:20px"></div>
-</div>
-
 <!-- HISTORY -->
 <div class="page" id="page-history">
   <div class="hist-card">
@@ -398,21 +339,23 @@ border-left: 3px solid;
   </div>
 </div>
 <script>
-const TOTAL=30,PEN=-5,KEY='zj2026_r4';
+const TOTAL=30,PEN=-5,KEY='zj2026_r8';
 const RIVALS=[
-  {name:'成都蓉城',penalty:0,  basePts:10, color:'#3b82f6'},
-  {name:'北京国安',penalty:-5, basePts:4,  color:'#a855f7'},
-  {name:'上海海港',penalty:-5, basePts:6,  color:'#06b6d4'},
-  {name:'山东泰山',penalty:-6, basePts:6,  color:'#eab308'},
-  {name:'上海申花',penalty:-10,basePts:5,  color:'#6b7280'},
+  {name:'成都蓉城',penalty:0,  basePts:16, color:'#3b82f6'},
+  {name:'北京国安',penalty:-5, basePts:5,  color:'#a855f7'},
+  {name:'上海海港',penalty:-5, basePts:7,  color:'#06b6d4'},
+  {name:'山东泰山',penalty:-6, basePts:10, color:'#eab308'},
+  {name:'上海申花',penalty:-10,basePts:14, color:'#6b7280'},
 ];
 const DEF=[
   {round:1,opp:'青岛西海岸',gf:2,ga:0,result:'win', pts:3},
   {round:2,opp:'上海申花',  gf:1,ga:1,result:'draw',pts:1},
   {round:3,opp:'青岛海牛',  gf:4,ga:1,result:'win', pts:3},
   {round:4,opp:'重庆铜梁龙',gf:0,ga:1,result:'loss',pts:0},
+  {round:5,opp:'大连英博',  gf:0,ga:2,result:'loss',pts:0},
+  {round:6,opp:'北京国安',  gf:1,ga:1,result:'draw',pts:1},
 ];
-let matches=ld(),selRes=null,sim={w:22,d:1,l:4};
+let matches=ld(),selRes=null;
 function ld(){try{const r=localStorage.getItem(KEY);if(r){const d=JSON.parse(r);if(d.length>=DEF.length)return d;}return[...DEF]}catch{return[...DEF]}}
 function sv(){try{localStorage.setItem(KEY,JSON.stringify(matches))}catch{}}
 function calc(){
@@ -439,13 +382,13 @@ function render(){
   document.getElementById('h-l').textContent=s.losses;
   const gd=s.gf-s.ga;
   document.getElementById('h-gd').textContent=(gd>=0?'+':'')+gd;
-  const fin=s.actual+sim.w*3+sim.d;
-  const v=verdict(fin);
+  const fin=s.actual+s.remain*3; // 理论上限（剩余全胜）
+  const v=verdict(s.actual);
   document.getElementById('verdict').className='verdict '+v.cls;
   const lbl=document.getElementById('v-label');
   lbl.className='verdict-label '+v.cls; lbl.textContent=v.label;
-  document.getElementById('v-pts').textContent=fin+' PTS';
-  renderBars(s);renderGaps(s);renderSim(s);renderHistory(s);
+  document.getElementById('v-pts').textContent=(fin>=0?'+':'')+fin+' PTS 上限';
+  renderBars(s);renderGaps(s);renderHistory(s);
 }
 function renderBars(s){
   const all=[{name:'浙江队',penalty:PEN,gamePts:s.gp,color:'#C8A84B',isMe:true},...RIVALS.map(r=>({...r,gamePts:r.basePts,isMe:false}))]
@@ -468,31 +411,6 @@ function renderGaps(s){
     return`<div class="row"><div class="gap-name">${r.name}</div><div class="gap-right"><span class="gap-opp">${ra>=0?'+':''}${ra} PTS</span><span class="gap-tag ${pc}">${pt}</span></div></div>`;
   }).join('');
 }
-function renderSim(s){
-  const tot=sim.w+sim.d+sim.l,chk=document.getElementById('sim-check');
-  chk.className='sim-check '+(tot===s.remain?'ok':'warn');
-  chk.textContent=tot===s.remain?'✓ 与剩余'+s.remain+'轮匹配':'⚠ 模拟'+tot+'场 ≠ 剩余'+s.remain+'场';
-  const add=sim.w*3+sim.d,fin=s.actual+add,v=verdict(fin);
-  document.getElementById('sim-res').innerHTML=`
-    <div class="sim-row"><span class="sim-lbl">新增积分</span><span class="sim-val">+${add}</span></div>
-    <div class="sim-row"><span class="sim-lbl">当前积分</span><span class="sim-val">${s.actual}</span></div>
-    <div class="sim-row"><span class="sim-lbl">赛季末预测</span><span class="sim-val big">${fin} PTS</span></div>
-    <div class="sim-row"><span class="sim-lbl">争冠评估</span><span class="sim-val">${v.label}</span></div>`;
-  // 对手模拟：同等剩余场次按同战绩(22w1d4l)预测
-  const rivalRows=RIVALS.map(r=>{
-    const ra=r.basePts+r.penalty; // 对手当前实际积分
-    const diff=fin-ra;
-    const diffEl=diff>0?`<span style="color:#34C759">浙江领先+${diff}</span>`:diff<0?`<span style="color:#E74C3C">落后${Math.abs(diff)}</span>`:`<span style="color:#C8A84B">同分</span>`;
-    return`<div class="sim-row">
-      <span class="sim-lbl">${r.name}<span style="color:rgba(234,242,234,0.45);font-size:11px;margin-left:4px">${ra>=0?'+':''}${ra}分</span></span>
-      <span class="sim-val">${diffEl}</span>
-    </div>`;
-  }).join('');
-  document.getElementById('sim-rival').innerHTML=`
-    <div class="sim-row"><span class="sim-lbl" style="color:#C8A84B">赛季末浙江预测</span><span class="sim-val big" style="color:#C8A84B">${fin} PTS</span></div>
-    <div class="sim-row"><span class="sim-lbl">vs 各对手当前差距</span><span class="sim-val" style="font-size:11px;color:rgba(234,242,234,0.45)">对手未加剩余赛程</span></div>
-    ${rivalRows}`;
-}
 function renderHistory(s){
   const list=document.getElementById('hist-list');
   if(!matches.length){list.innerHTML='<div class="empty">暂无比赛记录</div>';}
@@ -514,7 +432,7 @@ function renderHistory(s){
     <div class="stat-row"><span class="stat-lbl">实际积分（扣5后）</span><span class="stat-val" style="color:#E2C46A">${s.actual}</span></div>`;
 }
 function go(name){
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['dashboard','record','sim','history'][i]===name));
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['dashboard','record','history'][i]===name));
   document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));
 }
 function setOpp(n){document.getElementById('inp-opp').value=n}
@@ -547,8 +465,7 @@ function addMatch(){
   render();go('dashboard');
 }
 function del(i){if(confirm('删除 R'+matches[i].round+' 记录？')){matches.splice(i,1);render()}}
-function clearAll(){if(confirm('重置为前4轮默认数据？')){matches=[...DEF];render()}}
-function adj(k,d){sim[k]=Math.max(0,sim[k]+d);document.getElementById('sim-'+k).textContent=sim[k];renderSim(calc())}
+function clearAll(){if(confirm('重置为前6轮默认数据？')){matches=[...DEF];render()}}
 render();
 </script>
 </body>
