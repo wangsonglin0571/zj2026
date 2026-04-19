@@ -1,5 +1,4 @@
 <!DOCTYPE html>
-
 <html lang="zh-CN">
 <head>
 <meta charset="UTF-8">
@@ -34,77 +33,77 @@
   --font-num: "SF Pro Display", -apple-system, sans-serif;
 }
 
-- { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
-  html, body {
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body {
   height: 100%;
   background: #0C1F0E;
   color: #EAF2EA;
-  font-family: -apple-system, “PingFang SC”, “Helvetica Neue”, sans-serif;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
   overscroll-behavior: none;
   -webkit-font-smoothing: antialiased;
-  }
-  #app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
-  .safe-top { height: 0; background: #132B15; flex-shrink: 0; }
+}
+#app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+.safe-top { height: 0; background: #132B15; flex-shrink: 0; }
 
 /* NAV */
 .nav {
-flex-shrink: 0;
-background: #132B15;
-border-bottom: 2px solid #C8A84B;
-padding: max(env(safe-area-inset-top), 11px) 18px 12px;
-display: flex; justify-content: space-between; align-items: center;
+  flex-shrink: 0;
+  background: #132B15;
+  border-bottom: 2px solid #C8A84B;
+  padding: max(env(safe-area-inset-top), 11px) 18px 12px;
+  display: flex; justify-content: space-between; align-items: center;
 }
 .nav-left { display: flex; align-items: center; gap: 10px; }
 .nav-crest {
-width: 34px; height: 34px;
-border-radius: 50% 50% 44% 44%;
-background: #C8A84B;
-display: flex; align-items: center; justify-content: center;
-flex-shrink: 0;
+  width: 34px; height: 34px;
+  border-radius: 50% 50% 44% 44%;
+  background: #C8A84B;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
 }
 .nav-crest span { font-size: 14px; font-weight: 800; color: #0C1F0E; }
 .nav-title { font-size: 18px; font-weight: 700; color: #FFFFFF; letter-spacing: 2px; }
 .nav-sub { font-size: 10px; color: #C8A84B; margin-top: 1px; letter-spacing: 1px; }
 .nav-badge {
-background: #C8A84B; color: #0C1F0E;
-font-size: 13px; font-weight: 700;
-padding: 4px 12px; border-radius: 4px; letter-spacing: 1px;
+  background: #C8A84B; color: #0C1F0E;
+  font-size: 13px; font-weight: 700;
+  padding: 4px 12px; border-radius: 4px; letter-spacing: 1px;
 }
 
 /* TABS */
 .tabs {
-flex-shrink: 0; display: flex;
-background: #132B15;
-border-bottom: 1px solid rgba(200,168,75,0.28);
+  flex-shrink: 0; display: flex;
+  background: #132B15;
+  border-bottom: 1px solid rgba(200,168,75,0.28);
 }
 .tab {
-flex: 1; padding: 9px 4px 8px; font-size: 12px;
-color: rgba(234,242,234,0.45);
-background: none; border: none;
-border-bottom: 2px solid transparent;
-cursor: pointer; text-align: center;
-font-family: -apple-system, “PingFang SC”, sans-serif;
-transition: all .18s;
+  flex: 1; padding: 9px 4px 8px; font-size: 12px;
+  color: rgba(234,242,234,0.45);
+  background: none; border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer; text-align: center;
+  font-family: -apple-system, "PingFang SC", sans-serif;
+  transition: all .18s;
 }
 .tab.active { color: #E2C46A; border-bottom-color: #C8A84B; font-weight: 600; }
 
 /* SCROLL */
-.scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: calc(var(–safe-bot) + 20px); }
+.scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: calc(var(--safe-bot) + 20px); }
 .page { display: none; }
 .page.active { display: block; }
 
 /* HERO */
 .hero {
-margin: 14px 16px 0;
-background: linear-gradient(145deg, #1A3A1D 0%, #132B15 100%);
-border: 1px solid rgba(200,168,75,0.28);
-border-radius: 12px; padding: 20px;
-position: relative; overflow: hidden;
+  margin: 14px 16px 0;
+  background: linear-gradient(145deg, #1A3A1D 0%, #132B15 100%);
+  border: 1px solid rgba(200,168,75,0.28);
+  border-radius: 12px; padding: 20px;
+  position: relative; overflow: hidden;
 }
 .hero::after {
-content: ‘’;
-position: absolute; top: 0; left: 0; right: 0; height: 2px;
-background: linear-gradient(90deg, transparent, #C8A84B, transparent);
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, #C8A84B, transparent);
 }
 .hero-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
 .hero-lbl { font-size: 10px; color: #C8A84B; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
@@ -122,9 +121,9 @@ background: linear-gradient(90deg, transparent, #C8A84B, transparent);
 
 /* VERDICT */
 .verdict {
-margin: 10px 16px 0; border-radius: 8px; padding: 12px 16px;
-display: flex; justify-content: space-between; align-items: center;
-border-left: 3px solid;
+  margin: 10px 16px 0; border-radius: 8px; padding: 12px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-left: 3px solid;
 }
 .verdict.great { background: rgba(200,168,75,0.1); border-color: #C8A84B; }
 .verdict.good  { background: rgba(52,199,89,0.08); border-color: #34C759; }
@@ -173,22 +172,22 @@ border-left: 3px solid;
 .rec-sec { padding: 13px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
 .rec-sec:last-child { border-bottom: none; }
 .rec-lbl { font-size: 10px; color: #C8A84B; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; display: block; }
-.opp-inp { width: 100%; background: #0C1F0E; border: 1px solid rgba(200,168,75,0.28); border-radius: 8px; color: #EAF2EA; font-size: 15px; padding: 10px 13px; outline: none; -webkit-appearance: none; font-family: -apple-system, “PingFang SC”, sans-serif; }
+.opp-inp { width: 100%; background: #0C1F0E; border: 1px solid rgba(200,168,75,0.28); border-radius: 8px; color: #EAF2EA; font-size: 15px; padding: 10px 13px; outline: none; -webkit-appearance: none; font-family: -apple-system, "PingFang SC", sans-serif; }
 .opp-inp:focus { border-color: #C8A84B; }
 .quick-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.quick-btn { padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.28); background: #0C1F0E; font-size: 11px; color: rgba(234,242,234,0.45); cursor: pointer; font-family: -apple-system, “PingFang SC”, sans-serif; }
+.quick-btn { padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.28); background: #0C1F0E; font-size: 11px; color: rgba(234,242,234,0.45); cursor: pointer; font-family: -apple-system, "PingFang SC", sans-serif; }
 .quick-btn:active { background: #C8A84B; color: #0C1F0E; }
 .score-row { display: flex; align-items: center; gap: 10px; }
 .score-inp { flex: 1; background: #0C1F0E; border: 1px solid rgba(200,168,75,0.28); border-radius: 8px; color: #FFFFFF; font-size: 34px; font-weight: 700; text-align: center; padding: 10px; outline: none; -webkit-appearance: none; }
 .score-inp:focus { border-color: #C8A84B; }
 .score-vs { font-size: 18px; color: rgba(234,242,234,0.45); }
 .res-btns { display: flex; gap: 8px; }
-.res-btn { flex: 1; padding: 12px 4px; border-radius: 8px; border: 1px solid rgba(200,168,75,0.28); background: #0C1F0E; font-size: 14px; font-weight: 600; color: rgba(234,242,234,0.45); cursor: pointer; text-align: center; font-family: -apple-system, “PingFang SC”, sans-serif; }
+.res-btn { flex: 1; padding: 12px 4px; border-radius: 8px; border: 1px solid rgba(200,168,75,0.28); background: #0C1F0E; font-size: 14px; font-weight: 600; color: rgba(234,242,234,0.45); cursor: pointer; text-align: center; font-family: -apple-system, "PingFang SC", sans-serif; }
 .res-btn small { display: block; font-size: 10px; font-weight: 400; margin-top: 2px; }
 .res-btn.sel-win  { border-color: #34C759; background: rgba(52,199,89,0.1);  color: #34C759; }
 .res-btn.sel-draw { border-color: #C8A84B; background: rgba(200,168,75,0.1); color: #E2C46A; }
 .res-btn.sel-loss { border-color: #E74C3C; background: rgba(231,76,60,0.1);  color: #E74C3C; }
-.submit-btn { margin: 14px 16px 0; width: calc(100% - 32px); padding: 14px; background: #C8A84B; color: #0C1F0E; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; font-family: -apple-system, “PingFang SC”, sans-serif; letter-spacing: 1px; cursor: pointer; -webkit-appearance: none; }
+.submit-btn { margin: 14px 16px 0; width: calc(100% - 32px); padding: 14px; background: #C8A84B; color: #0C1F0E; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; font-family: -apple-system, "PingFang SC", sans-serif; letter-spacing: 1px; cursor: pointer; -webkit-appearance: none; }
 .submit-btn:active { background: #E2C46A; }
 .submit-btn:disabled { background: #1A3A1D; color: rgba(234,242,234,0.45); }
 .tip { margin: 10px 16px 0; background: rgba(200,168,75,0.05); border: 1px solid rgba(200,168,75,0.15); border-radius: 8px; padding: 9px 13px; font-size: 11px; color: rgba(234,242,234,0.45); }
@@ -197,7 +196,7 @@ border-left: 3px solid;
 .hist-card { margin: 14px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
 .hist-hdr { padding: 12px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); display: flex; justify-content: space-between; align-items: center; }
 .hist-hdr-t { font-size: 15px; font-weight: 700; color: #FFFFFF; }
-.clear-btn { font-size: 11px; color: #E74C3C; background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.2); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-family: -apple-system, “PingFang SC”, sans-serif; }
+.clear-btn { font-size: 11px; color: #E74C3C; background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.2); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-family: -apple-system, "PingFang SC", sans-serif; }
 .match-row { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
 .match-row:last-child { border-bottom: none; }
 .m-round { font-size: 12px; color: rgba(234,242,234,0.45); min-width: 26px; }
@@ -219,7 +218,6 @@ border-left: 3px solid;
 .stat-val { font-size: 13px; font-weight: 600; }
 .empty { padding: 32px 20px; text-align: center; color: rgba(234,242,234,0.45); font-size: 12px; }
 </style>
-
 </head>
 <body>
 <div id="app">
@@ -241,112 +239,123 @@ border-left: 3px solid;
   </div>
   <div class="scroll">
 
-```
-<!-- DASHBOARD -->
-<div class="page active" id="page-dashboard">
-  <div class="hero">
-    <div class="hero-top">
-      <div>
-        <div class="hero-lbl">实际积分</div>
-        <div class="hero-pts" id="h-pts">2<span class="hero-unit">PTS</span></div>
+    <!-- DASHBOARD -->
+    <div class="page active" id="page-dashboard">
+      <div class="hero">
+        <div class="hero-top">
+          <div>
+            <div class="hero-lbl">实际积分</div>
+            <div class="hero-pts" id="h-pts">2<span class="hero-unit">PTS</span></div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-rnum" id="h-remain">27</div>
+            <div class="hero-rlbl">轮待战</div>
+          </div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stats">
+          <div class="hstat"><div class="hstat-val" id="h-w">2</div><div class="hstat-lbl">胜</div></div>
+          <div class="hstat"><div class="hstat-val" id="h-d">1</div><div class="hstat-lbl">平</div></div>
+          <div class="hstat"><div class="hstat-val" id="h-l">1</div><div class="hstat-lbl">负</div></div>
+          <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
+        </div>
       </div>
-      <div class="hero-right">
-        <div class="hero-rnum" id="h-remain">27</div>
-        <div class="hero-rlbl">轮待战</div>
+      <div class="verdict ok" id="verdict">
+        <div>
+          <div class="verdict-label ok" id="v-label">争冠竞争者</div>
+          <div class="verdict-sub">模拟目标 · 赛季末积分</div>
+        </div>
+        <div class="verdict-pts" id="v-pts">— PTS</div>
       </div>
+      <div class="sec">积分对比</div>
+      <div class="card" id="standings"></div>
+      <div class="sec">与主要对手差距</div>
+      <div id="data-updated" style="font-size:10px;color:rgba(234,242,234,0.3);text-align:right;padding:0 16px 6px;"></div>
+      <div class="card" id="gaps" style="margin-bottom:20px"></div>
     </div>
-    <div class="hero-divider"></div>
-    <div class="hero-stats">
-      <div class="hstat"><div class="hstat-val" id="h-w">2</div><div class="hstat-lbl">胜</div></div>
-      <div class="hstat"><div class="hstat-val" id="h-d">1</div><div class="hstat-lbl">平</div></div>
-      <div class="hstat"><div class="hstat-val" id="h-l">1</div><div class="hstat-lbl">负</div></div>
-      <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
-    </div>
-  </div>
-  <div class="verdict ok" id="verdict">
-    <div>
-      <div class="verdict-label ok" id="v-label">争冠竞争者</div>
-      <div class="verdict-sub">模拟目标 · 赛季末积分</div>
-    </div>
-    <div class="verdict-pts" id="v-pts">— PTS</div>
-  </div>
-  <div class="sec">积分对比</div>
-  <div class="card" id="standings"></div>
-  <div class="sec">与主要对手差距</div>
-  <div class="card" id="gaps" style="margin-bottom:20px"></div>
-</div>
 
-<!-- RECORD -->
-<div class="page" id="page-record">
-  <div class="rec-card">
-    <div class="rec-sec">
-      <span class="rec-lbl">对手</span>
-      <input class="opp-inp" id="inp-opp" type="text" placeholder="输入对手名称" maxlength="10">
-      <div class="quick-row">
-        <button class="quick-btn" onclick="setOpp('成都蓉城')">成都蓉城</button>
-        <button class="quick-btn" onclick="setOpp('北京国安')">北京国安</button>
-        <button class="quick-btn" onclick="setOpp('上海海港')">上海海港</button>
-        <button class="quick-btn" onclick="setOpp('山东泰山')">山东泰山</button>
-        <button class="quick-btn" onclick="setOpp('上海申花')">上海申花</button>
-        <button class="quick-btn" onclick="setOpp('武汉三镇')">武汉三镇</button>
-        <button class="quick-btn" onclick="setOpp('重庆铜梁龙')">重庆铜梁龙</button>
-        <button class="quick-btn" onclick="setOpp('河南队')">河南队</button>
-        <button class="quick-btn" onclick="setOpp('青岛海牛')">青岛海牛</button>
-        <button class="quick-btn" onclick="setOpp('大连英博')">大连英博</button>
-        <button class="quick-btn" onclick="setOpp('辽宁铁人')">辽宁铁人</button>
-        <button class="quick-btn" onclick="setOpp('云南玉昆')">云南玉昆</button>
-        <button class="quick-btn" onclick="setOpp('深圳新鹏城')">深圳新鹏城</button>
-        <button class="quick-btn" onclick="setOpp('青岛西海岸')">青岛西海岸</button>
-        <button class="quick-btn" onclick="setOpp('天津津门虎')">天津津门虎</button>
+    <!-- RECORD -->
+    <div class="page" id="page-record">
+      <div class="rec-card">
+        <div class="rec-sec">
+          <span class="rec-lbl">对手</span>
+          <input class="opp-inp" id="inp-opp" type="text" placeholder="输入对手名称" maxlength="10">
+          <div class="quick-row">
+            <button class="quick-btn" onclick="setOpp('成都蓉城')">成都蓉城</button>
+            <button class="quick-btn" onclick="setOpp('北京国安')">北京国安</button>
+            <button class="quick-btn" onclick="setOpp('上海海港')">上海海港</button>
+            <button class="quick-btn" onclick="setOpp('山东泰山')">山东泰山</button>
+            <button class="quick-btn" onclick="setOpp('上海申花')">上海申花</button>
+            <button class="quick-btn" onclick="setOpp('武汉三镇')">武汉三镇</button>
+            <button class="quick-btn" onclick="setOpp('重庆铜梁龙')">重庆铜梁龙</button>
+            <button class="quick-btn" onclick="setOpp('河南队')">河南队</button>
+            <button class="quick-btn" onclick="setOpp('青岛海牛')">青岛海牛</button>
+            <button class="quick-btn" onclick="setOpp('大连英博')">大连英博</button>
+            <button class="quick-btn" onclick="setOpp('辽宁铁人')">辽宁铁人</button>
+            <button class="quick-btn" onclick="setOpp('云南玉昆')">云南玉昆</button>
+            <button class="quick-btn" onclick="setOpp('深圳新鹏城')">深圳新鹏城</button>
+            <button class="quick-btn" onclick="setOpp('青岛西海岸')">青岛西海岸</button>
+            <button class="quick-btn" onclick="setOpp('天津津门虎')">天津津门虎</button>
+          </div>
+        </div>
+        <div class="rec-sec">
+          <span class="rec-lbl">比分（浙江 VS 对手）</span>
+          <div class="score-row">
+            <input class="score-inp" id="inp-gf" type="number" min="0" max="20" value="0" inputmode="numeric">
+            <div class="score-vs">:</div>
+            <input class="score-inp" id="inp-ga" type="number" min="0" max="20" value="0" inputmode="numeric">
+          </div>
+        </div>
+        <div class="rec-sec">
+          <span class="rec-lbl">结果</span>
+          <div class="res-btns">
+            <button class="res-btn" id="btn-win"  onclick="setRes('win')">胜<small>+3 PTS</small></button>
+            <button class="res-btn" id="btn-draw" onclick="setRes('draw')">平<small>+1 PT</small></button>
+            <button class="res-btn" id="btn-loss" onclick="setRes('loss')">负<small>+0 PTS</small></button>
+          </div>
+        </div>
       </div>
+      <button class="submit-btn" id="submit-btn" onclick="addMatch()" disabled>请先选择结果</button>
+      <div class="tip">Safari → 分享 → 添加到主屏幕，数据本地保存</div>
+      <div style="height:20px"></div>
     </div>
-    <div class="rec-sec">
-      <span class="rec-lbl">比分（浙江 VS 对手）</span>
-      <div class="score-row">
-        <input class="score-inp" id="inp-gf" type="number" min="0" max="20" value="0" inputmode="numeric">
-        <div class="score-vs">:</div>
-        <input class="score-inp" id="inp-ga" type="number" min="0" max="20" value="0" inputmode="numeric">
-      </div>
-    </div>
-    <div class="rec-sec">
-      <span class="rec-lbl">结果</span>
-      <div class="res-btns">
-        <button class="res-btn" id="btn-win"  onclick="setRes('win')">胜<small>+3 PTS</small></button>
-        <button class="res-btn" id="btn-draw" onclick="setRes('draw')">平<small>+1 PT</small></button>
-        <button class="res-btn" id="btn-loss" onclick="setRes('loss')">负<small>+0 PTS</small></button>
-      </div>
-    </div>
-  </div>
-  <button class="submit-btn" id="submit-btn" onclick="addMatch()" disabled>请先选择结果</button>
-  <div class="tip">Safari → 分享 → 添加到主屏幕，数据本地保存</div>
-  <div style="height:20px"></div>
-</div>
 
-<!-- HISTORY -->
-<div class="page" id="page-history">
-  <div class="hist-card">
-    <div class="hist-hdr">
-      <div class="hist-hdr-t">比赛记录</div>
-      <button class="clear-btn" onclick="clearAll()">重置</button>
+    <!-- HISTORY -->
+    <div class="page" id="page-history">
+      <div class="hist-card">
+        <div class="hist-hdr">
+          <div class="hist-hdr-t">比赛记录</div>
+          <button class="clear-btn" onclick="clearAll()">重置</button>
+        </div>
+        <div id="hist-list"></div>
+      </div>
+      <div class="sec">赛季统计</div>
+      <div class="stats-card" id="stats-card" style="margin-bottom:20px"></div>
     </div>
-    <div id="hist-list"></div>
-  </div>
-  <div class="sec">赛季统计</div>
-  <div class="stats-card" id="stats-card" style="margin-bottom:20px"></div>
-</div>
-```
 
   </div>
 </div>
 <script>
-const TOTAL=30,PEN=-5,KEY='zj2026_r8';
-const RIVALS=[
+const TOTAL=30,PEN=-5,KEY='zj2026_v2';
+// 对手积分从 data.json 动态加载，以下为初始 fallback
+let RIVALS=[
   {name:'成都蓉城',penalty:0,  basePts:16, color:'#3b82f6'},
   {name:'北京国安',penalty:-5, basePts:5,  color:'#a855f7'},
   {name:'上海海港',penalty:-5, basePts:7,  color:'#06b6d4'},
   {name:'山东泰山',penalty:-6, basePts:10, color:'#eab308'},
   {name:'上海申花',penalty:-10,basePts:14, color:'#6b7280'},
 ];
+async function loadData(){
+  try{
+    const r=await fetch('data.json?t='+Date.now());
+    if(!r.ok)return;
+    const d=await r.json();
+    if(d.rivals&&d.rivals.length){RIVALS=d.rivals;}
+    const el=document.getElementById('data-updated');
+    if(el&&d.updated)el.textContent='对手积分更新：'+d.updated;
+    render();
+  }catch(e){render();}
+}
 const DEF=[
   {round:1,opp:'青岛西海岸',gf:2,ga:0,result:'win', pts:3},
   {round:2,opp:'上海申花',  gf:1,ga:1,result:'draw',pts:1},
@@ -466,7 +475,7 @@ function addMatch(){
 }
 function del(i){if(confirm('删除 R'+matches[i].round+' 记录？')){matches.splice(i,1);render()}}
 function clearAll(){if(confirm('重置为前6轮默认数据？')){matches=[...DEF];render()}}
-render();
+loadData();
 </script>
 </body>
 </html>
