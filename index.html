@@ -73,27 +73,8 @@ html, body {
   padding: 4px 12px; border-radius: 4px; letter-spacing: 1px;
 }
 
-/* TABS */
-.tabs {
-  flex-shrink: 0; display: flex;
-  background: #132B15;
-  border-bottom: 1px solid rgba(200,168,75,0.28);
-}
-.tab {
-  flex: 1; padding: 9px 4px 8px; font-size: 12px;
-  color: rgba(234,242,234,0.45);
-  background: none; border: none;
-  border-bottom: 2px solid transparent;
-  cursor: pointer; text-align: center;
-  font-family: -apple-system, "PingFang SC", sans-serif;
-  transition: all .18s;
-}
-.tab.active { color: #E2C46A; border-bottom-color: #C8A84B; font-weight: 600; }
-
 /* SCROLL */
 .scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: calc(var(--safe-bot) + 20px); }
-.page { display: none; }
-.page.active { display: block; }
 
 /* HERO */
 .hero {
@@ -170,56 +151,6 @@ html, body {
 .gap-tag.behind { background: rgba(231,76,60,0.12); color: #E74C3C; }
 .gap-tag.tie    { background: rgba(241,196,15,0.1);  color: #F1C40F; }
 
-/* RECORD */
-.rec-card { margin: 14px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
-.rec-sec { padding: 13px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
-.rec-sec:last-child { border-bottom: none; }
-.rec-lbl { font-size: 10px; color: #C8A84B; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; display: block; }
-.opp-inp { width: 100%; background: #0C1F0E; border: 1px solid rgba(200,168,75,0.28); border-radius: 8px; color: #EAF2EA; font-size: 15px; padding: 10px 13px; outline: none; -webkit-appearance: none; font-family: -apple-system, "PingFang SC", sans-serif; }
-.opp-inp:focus { border-color: #C8A84B; }
-.quick-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
-.quick-btn { padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.28); background: #0C1F0E; font-size: 11px; color: rgba(234,242,234,0.45); cursor: pointer; font-family: -apple-system, "PingFang SC", sans-serif; }
-.quick-btn:active { background: #C8A84B; color: #0C1F0E; }
-.score-row { display: flex; align-items: center; gap: 10px; }
-.score-inp { flex: 1; background: #0C1F0E; border: 1px solid rgba(200,168,75,0.28); border-radius: 8px; color: #FFFFFF; font-size: 34px; font-weight: 700; text-align: center; padding: 10px; outline: none; -webkit-appearance: none; }
-.score-inp:focus { border-color: #C8A84B; }
-.score-vs { font-size: 18px; color: rgba(234,242,234,0.45); }
-.res-btns { display: flex; gap: 8px; }
-.res-btn { flex: 1; padding: 12px 4px; border-radius: 8px; border: 1px solid rgba(200,168,75,0.28); background: #0C1F0E; font-size: 14px; font-weight: 600; color: rgba(234,242,234,0.45); cursor: pointer; text-align: center; font-family: -apple-system, "PingFang SC", sans-serif; }
-.res-btn small { display: block; font-size: 10px; font-weight: 400; margin-top: 2px; }
-.res-btn.sel-win  { border-color: #34C759; background: rgba(52,199,89,0.1);  color: #34C759; }
-.res-btn.sel-draw { border-color: #C8A84B; background: rgba(200,168,75,0.1); color: #E2C46A; }
-.res-btn.sel-loss { border-color: #E74C3C; background: rgba(231,76,60,0.1);  color: #E74C3C; }
-.submit-btn { margin: 14px 16px 0; width: calc(100% - 32px); padding: 14px; background: #C8A84B; color: #0C1F0E; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; font-family: -apple-system, "PingFang SC", sans-serif; letter-spacing: 1px; cursor: pointer; -webkit-appearance: none; }
-.submit-btn:active { background: #E2C46A; }
-.submit-btn:disabled { background: #1A3A1D; color: rgba(234,242,234,0.45); }
-.tip { margin: 10px 16px 0; background: rgba(200,168,75,0.05); border: 1px solid rgba(200,168,75,0.15); border-radius: 8px; padding: 9px 13px; font-size: 11px; color: rgba(234,242,234,0.45); }
-
-/* HISTORY */
-.hist-card { margin: 14px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
-.hist-hdr { padding: 12px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); display: flex; justify-content: space-between; align-items: center; }
-.hist-hdr-t { font-size: 15px; font-weight: 700; color: #FFFFFF; }
-.clear-btn { font-size: 11px; color: #E74C3C; background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.2); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-family: -apple-system, "PingFang SC", sans-serif; }
-.match-row { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
-.match-row:last-child { border-bottom: none; }
-.m-round { font-size: 12px; color: rgba(234,242,234,0.45); min-width: 26px; }
-.res-tag { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 3px; min-width: 24px; text-align: center; }
-.res-tag.win  { background: rgba(52,199,89,0.12);  color: #34C759; }
-.res-tag.draw { background: rgba(200,168,75,0.12); color: #E2C46A; }
-.res-tag.loss { background: rgba(231,76,60,0.1);   color: #E74C3C; }
-.m-body { flex: 1; }
-.m-opp { font-size: 13px; font-weight: 500; }
-.m-score { font-size: 11px; color: rgba(234,242,234,0.45); margin-top: 1px; }
-.m-pts { font-size: 15px; font-weight: 700; }
-.m-pts.win { color: #34C759; } .m-pts.draw { color: #C8A84B; } .m-pts.loss { color: rgba(234,242,234,0.45); }
-.del-btn { background: none; border: none; font-size: 16px; color: rgba(234,242,234,0.2); cursor: pointer; padding: 4px; }
-.del-btn:active { color: #E74C3C; }
-.stats-card { margin: 10px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; margin-bottom: 4px; }
-.stat-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
-.stat-row:last-child { border-bottom: none; }
-.stat-lbl { font-size: 12px; color: rgba(234,242,234,0.45); }
-.stat-val { font-size: 13px; font-weight: 600; }
-.empty { padding: 32px 20px; text-align: center; color: rgba(234,242,234,0.45); font-size: 12px; }
 </style>
 </head>
 <body>
@@ -242,111 +173,42 @@ html, body {
         transition:all .2s;">↻</button>
     </div>
   </div>
-  <div class="tabs">
-    <button class="tab active" onclick="go('dashboard')">总览</button>
-    <button class="tab" onclick="go('record')">录入</button>
-    <button class="tab" onclick="go('history')">记录</button>
-  </div>
   <div class="scroll">
-
-    <!-- DASHBOARD -->
-    <div class="page active" id="page-dashboard">
-      <div class="hero">
-        <div class="hero-top">
-          <div>
-            <div class="hero-lbl">实际积分</div>
-            <div class="hero-pts" id="h-pts">2<span class="hero-unit">PTS</span></div>
-          </div>
-          <div class="hero-right">
-            <div class="hero-rnum" id="h-remain">27</div>
-            <div class="hero-rlbl">轮待战</div>
-          </div>
-        </div>
-        <div class="hero-divider"></div>
-        <div class="hero-stats">
-          <div class="hstat"><div class="hstat-val" id="h-w">2</div><div class="hstat-lbl">胜</div></div>
-          <div class="hstat"><div class="hstat-val" id="h-d">1</div><div class="hstat-lbl">平</div></div>
-          <div class="hstat"><div class="hstat-val" id="h-l">1</div><div class="hstat-lbl">负</div></div>
-          <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
-        </div>
-      </div>
-      <div class="verdict ok" id="verdict">
+    <div class="hero">
+      <div class="hero-top">
         <div>
-          <div class="verdict-label ok" id="v-label">争冠竞争者</div>
-          <div class="verdict-sub">模拟目标 · 赛季末积分</div>
+          <div class="hero-lbl">实际积分</div>
+          <div class="hero-pts" id="h-pts">2<span class="hero-unit">PTS</span></div>
         </div>
-        <div class="verdict-pts" id="v-pts">— PTS</div>
-      </div>
-      <div class="sec">积分对比</div>
-      <div class="card" id="standings"></div>
-      <div class="sec">与主要对手差距</div>
-      <div id="data-updated" style="font-size:10px;color:rgba(234,242,234,0.3);text-align:right;padding:0 16px 6px;"></div>
-      <div class="card" id="gaps" style="margin-bottom:20px"></div>
-    </div>
-
-    <!-- RECORD -->
-    <div class="page" id="page-record">
-      <div class="rec-card">
-        <div class="rec-sec">
-          <span class="rec-lbl">对手</span>
-          <input class="opp-inp" id="inp-opp" type="text" placeholder="输入对手名称" maxlength="10">
-          <div class="quick-row">
-            <button class="quick-btn" onclick="setOpp('成都蓉城')">成都蓉城</button>
-            <button class="quick-btn" onclick="setOpp('北京国安')">北京国安</button>
-            <button class="quick-btn" onclick="setOpp('上海海港')">上海海港</button>
-            <button class="quick-btn" onclick="setOpp('山东泰山')">山东泰山</button>
-            <button class="quick-btn" onclick="setOpp('上海申花')">上海申花</button>
-            <button class="quick-btn" onclick="setOpp('武汉三镇')">武汉三镇</button>
-            <button class="quick-btn" onclick="setOpp('重庆铜梁龙')">重庆铜梁龙</button>
-            <button class="quick-btn" onclick="setOpp('河南队')">河南队</button>
-            <button class="quick-btn" onclick="setOpp('青岛海牛')">青岛海牛</button>
-            <button class="quick-btn" onclick="setOpp('大连英博')">大连英博</button>
-            <button class="quick-btn" onclick="setOpp('辽宁铁人')">辽宁铁人</button>
-            <button class="quick-btn" onclick="setOpp('云南玉昆')">云南玉昆</button>
-            <button class="quick-btn" onclick="setOpp('深圳新鹏城')">深圳新鹏城</button>
-            <button class="quick-btn" onclick="setOpp('青岛西海岸')">青岛西海岸</button>
-            <button class="quick-btn" onclick="setOpp('天津津门虎')">天津津门虎</button>
-          </div>
-        </div>
-        <div class="rec-sec">
-          <span class="rec-lbl">比分（浙江 VS 对手）</span>
-          <div class="score-row">
-            <input class="score-inp" id="inp-gf" type="number" min="0" max="20" value="0" inputmode="numeric">
-            <div class="score-vs">:</div>
-            <input class="score-inp" id="inp-ga" type="number" min="0" max="20" value="0" inputmode="numeric">
-          </div>
-        </div>
-        <div class="rec-sec">
-          <span class="rec-lbl">结果</span>
-          <div class="res-btns">
-            <button class="res-btn" id="btn-win"  onclick="setRes('win')">胜<small>+3 PTS</small></button>
-            <button class="res-btn" id="btn-draw" onclick="setRes('draw')">平<small>+1 PT</small></button>
-            <button class="res-btn" id="btn-loss" onclick="setRes('loss')">负<small>+0 PTS</small></button>
-          </div>
+        <div class="hero-right">
+          <div class="hero-rnum" id="h-remain">27</div>
+          <div class="hero-rlbl">轮待战</div>
         </div>
       </div>
-      <button class="submit-btn" id="submit-btn" onclick="addMatch()" disabled>请先选择结果</button>
-      <div class="tip">Safari → 分享 → 添加到主屏幕，数据本地保存</div>
-      <div style="height:20px"></div>
-    </div>
-
-    <!-- HISTORY -->
-    <div class="page" id="page-history">
-      <div class="hist-card">
-        <div class="hist-hdr">
-          <div class="hist-hdr-t">比赛记录</div>
-          <button class="clear-btn" onclick="clearAll()">重置</button>
-        </div>
-        <div id="hist-list"></div>
+      <div class="hero-divider"></div>
+      <div class="hero-stats">
+        <div class="hstat"><div class="hstat-val" id="h-w">2</div><div class="hstat-lbl">胜</div></div>
+        <div class="hstat"><div class="hstat-val" id="h-d">1</div><div class="hstat-lbl">平</div></div>
+        <div class="hstat"><div class="hstat-val" id="h-l">1</div><div class="hstat-lbl">负</div></div>
+        <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
       </div>
-      <div class="sec">赛季统计</div>
-      <div class="stats-card" id="stats-card" style="margin-bottom:20px"></div>
     </div>
-
+      <div class="verdict ok" id="verdict">
+      <div>
+        <div class="verdict-label ok" id="v-label">争冠竞争者</div>
+        <div class="verdict-sub">自动更新 · 当前积分走势</div>
+      </div>
+      <div class="verdict-pts" id="v-pts">— PTS</div>
+    </div>
+    <div class="sec">积分对比</div>
+    <div class="card" id="standings"></div>
+    <div class="sec">与主要对手差距</div>
+    <div id="data-updated" style="font-size:10px;color:rgba(234,242,234,0.3);text-align:right;padding:0 16px 6px;"></div>
+    <div class="card" id="gaps" style="margin-bottom:20px"></div>
   </div>
 </div>
 <script>
-const TOTAL=30,PEN=-5,KEY='zj2026_v2';
+const TOTAL=30,PEN=-5;
 // 对手积分从 data.json 动态加载，以下为初始 fallback
 let RIVALS=[
   {name:'成都蓉城',penalty:0,  basePts:16, color:'#3b82f6'},
@@ -386,9 +248,7 @@ const DEF=[
   {round:5,opp:'大连英博',  gf:0,ga:2,result:'loss',pts:0},
   {round:6,opp:'北京国安',  gf:1,ga:1,result:'draw',pts:1},
 ];
-let matches=ld(),selRes=null;
-function ld(){try{const r=localStorage.getItem(KEY);if(r){const d=JSON.parse(r);if(d.length>=DEF.length)return d;}return[...DEF]}catch{return[...DEF]}}
-function sv(){try{localStorage.setItem(KEY,JSON.stringify(matches))}catch{}}
+const matches=[...DEF];
 function calc(){
   const played=matches.length,gp=matches.reduce((s,m)=>s+m.pts,0),actual=gp+PEN,remain=TOTAL-played;
   const wins=matches.filter(m=>m.result==='win').length,draws=matches.filter(m=>m.result==='draw').length,losses=matches.filter(m=>m.result==='loss').length;
@@ -404,7 +264,7 @@ function verdict(pts){
   return           {cls:'bad',  label:'需提升战绩'};
 }
 function render(){
-  const s=calc();sv();
+  const s=calc();
   document.getElementById('round-badge').textContent='R'+s.played;
   document.getElementById('h-pts').innerHTML=s.actual+'<span class="hero-unit">PTS</span>';
   document.getElementById('h-remain').textContent=s.remain;
@@ -419,7 +279,7 @@ function render(){
   const lbl=document.getElementById('v-label');
   lbl.className='verdict-label '+v.cls; lbl.textContent=v.label;
   document.getElementById('v-pts').textContent=(fin>=0?'+':'')+fin+' PTS 上限';
-  renderBars(s);renderGaps(s);renderHistory(s);
+  renderBars(s);renderGaps(s);
 }
 function renderBars(s){
   const all=[{name:'浙江队',penalty:PEN,gamePts:s.gp,color:'#C8A84B',isMe:true},...RIVALS.map(r=>({...r,gamePts:r.basePts,isMe:false}))]
@@ -442,61 +302,6 @@ function renderGaps(s){
     return`<div class="row"><div class="gap-name">${r.name}</div><div class="gap-right"><span class="gap-opp">${ra>=0?'+':''}${ra} PTS</span><span class="gap-tag ${pc}">${pt}</span></div></div>`;
   }).join('');
 }
-function renderHistory(s){
-  const list=document.getElementById('hist-list');
-  if(!matches.length){list.innerHTML='<div class="empty">暂无比赛记录</div>';}
-  else{list.innerHTML=[...matches].sort((a,b)=>b.round-a.round).map(m=>{
-    const i=matches.findIndex(x=>x.round===m.round);
-    const rt=m.result==='win'?'胜':m.result==='draw'?'平':'负';
-    return`<div class="match-row"><div class="m-round">R${m.round}</div><div class="res-tag ${m.result}">${rt}</div>
-      <div class="m-body"><div class="m-opp">${m.opp}</div><div class="m-score">${m.gf} : ${m.ga}</div></div>
-      <div class="m-pts ${m.result}">+${m.pts}</div>
-      <button class="del-btn" onclick="del(${i})">×</button></div>`;
-  }).join('');}
-  const gd=s.gf-s.ga,wr=s.played>0?((s.wins/s.played)*100).toFixed(0):0;
-  document.getElementById('stats-card').innerHTML=`
-    <div class="stat-row"><span class="stat-lbl">已赛 / 总轮</span><span class="stat-val">${s.played} / ${TOTAL}</span></div>
-    <div class="stat-row"><span class="stat-lbl">胜率</span><span class="stat-val">${wr}%</span></div>
-    <div class="stat-row"><span class="stat-lbl">进球 / 失球</span><span class="stat-val">${s.gf} / ${s.ga}</span></div>
-    <div class="stat-row"><span class="stat-lbl">净胜球</span><span class="stat-val" style="color:${gd>=0?'#34C759':'#E74C3C'}">${gd>=0?'+':''}${gd}</span></div>
-    <div class="stat-row"><span class="stat-lbl">比赛积分</span><span class="stat-val">${s.gp}</span></div>
-    <div class="stat-row"><span class="stat-lbl">实际积分（扣5后）</span><span class="stat-val" style="color:#E2C46A">${s.actual}</span></div>`;
-}
-function go(name){
-  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['dashboard','record','history'][i]===name));
-  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));
-}
-function setOpp(n){document.getElementById('inp-opp').value=n}
-function setRes(r){
-  selRes=r;
-  ['win','draw','loss'].forEach(x=>document.getElementById('btn-'+x).className='res-btn'+(x===r?' sel-'+x:''));
-  const btn=document.getElementById('submit-btn');
-  btn.disabled=false;
-  btn.textContent=r==='win'?'录入胜场 · +3分':r==='draw'?'录入平局 · +1分':'录入负场 · +0分';
-}
-function syncScore(){
-  const gf=parseInt(document.getElementById('inp-gf').value)||0,ga=parseInt(document.getElementById('inp-ga').value)||0;
-  setRes(gf>ga?'win':gf<ga?'loss':'draw');
-}
-['inp-gf','inp-ga'].forEach(id=>document.getElementById(id).addEventListener('input',syncScore));
-function addMatch(){
-  if(!selRes)return;
-  const s=calc();if(s.played>=TOTAL){alert('已达30轮');return}
-  const round=s.played+1,opp=document.getElementById('inp-opp').value.trim()||'未知对手';
-  const gf=parseInt(document.getElementById('inp-gf').value)||0,ga=parseInt(document.getElementById('inp-ga').value)||0;
-  const pts=selRes==='win'?3:selRes==='draw'?1:0;
-  matches.push({round,opp,gf,ga,result:selRes,pts});
-  matches.sort((a,b)=>a.round-b.round);
-  selRes=null;
-  document.getElementById('inp-opp').value='';
-  document.getElementById('inp-gf').value=0;
-  document.getElementById('inp-ga').value=0;
-  ['win','draw','loss'].forEach(x=>document.getElementById('btn-'+x).className='res-btn');
-  const btn=document.getElementById('submit-btn');btn.disabled=true;btn.textContent='请先选择结果';
-  render();go('dashboard');
-}
-function del(i){if(confirm('删除 R'+matches[i].round+' 记录？')){matches.splice(i,1);render()}}
-function clearAll(){if(confirm('重置为前6轮默认数据？')){matches=[...DEF];render()}}
 loadData();
 </script>
 </body>
