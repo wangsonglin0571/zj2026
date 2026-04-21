@@ -1,5 +1,5 @@
 {
-  "updated": "2026-04-20 16:05 UTC",
+  "updated": "2026-04-21 13:39 UTC",
   "nextMatch": {
     "opponent": "成都蓉城",
     "kickoffBjt": "2026-04-25 19:00",
@@ -16,15 +16,15 @@
     {
       "name": "成都蓉城",
       "penalty": 0,
-      "basePts": 16,
-      "actual": 16,
+      "basePts": 19,
+      "actual": 19,
       "color": "#3b82f6"
     },
     {
       "name": "北京国安",
       "penalty": -5,
-      "basePts": 0,
-      "actual": -5,
+      "basePts": 3,
+      "actual": -2,
       "color": "#a855f7"
     },
     {
@@ -53,8 +53,8 @@
     {
       "name": "成都蓉城",
       "penalty": 0,
-      "gamePts": 16,
-      "actual": 16
+      "gamePts": 19,
+      "actual": 19
     },
     {
       "name": "重庆铜梁龙",
@@ -99,6 +99,12 @@
       "actual": -2
     },
     {
+      "name": "北京国安",
+      "penalty": -5,
+      "gamePts": 3,
+      "actual": -2
+    },
+    {
       "name": "浙江",
       "penalty": -5,
       "gamePts": 3,
@@ -111,27 +117,21 @@
       "actual": -3
     },
     {
+      "name": "武汉三镇",
+      "penalty": -5,
+      "gamePts": 2,
+      "actual": -3
+    },
+    {
       "name": "河南",
       "penalty": -6,
       "gamePts": 1,
       "actual": -5
     },
     {
-      "name": "北京国安",
-      "penalty": -5,
-      "gamePts": 0,
-      "actual": -5
-    },
-    {
       "name": "上海申花",
       "penalty": -10,
       "gamePts": 4,
-      "actual": -6
-    },
-    {
-      "name": "武汉三镇",
-      "penalty": -5,
-      "gamePts": -1,
       "actual": -6
     },
     {
