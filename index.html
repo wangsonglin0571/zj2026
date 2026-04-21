@@ -289,7 +289,7 @@ html, body {
   </div>
 </div>
 <script>
-const TOTAL=30,PEN=-5;
+const TOTAL=30;
 // 对手积分从 data.json 动态加载，以下为初始 fallback
 let RIVALS=[
   {name:'成都蓉城',penalty:0,  basePts:16, color:'#3b82f6'},
@@ -334,7 +334,7 @@ function applyData(d,source){
   const el=document.getElementById('data-updated');
   if(el&&d.updated){
     const src=source==='repo'?'GitHub最新提交':'当前发布页';
-    el.textContent='对手积分更新：'+d.updated+' · '+src;
+    el.textContent='对手积分更新：'+formatUpdated(d.updated)+' · '+src;
   }
   render();
 }
@@ -356,35 +356,51 @@ async function manualRefresh(){
     btn.disabled=false;
   },800);
 }
-const DEF=[
-  {round:1,opp:'青岛西海岸',gf:2,ga:0,result:'win', pts:3},
-  {round:2,opp:'上海申花',  gf:1,ga:1,result:'draw',pts:1},
-  {round:3,opp:'青岛海牛',  gf:4,ga:1,result:'win', pts:3},
-  {round:4,opp:'重庆铜梁龙',gf:0,ga:1,result:'loss',pts:0},
-  {round:5,opp:'大连英博',  gf:0,ga:2,result:'loss',pts:0},
-  {round:6,opp:'北京国安',  gf:1,ga:1,result:'draw',pts:1},
-];
-const matches=[...DEF];
-function calc(){
-  if(ZHEJIANG&&Number.isFinite(ZHEJIANG.played)){
-    const played=ZHEJIANG.played;
-    const gp=ZHEJIANG.gamePts;
-    const actual=ZHEJIANG.actual;
-    const remain=Math.max(0,TOTAL-played);
-    const wins=ZHEJIANG.wins;
-    const draws=ZHEJIANG.draws;
-    const losses=ZHEJIANG.losses;
-    const gf=ZHEJIANG.gf;
-    const ga=ZHEJIANG.ga;
-    const rate=played>0?gp/played:0;
-    const proj=Math.round(actual+rate*remain);
-    return{played,gp,actual,remain,wins,draws,losses,gf,ga,proj};
+const FALLBACK_ZHEJIANG={
+  played:6,
+  wins:2,
+  draws:2,
+  losses:2,
+  gf:8,
+  ga:5,
+  gd:3,
+  gamePts:8,
+  actual:3,
+  penalty:-5,
+};
+function formatUpdated(updated){
+  if(typeof updated!=='string'||!updated)return '待更新';
+  const utc=updated.match(/^(\d{4}-\d{2}-\d{2}) (\d{2}):(\d{2}) UTC$/);
+  if(utc){
+    const dt=new Date(`${utc[1]}T${utc[2]}:${utc[3]}:00Z`);
+    const bjt=new Intl.DateTimeFormat('zh-CN',{
+      timeZone:'Asia/Shanghai',
+      year:'numeric',
+      month:'2-digit',
+      day:'2-digit',
+      hour:'2-digit',
+      minute:'2-digit',
+      hour12:false,
+    }).format(dt).replace(/\//g,'-');
+    return `${bjt} 北京时间`;
   }
-  const played=matches.length,gp=matches.reduce((s,m)=>s+m.pts,0),actual=gp+PEN,remain=TOTAL-played;
-  const wins=matches.filter(m=>m.result==='win').length,draws=matches.filter(m=>m.result==='draw').length,losses=matches.filter(m=>m.result==='loss').length;
-  const gf=matches.reduce((s,m)=>s+m.gf,0),ga=matches.reduce((s,m)=>s+m.ga,0);
+  return updated;
+}
+function calc(){
+  const team=ZHEJIANG&&Number.isFinite(ZHEJIANG.played)?ZHEJIANG:FALLBACK_ZHEJIANG;
+  const played=team.played;
+  const gp=team.gamePts;
+  const actual=team.actual;
+  const penalty=team.penalty;
+  const remain=Math.max(0,TOTAL-played);
+  const wins=team.wins;
+  const draws=team.draws;
+  const losses=team.losses;
+  const gf=team.gf;
+  const ga=team.ga;
+  const gd=Number.isFinite(team.gd)?team.gd:(gf-ga);
   const rate=played>0?gp/played:0,proj=Math.round(actual+rate*remain);
-  return{played,gp,actual,remain,wins,draws,losses,gf,ga,proj};
+  return{played,gp,actual,penalty,remain,wins,draws,losses,gf,ga,gd,proj};
 }
 function verdict(pts){
   if(pts>=72)return{cls:'great',label:'夺冠热门'};
@@ -401,8 +417,7 @@ function render(){
   document.getElementById('h-w').textContent=s.wins;
   document.getElementById('h-d').textContent=s.draws;
   document.getElementById('h-l').textContent=s.losses;
-  const gd=s.gf-s.ga;
-  document.getElementById('h-gd').textContent=(gd>=0?'+':'')+gd;
+  document.getElementById('h-gd').textContent=(s.gd>=0?'+':'')+s.gd;
   const fin=s.actual+s.remain*3; // 理论上限（剩余全胜）
   const v=verdict(s.actual);
   document.getElementById('verdict').className='verdict '+v.cls;
@@ -417,8 +432,10 @@ function render(){
   renderBars(s);renderGaps(s);
 }
 function renderBars(s){
-  const all=[{name:'浙江队',penalty:PEN,gamePts:s.gp,color:'#C8A84B',isMe:true},...RIVALS.map(r=>({...r,gamePts:r.basePts,isMe:false}))]
-    .map(t=>({...t,actual:t.gamePts+t.penalty})).sort((a,b)=>b.actual-a.actual);
+  const all=[
+    {name:'浙江队',penalty:s.penalty,gamePts:s.gp,actual:s.actual,color:'#C8A84B',isMe:true},
+    ...RIVALS.map(r=>({...r,gamePts:r.basePts,actual:r.actual,isMe:false}))
+  ].sort((a,b)=>b.actual-a.actual);
   const mx=Math.max(...all.map(t=>t.actual),1);
   document.getElementById('standings').innerHTML=all.map((t,i)=>{
     const pct=Math.max(2,(Math.max(0,t.actual)/mx)*100).toFixed(1);
