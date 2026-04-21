@@ -1,5 +1,12 @@
 {
   "updated": "2026-04-20 16:05 UTC",
+  "nextMatch": {
+    "opponent": "深圳新鹏城",
+    "kickoffBjt": "2026-05-02 19:35",
+    "venue": "黄龙体育中心体育场",
+    "location": "浙江杭州",
+    "note": "中超第9轮"
+  },
   "zhejiang": {
     "gamePts": 3,
     "actual": -2,

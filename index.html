@@ -122,6 +122,66 @@ html, body {
 .verdict-sub { font-size: 11px; color: rgba(234,242,234,0.45); margin-top: 2px; }
 .verdict-pts { font-size: 22px; font-weight: 700; color: #E2C46A; }
 
+/* NEXT MATCH */
+.next-match {
+  margin: 10px 16px 0;
+  background: linear-gradient(145deg, rgba(26,58,29,0.98) 0%, rgba(19,43,21,0.98) 100%);
+  border: 1px solid rgba(200,168,75,0.18);
+  border-radius: 10px;
+  padding: 14px 16px;
+}
+.next-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 10px;
+}
+.next-kicker {
+  font-size: 10px;
+  font-weight: 700;
+  color: #C8A84B;
+  letter-spacing: 1.6px;
+  text-transform: uppercase;
+}
+.next-note {
+  font-size: 11px;
+  color: rgba(234,242,234,0.5);
+}
+.next-opponent {
+  font-size: 28px;
+  font-weight: 700;
+  color: #FFFFFF;
+  line-height: 1.1;
+  letter-spacing: 0.4px;
+}
+.next-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 10px 14px;
+  margin-top: 14px;
+}
+.next-item {
+  padding-top: 10px;
+  border-top: 1px solid rgba(200,168,75,0.12);
+}
+.next-item.full {
+  grid-column: 1 / -1;
+}
+.next-item-lbl {
+  font-size: 10px;
+  color: rgba(234,242,234,0.42);
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+.next-item-val {
+  margin-top: 4px;
+  font-size: 14px;
+  font-weight: 600;
+  color: #EAF2EA;
+  line-height: 1.45;
+}
+
 /* SEC + CARD */
 .sec { font-size: 10px; font-weight: 700; color: #C8A84B; text-transform: uppercase; letter-spacing: 2px; padding: 16px 16px 8px; }
 .card { margin: 0 16px; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
@@ -193,12 +253,33 @@ html, body {
         <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
       </div>
     </div>
-      <div class="verdict ok" id="verdict">
+    <div class="verdict ok" id="verdict">
       <div>
         <div class="verdict-label ok" id="v-label">争冠竞争者</div>
         <div class="verdict-sub">自动更新 · 当前积分走势</div>
       </div>
       <div class="verdict-pts" id="v-pts">— PTS</div>
+    </div>
+    <div class="next-match">
+      <div class="next-head">
+        <div class="next-kicker">下一次比赛</div>
+        <div class="next-note" id="next-note">中超第10轮</div>
+      </div>
+      <div class="next-opponent" id="next-opponent">云南玉昆</div>
+      <div class="next-grid">
+        <div class="next-item">
+          <div class="next-item-lbl">北京时间</div>
+          <div class="next-item-val" id="next-kickoff">2026-05-06 20:00</div>
+        </div>
+        <div class="next-item">
+          <div class="next-item-lbl">比赛地点</div>
+          <div class="next-item-val" id="next-location">云南玉溪</div>
+        </div>
+        <div class="next-item full">
+          <div class="next-item-lbl">球场</div>
+          <div class="next-item-val" id="next-venue">玉溪高原体育运动中心体育场</div>
+        </div>
+      </div>
     </div>
     <div class="sec">积分对比</div>
     <div class="card" id="standings"></div>
@@ -217,12 +298,20 @@ let RIVALS=[
   {name:'山东泰山',penalty:-6, basePts:10, color:'#eab308'},
   {name:'上海申花',penalty:-10,basePts:14, color:'#6b7280'},
 ];
+let NEXT_MATCH={
+  opponent:'云南玉昆',
+  kickoffBjt:'2026-05-06 20:00',
+  venue:'玉溪高原体育运动中心体育场',
+  location:'云南玉溪',
+  note:'中超第10轮',
+};
 async function loadData(){
   try{
     const r=await fetch('data.json?t='+Date.now());
     if(!r.ok)return;
     const d=await r.json();
     if(d.rivals&&d.rivals.length){RIVALS=d.rivals;}
+    if(d.nextMatch){NEXT_MATCH={...NEXT_MATCH,...d.nextMatch};}
     const el=document.getElementById('data-updated');
     if(el&&d.updated)el.textContent='对手积分更新：'+d.updated;
     render();
@@ -279,6 +368,11 @@ function render(){
   const lbl=document.getElementById('v-label');
   lbl.className='verdict-label '+v.cls; lbl.textContent=v.label;
   document.getElementById('v-pts').textContent=(fin>=0?'+':'')+fin+' PTS 上限';
+  document.getElementById('next-opponent').textContent=NEXT_MATCH.opponent||'待定';
+  document.getElementById('next-kickoff').textContent=NEXT_MATCH.kickoffBjt||'待更新';
+  document.getElementById('next-location').textContent=NEXT_MATCH.location||'待更新';
+  document.getElementById('next-venue').textContent=NEXT_MATCH.venue||'待更新';
+  document.getElementById('next-note').textContent=NEXT_MATCH.note||'下一轮';
   renderBars(s);renderGaps(s);
 }
 function renderBars(s){
