@@ -226,7 +226,7 @@ html, body {
     </div>
     <div style="display:flex;align-items:center;gap:8px;">
       <div class="nav-badge" id="round-badge">R6</div>
-      <button id="refresh-btn" onclick="manualRefresh()" style="
+      <button id="refresh-btn" onclick="manualRefresh()" title="重载最新已发布数据" aria-label="重载最新已发布数据" style="
         background:none;border:1px solid rgba(200,168,75,0.4);border-radius:6px;
         color:#C8A84B;font-size:16px;width:32px;height:32px;cursor:pointer;
         display:flex;align-items:center;justify-content:center;
@@ -299,22 +299,49 @@ let RIVALS=[
   {name:'上海申花',penalty:-10,basePts:14, color:'#6b7280'},
 ];
 let NEXT_MATCH={
-  opponent:'云南玉昆',
-  kickoffBjt:'2026-05-06 20:00',
-  venue:'玉溪高原体育运动中心体育场',
-  location:'云南玉溪',
-  note:'中超第10轮',
+  opponent:'成都蓉城',
+  kickoffBjt:'2026-04-25 19:00',
+  venue:'双流体育中心',
+  location:'四川成都',
+  note:'中超第8轮',
 };
-async function loadData(){
+let ZHEJIANG=null;
+const DATA_SOURCES={
+  site:'data.json',
+  repo:'https://raw.githubusercontent.com/wangsonglin0571/zj2026/main/data.json',
+};
+async function fetchData(preferRepo=false){
+  const order=preferRepo
+    ? [['repo',DATA_SOURCES.repo],['site',DATA_SOURCES.site]]
+    : [['site',DATA_SOURCES.site],['repo',DATA_SOURCES.repo]];
+  let lastErr=null;
+  for(const [name,url] of order){
+    try{
+      const r=await fetch(url+'?t='+Date.now(),{cache:'no-store'});
+      if(!r.ok)continue;
+      const d=await r.json();
+      return {d,source:name};
+    }catch(e){
+      lastErr=e;
+    }
+  }
+  throw lastErr||new Error('fetch failed');
+}
+function applyData(d,source){
+  if(d.rivals&&d.rivals.length){RIVALS=d.rivals;}
+  if(d.nextMatch){NEXT_MATCH={...NEXT_MATCH,...d.nextMatch};}
+  if(d.zhejiang){ZHEJIANG=d.zhejiang;}
+  const el=document.getElementById('data-updated');
+  if(el&&d.updated){
+    const src=source==='repo'?'GitHub最新提交':'当前发布页';
+    el.textContent='对手积分更新：'+d.updated+' · '+src;
+  }
+  render();
+}
+async function loadData(opts={}){
   try{
-    const r=await fetch('data.json?t='+Date.now());
-    if(!r.ok)return;
-    const d=await r.json();
-    if(d.rivals&&d.rivals.length){RIVALS=d.rivals;}
-    if(d.nextMatch){NEXT_MATCH={...NEXT_MATCH,...d.nextMatch};}
-    const el=document.getElementById('data-updated');
-    if(el&&d.updated)el.textContent='对手积分更新：'+d.updated;
-    render();
+    const {d,source}=await fetchData(Boolean(opts.preferRepo));
+    applyData(d,source);
   }catch(e){render();}
 }
 async function manualRefresh(){
@@ -322,7 +349,7 @@ async function manualRefresh(){
   btn.style.transform='rotate(360deg)';
   btn.style.transition='transform 0.6s ease';
   btn.disabled=true;
-  await loadData();
+  await loadData({preferRepo:true});
   setTimeout(()=>{
     btn.style.transform='';
     btn.style.transition='';
@@ -339,6 +366,20 @@ const DEF=[
 ];
 const matches=[...DEF];
 function calc(){
+  if(ZHEJIANG&&Number.isFinite(ZHEJIANG.played)){
+    const played=ZHEJIANG.played;
+    const gp=ZHEJIANG.gamePts;
+    const actual=ZHEJIANG.actual;
+    const remain=Math.max(0,TOTAL-played);
+    const wins=ZHEJIANG.wins;
+    const draws=ZHEJIANG.draws;
+    const losses=ZHEJIANG.losses;
+    const gf=ZHEJIANG.gf;
+    const ga=ZHEJIANG.ga;
+    const rate=played>0?gp/played:0;
+    const proj=Math.round(actual+rate*remain);
+    return{played,gp,actual,remain,wins,draws,losses,gf,ga,proj};
+  }
   const played=matches.length,gp=matches.reduce((s,m)=>s+m.pts,0),actual=gp+PEN,remain=TOTAL-played;
   const wins=matches.filter(m=>m.result==='win').length,draws=matches.filter(m=>m.result==='draw').length,losses=matches.filter(m=>m.result==='loss').length;
   const gf=matches.reduce((s,m)=>s+m.gf,0),ga=matches.reduce((s,m)=>s+m.ga,0);

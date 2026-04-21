@@ -91,10 +91,24 @@ def parse(html):
                 if len(nums) >= 8:
                     break
             if len(nums) >= 8:
+                played = int(nums[0])
+                wins = int(nums[1])
+                draws = int(nums[2])
+                losses = int(nums[3])
+                gf = int(nums[4])
+                ga = int(nums[5])
+                gd = int(nums[6])
                 pts_raw = int(nums[7])          # 第8个数字是积分
                 penalty = PENALTIES.get(name, 0)
                 teams.append({
                     "name":    name,
+                    "played":  played,
+                    "wins":    wins,
+                    "draws":   draws,
+                    "losses":  losses,
+                    "gf":      gf,
+                    "ga":      ga,
+                    "gd":      gd,
                     "penalty": penalty,
                     "gamePts": pts_raw,
                     "actual":  pts_raw + penalty,
@@ -214,6 +228,13 @@ def main():
         "updated":   time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
         "nextMatch": next_match,
         "zhejiang": {
+            "played":  zj["played"],
+            "wins":    zj["wins"],
+            "draws":   zj["draws"],
+            "losses":  zj["losses"],
+            "gf":      zj["gf"],
+            "ga":      zj["ga"],
+            "gd":      zj["gd"],
             "gamePts": zj["gamePts"],
             "actual":  zj["actual"],
             "penalty": zj["penalty"],
