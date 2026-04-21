@@ -3,7 +3,7 @@
 抓取懂球帝中超积分榜，并从直播吧赛事表提取浙江下一场比赛，生成 data.json
 """
 import json, re, time, requests
-from datetime import datetime
+from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
 
 URL = "https://www.dongqiudi.com/data/231"
@@ -13,6 +13,7 @@ ZHEJIANG_HOME = {
     "venue": "黄龙体育中心体育场",
     "location": "浙江杭州",
 }
+BEIJING = timezone(timedelta(hours=8))
 
 # 扣分配置（赛季固定）
 PENALTIES = {
@@ -105,7 +106,7 @@ def parse(html):
 
 def parse_livebar_next_match(html, previous=None):
     soup = BeautifulSoup(html, "html.parser")
-    now = datetime.now()
+    now = datetime.now(BEIJING).replace(tzinfo=None)
 
     for item in soup.select('li[data-type="football"][data-time]'):
         label = item.get("label", "")
