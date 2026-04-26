@@ -226,7 +226,7 @@ html, body {
     </div>
     <div style="display:flex;align-items:center;gap:8px;">
       <div class="nav-badge" id="round-badge">R6</div>
-      <button id="refresh-btn" onclick="manualRefresh()" title="重载最新已发布数据" aria-label="重载最新已发布数据" style="
+      <button id="refresh-btn" onclick="manualRefresh()" title="触发 GitHub Actions 手动更新" aria-label="触发 GitHub Actions 手动更新" style="
         background:none;border:1px solid rgba(200,168,75,0.4);border-radius:6px;
         color:#C8A84B;font-size:16px;width:32px;height:32px;cursor:pointer;
         display:flex;align-items:center;justify-content:center;
@@ -306,10 +306,13 @@ let NEXT_MATCH={
   note:'中超第8轮',
 };
 let ZHEJIANG=null;
+let LAST_UPDATED_RAW='';
 const DATA_SOURCES={
   site:'data.json',
   repo:'https://raw.githubusercontent.com/wangsonglin0571/zj2026/main/data.json',
 };
+const GITHUB_ACTIONS_API='https://api.github.com/repos/wangsonglin0571/zj2026/actions/workflows/update.yml/dispatches';
+const GITHUB_TOKEN_KEY='zj2026_github_pat_v1';
 async function fetchData(preferRepo=false){
   const order=preferRepo
     ? [['repo',DATA_SOURCES.repo],['site',DATA_SOURCES.site]]
@@ -331,12 +334,60 @@ function applyData(d,source){
   if(d.rivals&&d.rivals.length){RIVALS=d.rivals;}
   if(d.nextMatch){NEXT_MATCH={...NEXT_MATCH,...d.nextMatch};}
   if(d.zhejiang){ZHEJIANG=d.zhejiang;}
+  LAST_UPDATED_RAW=d.updated||LAST_UPDATED_RAW;
   const el=document.getElementById('data-updated');
   if(el&&d.updated){
     const src=source==='repo'?'GitHub最新提交':'当前发布页';
     el.textContent='对手积分更新：'+formatUpdated(d.updated)+' · '+src;
   }
   render();
+}
+function setUpdateStatus(msg){
+  const el=document.getElementById('data-updated');
+  if(el)el.textContent=msg;
+}
+function getGithubToken(){
+  return localStorage.getItem(GITHUB_TOKEN_KEY)||'';
+}
+function saveGithubToken(token){
+  localStorage.setItem(GITHUB_TOKEN_KEY,token.trim());
+}
+function clearGithubToken(){
+  localStorage.removeItem(GITHUB_TOKEN_KEY);
+}
+async function triggerWorkflow(token){
+  const res=await fetch(GITHUB_ACTIONS_API,{
+    method:'POST',
+    headers:{
+      'Accept':'application/vnd.github+json',
+      'Authorization':'Bearer '+token,
+      'Content-Type':'application/json',
+      'X-GitHub-Api-Version':'2022-11-28',
+    },
+    body:JSON.stringify({ref:'main'}),
+  });
+  if(res.status===204)return;
+  if(res.status===401||res.status===403){
+    clearGithubToken();
+    throw new Error('GitHub 授权失效，请重新输入 PAT');
+  }
+  const text=await res.text();
+  throw new Error('触发失败：'+res.status+(text?` ${text.slice(0,120)}`:''));
+}
+async function waitForFreshData(previousUpdated){
+  for(let i=0;i<8;i+=1){
+    await new Promise(r=>setTimeout(r,5000));
+    try{
+      const {d,source}=await fetchData(true);
+      applyData(d,source);
+      if(d.updated&&d.updated!==previousUpdated){
+        setUpdateStatus('对手积分更新：'+formatUpdated(d.updated)+' · GitHub最新提交');
+        return true;
+      }
+      setUpdateStatus(`已触发更新，正在等待 GitHub Actions 完成（${(i+1)*5}s）`);
+    }catch(e){}
+  }
+  return false;
 }
 async function loadData(opts={}){
   try{
@@ -349,7 +400,29 @@ async function manualRefresh(){
   btn.style.transform='rotate(360deg)';
   btn.style.transition='transform 0.6s ease';
   btn.disabled=true;
-  await loadData({preferRepo:true});
+  try{
+    let token=getGithubToken();
+    if(!token){
+      token=window.prompt('首次手动更新需输入 GitHub PAT（建议 fine-grained，只授权这个仓库的 Actions/Contents 读写）。令牌只保存在你当前设备浏览器里。','')||'';
+      token=token.trim();
+      if(token)saveGithubToken(token);
+    }
+    if(token){
+      const previousUpdated=LAST_UPDATED_RAW;
+      setUpdateStatus('已请求 GitHub Actions 手动更新，正在等待新数据...');
+      await triggerWorkflow(token);
+      const refreshed=await waitForFreshData(previousUpdated);
+      if(!refreshed){
+        setUpdateStatus('GitHub Actions 已触发；如果积分还没变，等 20-40 秒后再点一次 ↻');
+      }
+    }else{
+      setUpdateStatus('未提供 PAT，仅重载当前已发布数据');
+      await loadData({preferRepo:true});
+    }
+  }catch(e){
+    setUpdateStatus(e.message||'手动更新失败');
+    await loadData({preferRepo:true});
+  }
   setTimeout(()=>{
     btn.style.transform='';
     btn.style.transition='';
