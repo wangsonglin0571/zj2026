@@ -365,7 +365,8 @@ html, body {
     </div>
     <div class="sec">积分对比</div>
     <div class="card" id="standings"></div>
-    <div id="data-updated" style="font-size:10px;color:rgba(234,242,234,0.3);text-align:right;padding:0 16px 6px;"></div>
+    <div id="data-updated" style="font-size:10px;color:rgba(234,242,234,0.3);text-align:right;padding:0 16px 2px;"></div>
+    <div id="manual-updated" style="font-size:10px;color:rgba(234,242,234,0.42);text-align:right;padding:0 16px 6px;"></div>
   </div>
 </div>
 <div class="auth-overlay" id="auth-overlay" onclick="closeAuthPanel(event)">
@@ -434,14 +435,14 @@ function applyData(d,source){
   const el=document.getElementById('data-updated');
   if(el&&d.updated){
     const src=source==='repo'?'GitHub最新提交':'当前发布页';
-    el.textContent='对手积分更新：'+formatUpdated(d.updated)+' · '+src;
+    el.textContent='数据更新时间：'+formatUpdated(d.updated)+' · '+src;
   }
   render();
 }
 function setUpdateStatus(msg){
   const el=document.getElementById('data-updated');
   if(!el)return;
-  el.textContent=LAST_MANUAL_STATUS?`${msg} · ${LAST_MANUAL_STATUS}`:msg;
+  el.textContent=msg;
 }
 function nowBjtLabel(){
   return new Intl.DateTimeFormat('zh-CN',{
@@ -457,6 +458,8 @@ function nowBjtLabel(){
 }
 function setManualStatus(msg){
   LAST_MANUAL_STATUS=msg?`${msg} · ${nowBjtLabel()}`:'';
+  const el=document.getElementById('manual-updated');
+  if(el)el.textContent=LAST_MANUAL_STATUS?`最近一次手动更新：${LAST_MANUAL_STATUS}`:'';
 }
 function getGithubToken(){
   return localStorage.getItem(GITHUB_TOKEN_KEY)||'';
@@ -526,7 +529,7 @@ async function waitForFreshData(previousUpdated){
       applyData(d,source);
       if(d.updated&&d.updated!==previousUpdated){
         setManualStatus('手动更新成功');
-        setUpdateStatus('对手积分更新：'+formatUpdated(d.updated)+' · GitHub最新提交');
+        setUpdateStatus('数据更新时间：'+formatUpdated(d.updated)+' · GitHub最新提交');
         return true;
       }
       setUpdateStatus(`已触发更新，正在等待 GitHub Actions 完成（${(i+1)*5}s）`);
