@@ -24,6 +24,9 @@ jobs:
       - name: Install dependencies
         run: pip install requests beautifulsoup4
 
+      - name: Check sources
+        run: python fetch_standings.py --check-sources
+
       - name: Fetch standings
         run: python fetch_standings.py
 

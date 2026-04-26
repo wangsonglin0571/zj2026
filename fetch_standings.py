@@ -2,7 +2,7 @@
 """
 抓取懂球帝中超积分榜，并从直播吧赛事表提取浙江下一场比赛，生成 data.json
 """
-import json, re, time, requests
+import argparse, json, re, time, requests
 from datetime import datetime, timedelta, timezone
 from bs4 import BeautifulSoup
 
@@ -44,34 +44,38 @@ ALL_TEAMS = [
     "上海海港","河南","北京国安","武汉三镇","青岛海牛","天津津门虎"
 ]
 
-def fetch():
-    headers = {
+def make_headers(referer):
+    return {
         "User-Agent": (
             "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
             "AppleWebKit/537.36 (KHTML, like Gecko) "
             "Chrome/135.0.0.0 Safari/537.36"
         ),
-        "Referer": "https://www.dongqiudi.com/",
+        "Referer": referer,
         "Accept-Language": "zh-CN,zh;q=0.9",
     }
-    r = requests.get(URL, headers=headers, timeout=20)
-    r.raise_for_status()
-    return r.text
+
+
+def fetch_url(url, referer, timeout=20, retries=2):
+    last_err = None
+    for attempt in range(retries + 1):
+        try:
+            r = requests.get(url, headers=make_headers(referer), timeout=timeout)
+            r.raise_for_status()
+            return r.text
+        except Exception as e:
+            last_err = e
+            if attempt < retries:
+                time.sleep(1 + attempt)
+    raise last_err
+
+
+def fetch():
+    return fetch_url(URL, "https://www.dongqiudi.com/")
 
 
 def fetch_livebar():
-    headers = {
-        "User-Agent": (
-            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
-            "AppleWebKit/537.36 (KHTML, like Gecko) "
-            "Chrome/135.0.0.0 Safari/537.36"
-        ),
-        "Referer": "https://www.zhibo8.com/",
-        "Accept-Language": "zh-CN,zh;q=0.9",
-    }
-    r = requests.get(LIVEBAR_URL, headers=headers, timeout=20)
-    r.raise_for_status()
-    return r.text
+    return fetch_url(LIVEBAR_URL, "https://www.zhibo8.com/")
 
 def parse(html):
     soup = BeautifulSoup(html, "html.parser")
@@ -186,15 +190,19 @@ def parse_livebar_next_match(html, previous=None):
         "note": "中超",
     }
 
-def main():
-    print("Fetching standings from dongqiudi...")
+def load_old_data():
+    try:
+        with open(OUT, "r", encoding="utf-8") as f:
+            return json.load(f)
+    except Exception:
+        return {}
+
+
+def collect_data():
     try:
         html = fetch()
     except Exception as e:
-        print(f"Fetch failed: {e}")
-        return
-
-    print("Fetching next match from zhibo8...")
+        raise RuntimeError(f"懂球帝抓取失败: {e}") from e
     try:
         livebar_html = fetch_livebar()
     except Exception as e:
@@ -202,16 +210,12 @@ def main():
         livebar_html = ""
 
     teams = parse(html)
-    print(f"Parsed {len(teams)} teams")
-
     if len(teams) < 10:
-        print("Too few teams parsed, aborting to avoid bad data")
-        return
+        raise RuntimeError(f"积分榜解析异常，仅拿到 {len(teams)} 支球队")
 
     zj = next((t for t in teams if t["name"] == "浙江"), None)
     if not zj:
-        print("浙江 not found, abort")
-        return
+        raise RuntimeError("积分榜中未找到浙江")
 
     rivals_data = []
     for name in RIVALS:
@@ -225,16 +229,10 @@ def main():
                 "color":   COLORS.get(name, "#888"),
             })
 
-    old_data = {}
-    try:
-        with open(OUT, "r", encoding="utf-8") as f:
-            old_data = json.load(f)
-    except Exception:
-        old_data = {}
-
+    old_data = load_old_data()
     next_match = parse_livebar_next_match(livebar_html, old_data.get("nextMatch"))
 
-    data = {
+    return {
         "updated":   time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
         "nextMatch": next_match,
         "zhejiang": {
@@ -253,14 +251,58 @@ def main():
         "allTeams": sorted(teams, key=lambda x: -x["actual"]),
     }
 
+
+def write_data(data):
     with open(OUT, "w", encoding="utf-8") as f:
         json.dump(data, f, ensure_ascii=False, indent=2)
 
+
+def print_summary(data, prefix=""):
+    zj = data["zhejiang"]
+    next_match = data["nextMatch"]
+    print(f"{prefix}浙江: 比赛积分{zj['gamePts']} 实际{zj['actual']:+d}")
+    print(f"{prefix}下一场: {next_match['kickoffBjt']} 浙江 vs {next_match['opponent']}")
+    for r in data["rivals"]:
+        print(f"{prefix}{r['name']}: {r['actual']:+d}")
+
+
+def check_sources():
+    print("Checking standings source (dongqiudi)...")
+    data = collect_data()
+    print(f"OK: 解析到 {len(data['allTeams'])} 支球队")
+    print_summary(data, prefix="  ")
+    next_match = data["nextMatch"]
+    if next_match.get("kickoffBjt"):
+        print("OK: 下一场赛程源可用")
+    else:
+        print("WARN: 未解析到下一场比赛")
+
+
+def run_update():
+    print("Fetching standings from dongqiudi...")
+    print("Fetching next match from zhibo8...")
+    data = collect_data()
+    write_data(data)
     print(f"\n✓ {OUT} updated")
-    print(f"  浙江: 比赛积分{zj['gamePts']} 实际{zj['actual']:+d}")
-    print(f"  下一场: {next_match['kickoffBjt']} 浙江 vs {next_match['opponent']}")
-    for r in rivals_data:
-        print(f"  {r['name']}: {r['actual']:+d}")
+    print_summary(data, prefix="  ")
+
+
+def parse_args():
+    parser = argparse.ArgumentParser(description="更新浙江争冠页数据")
+    parser.add_argument(
+        "--check-sources",
+        action="store_true",
+        help="仅检查数据源和解析结果，不写入 data.json",
+    )
+    return parser.parse_args()
+
+
+def main():
+    args = parse_args()
+    if args.check_sources:
+        check_sources()
+    else:
+        run_update()
 
 if __name__ == "__main__":
     main()
