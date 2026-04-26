@@ -47,9 +47,9 @@ ALL_TEAMS = [
 def fetch():
     headers = {
         "User-Agent": (
-            "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
-            "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 "
-            "Mobile/15E148 Safari/604.1"
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/135.0.0.0 Safari/537.36"
         ),
         "Referer": "https://www.dongqiudi.com/",
         "Accept-Language": "zh-CN,zh;q=0.9",
@@ -62,9 +62,9 @@ def fetch():
 def fetch_livebar():
     headers = {
         "User-Agent": (
-            "Mozilla/5.0 (iPhone; CPU iPhone OS 17_0 like Mac OS X) "
-            "AppleWebKit/605.1.15 (KHTML, like Gecko) Version/17.0 "
-            "Mobile/15E148 Safari/604.1"
+            "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) "
+            "AppleWebKit/537.36 (KHTML, like Gecko) "
+            "Chrome/135.0.0.0 Safari/537.36"
         ),
         "Referer": "https://www.zhibo8.com/",
         "Accept-Language": "zh-CN,zh;q=0.9",
@@ -98,7 +98,8 @@ def parse(html):
                 gf = int(nums[4])
                 ga = int(nums[5])
                 gd = int(nums[6])
-                pts_raw = int(nums[7])          # 第8个数字是积分
+                actual_pts = int(nums[7])       # 懂球帝榜单已是扣分后的当前积分
+                game_pts = wins * 3 + draws     # 比赛积分按胜平负回算，避免重复扣分
                 penalty = PENALTIES.get(name, 0)
                 teams.append({
                     "name":    name,
@@ -110,8 +111,8 @@ def parse(html):
                     "ga":      ga,
                     "gd":      gd,
                     "penalty": penalty,
-                    "gamePts": pts_raw,
-                    "actual":  pts_raw + penalty,
+                    "gamePts": game_pts,
+                    "actual":  actual_pts,
                 })
         i += 1
 

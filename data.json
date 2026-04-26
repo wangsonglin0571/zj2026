@@ -1,74 +1,74 @@
 {
-  "updated": "2026-04-22 16:06 UTC",
+  "updated": "2026-04-26 02:54 UTC",
   "nextMatch": {
-    "opponent": "成都蓉城",
-    "kickoffBjt": "2026-04-25 19:00",
-    "venue": "双流体育中心",
-    "location": "四川成都",
-    "note": "中超第8轮"
+    "opponent": "云南玉昆",
+    "kickoffBjt": "2026-05-06 20:00",
+    "venue": "玉溪高原体育中心",
+    "location": "云南玉溪",
+    "note": "中超第10轮"
   },
   "zhejiang": {
-    "played": 7,
+    "played": 8,
     "wins": 2,
     "draws": 2,
-    "losses": 3,
+    "losses": 4,
     "gf": 7,
-    "ga": 8,
-    "gd": -1,
-    "gamePts": 3,
-    "actual": -2,
+    "ga": 12,
+    "gd": -5,
+    "gamePts": 8,
+    "actual": 3,
     "penalty": -5
   },
   "rivals": [
     {
       "name": "成都蓉城",
       "penalty": 0,
-      "basePts": 19,
-      "actual": 19,
+      "basePts": 22,
+      "actual": 22,
       "color": "#3b82f6"
     },
     {
       "name": "北京国安",
       "penalty": -5,
-      "basePts": 3,
-      "actual": -2,
+      "basePts": 8,
+      "actual": 3,
       "color": "#a855f7"
     },
     {
       "name": "上海海港",
       "penalty": -5,
-      "basePts": 2,
-      "actual": -3,
+      "basePts": 10,
+      "actual": 5,
       "color": "#06b6d4"
     },
     {
       "name": "山东泰山",
       "penalty": -6,
-      "basePts": 7,
-      "actual": 1,
+      "basePts": 13,
+      "actual": 7,
       "color": "#eab308"
     },
     {
       "name": "上海申花",
       "penalty": -10,
-      "basePts": 7,
-      "actual": -3,
+      "basePts": 17,
+      "actual": 7,
       "color": "#6b7280"
     }
   ],
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 7,
-      "wins": 6,
+      "played": 8,
+      "wins": 7,
       "draws": 1,
       "losses": 0,
-      "gf": 19,
+      "gf": 23,
       "ga": 7,
-      "gd": 12,
+      "gd": 16,
       "penalty": 0,
-      "gamePts": 19,
-      "actual": 19
+      "gamePts": 22,
+      "actual": 22
     },
     {
       "name": "重庆铜梁龙",
@@ -110,6 +110,32 @@
       "actual": 9
     },
     {
+      "name": "上海申花",
+      "played": 7,
+      "wins": 5,
+      "draws": 2,
+      "losses": 0,
+      "gf": 16,
+      "ga": 8,
+      "gd": 8,
+      "penalty": -10,
+      "gamePts": 17,
+      "actual": 7
+    },
+    {
+      "name": "山东泰山",
+      "played": 7,
+      "wins": 4,
+      "draws": 1,
+      "losses": 2,
+      "gf": 10,
+      "ga": 9,
+      "gd": 1,
+      "penalty": -6,
+      "gamePts": 13,
+      "actual": 7
+    },
+    {
       "name": "辽宁铁人",
       "played": 7,
       "wins": 2,
@@ -121,19 +147,6 @@
       "penalty": 0,
       "gamePts": 7,
       "actual": 7
-    },
-    {
-      "name": "青岛西海岸",
-      "played": 7,
-      "wins": 1,
-      "draws": 3,
-      "losses": 3,
-      "gf": 4,
-      "ga": 12,
-      "gd": -8,
-      "penalty": 0,
-      "gamePts": 6,
-      "actual": 6
     },
     {
       "name": "深圳新鹏城",
@@ -149,82 +162,56 @@
       "actual": 6
     },
     {
-      "name": "山东泰山",
+      "name": "青岛西海岸",
       "played": 7,
-      "wins": 4,
-      "draws": 1,
-      "losses": 2,
-      "gf": 10,
-      "ga": 9,
-      "gd": 1,
-      "penalty": -6,
-      "gamePts": 7,
-      "actual": 1
-    },
-    {
-      "name": "北京国安",
-      "played": 7,
-      "wins": 2,
-      "draws": 2,
+      "wins": 1,
+      "draws": 3,
       "losses": 3,
-      "gf": 7,
-      "ga": 7,
-      "gd": 0,
-      "penalty": -5,
-      "gamePts": 3,
-      "actual": -2
-    },
-    {
-      "name": "浙江",
-      "played": 7,
-      "wins": 2,
-      "draws": 2,
-      "losses": 3,
-      "gf": 7,
-      "ga": 8,
-      "gd": -1,
-      "penalty": -5,
-      "gamePts": 3,
-      "actual": -2
-    },
-    {
-      "name": "上海申花",
-      "played": 7,
-      "wins": 5,
-      "draws": 2,
-      "losses": 0,
-      "gf": 16,
-      "ga": 8,
-      "gd": 8,
-      "penalty": -10,
-      "gamePts": 7,
-      "actual": -3
+      "gf": 4,
+      "ga": 12,
+      "gd": -8,
+      "penalty": 0,
+      "gamePts": 6,
+      "actual": 6
     },
     {
       "name": "上海海港",
-      "played": 7,
-      "wins": 2,
+      "played": 8,
+      "wins": 3,
       "draws": 1,
       "losses": 4,
-      "gf": 9,
+      "gf": 13,
       "ga": 9,
-      "gd": 0,
+      "gd": 4,
       "penalty": -5,
-      "gamePts": 2,
-      "actual": -3
+      "gamePts": 10,
+      "actual": 5
     },
     {
-      "name": "武汉三镇",
-      "played": 7,
+      "name": "北京国安",
+      "played": 8,
       "wins": 2,
-      "draws": 1,
+      "draws": 2,
       "losses": 4,
-      "gf": 10,
-      "ga": 12,
+      "gf": 9,
+      "ga": 11,
       "gd": -2,
       "penalty": -5,
-      "gamePts": 2,
-      "actual": -3
+      "gamePts": 8,
+      "actual": 3
+    },
+    {
+      "name": "浙江",
+      "played": 8,
+      "wins": 2,
+      "draws": 2,
+      "losses": 4,
+      "gf": 7,
+      "ga": 12,
+      "gd": -5,
+      "penalty": -5,
+      "gamePts": 8,
+      "actual": 3
     },
     {
       "name": "河南",
@@ -236,8 +223,34 @@
       "ga": 7,
       "gd": -1,
       "penalty": -6,
-      "gamePts": 2,
-      "actual": -4
+      "gamePts": 8,
+      "actual": 2
+    },
+    {
+      "name": "武汉三镇",
+      "played": 8,
+      "wins": 2,
+      "draws": 1,
+      "losses": 5,
+      "gf": 10,
+      "ga": 16,
+      "gd": -6,
+      "penalty": -5,
+      "gamePts": 7,
+      "actual": 2
+    },
+    {
+      "name": "天津津门虎",
+      "played": 8,
+      "wins": 2,
+      "draws": 2,
+      "losses": 4,
+      "gf": 11,
+      "ga": 12,
+      "gd": -1,
+      "penalty": -10,
+      "gamePts": 8,
+      "actual": -2
     },
     {
       "name": "青岛海牛",
@@ -249,21 +262,8 @@
       "ga": 11,
       "gd": -7,
       "penalty": -7,
-      "gamePts": -2,
-      "actual": -9
-    },
-    {
-      "name": "天津津门虎",
-      "played": 7,
-      "wins": 1,
-      "draws": 2,
-      "losses": 4,
-      "gf": 7,
-      "ga": 10,
-      "gd": -3,
-      "penalty": -10,
-      "gamePts": -5,
-      "actual": -15
+      "gamePts": 5,
+      "actual": -2
     }
   ]
 }
