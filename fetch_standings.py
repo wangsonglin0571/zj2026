@@ -169,7 +169,16 @@ def parse_livebar_next_match(html, previous=None):
 
         return match
 
-    return previous or {
+    if previous:
+        kickoff = previous.get("kickoffBjt", "")
+        try:
+            prev_dt = datetime.strptime(kickoff, "%Y-%m-%d %H:%M")
+        except ValueError:
+            prev_dt = None
+        if prev_dt and prev_dt >= now:
+            return previous
+
+    return {
         "opponent": "待更新",
         "kickoffBjt": "",
         "venue": "",
