@@ -402,6 +402,7 @@ let NEXT_MATCH={
 };
 let ZHEJIANG=null;
 let LAST_UPDATED_RAW='';
+let LAST_MANUAL_STATUS='';
 const DATA_SOURCES={
   site:'data.json',
   repo:'https://raw.githubusercontent.com/wangsonglin0571/zj2026/main/data.json',
@@ -439,7 +440,23 @@ function applyData(d,source){
 }
 function setUpdateStatus(msg){
   const el=document.getElementById('data-updated');
-  if(el)el.textContent=msg;
+  if(!el)return;
+  el.textContent=LAST_MANUAL_STATUS?`${msg} · ${LAST_MANUAL_STATUS}`:msg;
+}
+function nowBjtLabel(){
+  return new Intl.DateTimeFormat('zh-CN',{
+    timeZone:'Asia/Shanghai',
+    year:'numeric',
+    month:'2-digit',
+    day:'2-digit',
+    hour:'2-digit',
+    minute:'2-digit',
+    second:'2-digit',
+    hour12:false,
+  }).format(new Date()).replace(/\//g,'-')+' 北京时间';
+}
+function setManualStatus(msg){
+  LAST_MANUAL_STATUS=msg?`${msg} · ${nowBjtLabel()}`:'';
 }
 function getGithubToken(){
   return localStorage.getItem(GITHUB_TOKEN_KEY)||'';
@@ -471,12 +488,14 @@ function saveTokenFromPanel(){
   }
   saveGithubToken(token);
   closeAuthPanel();
+  setManualStatus('');
   setUpdateStatus('PAT 已保存，可直接点击 ↻ 手动更新');
 }
 function clearTokenFromPanel(){
   clearGithubToken();
   const input=document.getElementById('auth-token-input');
   if(input)input.value='';
+  setManualStatus('');
   setUpdateStatus('已清除本机保存的 PAT');
 }
 async function triggerWorkflow(token){
@@ -506,6 +525,7 @@ async function waitForFreshData(previousUpdated){
       const {d,source}=await fetchData(true);
       applyData(d,source);
       if(d.updated&&d.updated!==previousUpdated){
+        setManualStatus('手动更新成功');
         setUpdateStatus('对手积分更新：'+formatUpdated(d.updated)+' · GitHub最新提交');
         return true;
       }
@@ -528,23 +548,28 @@ async function manualRefresh(){
   try{
     let token=getGithubToken();
     if(!token){
+      setManualStatus('');
       openAuthPanel();
       setUpdateStatus('先点“设”保存一次 GitHub PAT，再使用 ↻ 手动更新');
       return;
     }
     if(token){
       const previousUpdated=LAST_UPDATED_RAW;
+      setManualStatus('已触发手动更新');
       setUpdateStatus('已请求 GitHub Actions 手动更新，正在等待新数据...');
       await triggerWorkflow(token);
       const refreshed=await waitForFreshData(previousUpdated);
       if(!refreshed){
+        setManualStatus('手动更新已触发');
         setUpdateStatus('GitHub Actions 已触发；如果积分还没变，等 20-40 秒后再点一次 ↻');
       }
     }else{
+      setManualStatus('仅重载已发布数据');
       setUpdateStatus('未提供 PAT，仅重载当前已发布数据');
       await loadData({preferRepo:true});
     }
   }catch(e){
+    setManualStatus('手动更新失败');
     setUpdateStatus(e.message||'手动更新失败');
     await loadData({preferRepo:true});
   }
