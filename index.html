@@ -202,93 +202,6 @@ html, body {
 .pts { font-size: 18px; font-weight: 700; color: #EAF2EA; }
 .pts.me { color: #E2C46A; }
 
-/* AUTH PANEL */
-.auth-overlay {
-  position: fixed;
-  inset: 0;
-  background: rgba(12,31,14,0.82);
-  display: none;
-  align-items: center;
-  justify-content: center;
-  padding: 20px;
-  z-index: 30;
-}
-.auth-overlay.show { display: flex; }
-.auth-panel {
-  width: min(100%, 420px);
-  background: linear-gradient(145deg, rgba(26,58,29,0.98) 0%, rgba(19,43,21,0.98) 100%);
-  border: 1px solid rgba(200,168,75,0.22);
-  border-radius: 14px;
-  padding: 18px 16px 16px;
-  box-shadow: 0 18px 48px rgba(0,0,0,0.32);
-}
-.auth-title {
-  font-size: 16px;
-  font-weight: 700;
-  color: #FFFFFF;
-}
-.auth-desc {
-  margin-top: 8px;
-  font-size: 12px;
-  line-height: 1.6;
-  color: rgba(234,242,234,0.6);
-}
-.auth-desc strong { color: #E2C46A; font-weight: 700; }
-.auth-input {
-  width: 100%;
-  margin-top: 14px;
-  border: 1px solid rgba(200,168,75,0.2);
-  background: rgba(12,31,14,0.72);
-  color: #EAF2EA;
-  border-radius: 10px;
-  padding: 12px 13px;
-  font-size: 14px;
-  outline: none;
-}
-.auth-input::placeholder { color: rgba(234,242,234,0.28); }
-.auth-tip {
-  margin-top: 10px;
-  font-size: 11px;
-  line-height: 1.5;
-  color: rgba(234,242,234,0.46);
-}
-.auth-actions {
-  display: flex;
-  gap: 8px;
-  margin-top: 14px;
-}
-.auth-btn {
-  flex: 1;
-  border-radius: 10px;
-  padding: 11px 12px;
-  font-size: 13px;
-  font-weight: 700;
-  cursor: pointer;
-  border: 1px solid rgba(200,168,75,0.22);
-  background: transparent;
-  color: #EAF2EA;
-}
-.auth-btn.primary {
-  background: #C8A84B;
-  color: #0C1F0E;
-  border-color: #C8A84B;
-}
-.auth-btn.ghost {
-  color: rgba(234,242,234,0.72);
-}
-.auth-foot {
-  margin-top: 10px;
-  font-size: 11px;
-  text-align: right;
-}
-.auth-link-btn {
-  border: none;
-  background: none;
-  color: rgba(234,242,234,0.55);
-  cursor: pointer;
-  padding: 0;
-}
-
 </style>
 </head>
 <body>
@@ -304,11 +217,7 @@ html, body {
     </div>
     <div style="display:flex;align-items:center;gap:8px;">
       <div class="nav-badge" id="round-badge">R6</div>
-      <button onclick="openAuthPanel()" title="更新授权设置" aria-label="更新授权设置" style="
-        background:none;border:1px solid rgba(200,168,75,0.25);border-radius:6px;
-        color:#C8A84B;font-size:12px;width:32px;height:32px;cursor:pointer;
-        display:flex;align-items:center;justify-content:center;">设</button>
-      <button id="refresh-btn" onclick="manualRefresh()" title="触发 GitHub Actions 手动更新" aria-label="触发 GitHub Actions 手动更新" style="
+      <button id="refresh-btn" onclick="manualRefresh()" title="刷新最新已发布数据" aria-label="刷新最新已发布数据" style="
         background:none;border:1px solid rgba(200,168,75,0.4);border-radius:6px;
         color:#C8A84B;font-size:16px;width:32px;height:32px;cursor:pointer;
         display:flex;align-items:center;justify-content:center;
@@ -369,21 +278,6 @@ html, body {
     <div id="manual-updated" style="font-size:10px;color:rgba(234,242,234,0.42);text-align:right;padding:0 16px 6px;"></div>
   </div>
 </div>
-<div class="auth-overlay" id="auth-overlay" onclick="closeAuthPanel(event)">
-  <div class="auth-panel">
-    <div class="auth-title">GitHub 手动更新授权</div>
-    <div class="auth-desc">输入一次 <strong>GitHub PAT</strong>，以后点右上角 <strong>↻</strong> 就能直接触发 GitHub Actions 更新数据。</div>
-    <input id="auth-token-input" class="auth-input" type="password" placeholder="粘贴 GitHub fine-grained PAT">
-    <div class="auth-tip">建议只授权仓库 <strong>wangsonglin0571/zj2026</strong>，权限给 <strong>Actions</strong> 和 <strong>Contents</strong> 的读写即可。令牌只保存在你当前浏览器。</div>
-    <div class="auth-actions">
-      <button class="auth-btn ghost" onclick="closeAuthPanel()">取消</button>
-      <button class="auth-btn primary" onclick="saveTokenFromPanel()">保存</button>
-    </div>
-    <div class="auth-foot">
-      <button class="auth-link-btn" onclick="clearTokenFromPanel()">清除 PAT</button>
-    </div>
-  </div>
-</div>
 <script>
 const TOTAL=30;
 // 对手积分从 data.json 动态加载，以下为初始 fallback
@@ -408,8 +302,6 @@ const DATA_SOURCES={
   site:'data.json',
   repo:'https://raw.githubusercontent.com/wangsonglin0571/zj2026/main/data.json',
 };
-const GITHUB_ACTIONS_API='https://api.github.com/repos/wangsonglin0571/zj2026/actions/workflows/update.yml/dispatches';
-const GITHUB_TOKEN_KEY='zj2026_github_pat_v1';
 async function fetchData(preferRepo=false){
   const order=preferRepo
     ? [['repo',DATA_SOURCES.repo],['site',DATA_SOURCES.site]]
@@ -434,7 +326,7 @@ function applyData(d,source){
   LAST_UPDATED_RAW=d.updated||LAST_UPDATED_RAW;
   const el=document.getElementById('data-updated');
   if(el&&d.updated){
-    const src=source==='repo'?'GitHub最新提交':'当前发布页';
+    const src=source==='repo'?'GitHub最新发布':'当前发布页';
     el.textContent='数据更新时间：'+formatUpdated(d.updated)+' · '+src;
   }
   render();
@@ -461,82 +353,6 @@ function setManualStatus(msg){
   const el=document.getElementById('manual-updated');
   if(el)el.textContent=LAST_MANUAL_STATUS?`最近一次手动更新：${LAST_MANUAL_STATUS}`:'';
 }
-function getGithubToken(){
-  return localStorage.getItem(GITHUB_TOKEN_KEY)||'';
-}
-function saveGithubToken(token){
-  localStorage.setItem(GITHUB_TOKEN_KEY,token.trim());
-}
-function clearGithubToken(){
-  localStorage.removeItem(GITHUB_TOKEN_KEY);
-}
-function openAuthPanel(){
-  const overlay=document.getElementById('auth-overlay');
-  const input=document.getElementById('auth-token-input');
-  if(input)input.value=getGithubToken();
-  if(overlay)overlay.classList.add('show');
-  setTimeout(()=>{ if(input)input.focus(); },0);
-}
-function closeAuthPanel(event){
-  if(event&&event.target&&event.target.id!=='auth-overlay')return;
-  const overlay=document.getElementById('auth-overlay');
-  if(overlay)overlay.classList.remove('show');
-}
-function saveTokenFromPanel(){
-  const input=document.getElementById('auth-token-input');
-  const token=(input?.value||'').trim();
-  if(!token){
-    setUpdateStatus('PAT 为空，未保存');
-    return;
-  }
-  saveGithubToken(token);
-  closeAuthPanel();
-  setManualStatus('');
-  setUpdateStatus('PAT 已保存，可直接点击 ↻ 手动更新');
-}
-function clearTokenFromPanel(){
-  clearGithubToken();
-  const input=document.getElementById('auth-token-input');
-  if(input)input.value='';
-  setManualStatus('');
-  setUpdateStatus('已清除本机保存的 PAT');
-}
-async function triggerWorkflow(token){
-  const res=await fetch(GITHUB_ACTIONS_API,{
-    method:'POST',
-    headers:{
-      'Accept':'application/vnd.github+json',
-      'Authorization':'Bearer '+token,
-      'Content-Type':'application/json',
-      'X-GitHub-Api-Version':'2022-11-28',
-    },
-    body:JSON.stringify({ref:'main'}),
-  });
-  if(res.status===204)return;
-  if(res.status===401||res.status===403){
-    clearGithubToken();
-    openAuthPanel();
-    throw new Error('GitHub 授权失效，请重新输入 PAT');
-  }
-  const text=await res.text();
-  throw new Error('触发失败：'+res.status+(text?` ${text.slice(0,120)}`:''));
-}
-async function waitForFreshData(previousUpdated){
-  for(let i=0;i<8;i+=1){
-    await new Promise(r=>setTimeout(r,5000));
-    try{
-      const {d,source}=await fetchData(true);
-      applyData(d,source);
-      if(d.updated&&d.updated!==previousUpdated){
-        setManualStatus('手动更新成功');
-        setUpdateStatus('数据更新时间：'+formatUpdated(d.updated)+' · GitHub最新提交');
-        return true;
-      }
-      setUpdateStatus(`已触发更新，正在等待 GitHub Actions 完成（${(i+1)*5}s）`);
-    }catch(e){}
-  }
-  return false;
-}
 async function loadData(opts={}){
   try{
     const {d,source}=await fetchData(Boolean(opts.preferRepo));
@@ -549,32 +365,19 @@ async function manualRefresh(){
   btn.style.transition='transform 0.6s ease';
   btn.disabled=true;
   try{
-    let token=getGithubToken();
-    if(!token){
-      setManualStatus('');
-      openAuthPanel();
-      setUpdateStatus('先点“设”保存一次 GitHub PAT，再使用 ↻ 手动更新');
-      return;
-    }
-    if(token){
-      const previousUpdated=LAST_UPDATED_RAW;
-      setManualStatus('已触发手动更新');
-      setUpdateStatus('已请求 GitHub Actions 手动更新，正在等待新数据...');
-      await triggerWorkflow(token);
-      const refreshed=await waitForFreshData(previousUpdated);
-      if(!refreshed){
-        setManualStatus('手动更新已触发');
-        setUpdateStatus('GitHub Actions 已触发；如果积分还没变，等 20-40 秒后再点一次 ↻');
-      }
+    const previousUpdated=LAST_UPDATED_RAW;
+    setManualStatus('正在刷新');
+    setUpdateStatus('正在拉取 GitHub 最新已发布数据...');
+    const {d,source}=await fetchData(true);
+    applyData(d,source);
+    if(d.updated&&d.updated!==previousUpdated){
+      setManualStatus('已刷新到新数据');
     }else{
-      setManualStatus('仅重载已发布数据');
-      setUpdateStatus('未提供 PAT，仅重载当前已发布数据');
-      await loadData({preferRepo:true});
+      setManualStatus('已检查，当前已是最新发布数据');
     }
   }catch(e){
-    setManualStatus('手动更新失败');
-    setUpdateStatus(e.message||'手动更新失败');
-    await loadData({preferRepo:true});
+    setManualStatus('刷新失败');
+    setUpdateStatus('刷新失败，请稍后再试');
   }
   setTimeout(()=>{
     btn.style.transform='';

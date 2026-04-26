@@ -2,9 +2,11 @@ name: Update CSL Standings
 
 on:
   schedule:
-    # 每天北京时间23:00 = UTC 15:00
-    - cron: '0 15 * * *'
-  workflow_dispatch:  # 支持手动触发
+    # 每天北京时间 11:00 做一次常规同步
+    - cron: '0 3 * * *'
+    # 每天北京时间 18:00-23:30 每 30 分钟检查一次
+    - cron: '0,30 10-15 * * *'
+  workflow_dispatch:  # 仍可在 GitHub Actions 页面手动触发
 
 jobs:
   update:
