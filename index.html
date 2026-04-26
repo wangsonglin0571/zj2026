@@ -202,15 +202,6 @@ html, body {
 .pts { font-size: 18px; font-weight: 700; color: #EAF2EA; }
 .pts.me { color: #E2C46A; }
 
-/* GAP */
-.gap-name { font-size: 13px; font-weight: 500; flex: 1; }
-.gap-right { display: flex; align-items: center; gap: 8px; }
-.gap-opp { font-size: 11px; color: rgba(234,242,234,0.45); }
-.gap-tag { font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 4px; }
-.gap-tag.lead   { background: rgba(52,199,89,0.12); color: #34C759; }
-.gap-tag.behind { background: rgba(231,76,60,0.12); color: #E74C3C; }
-.gap-tag.tie    { background: rgba(241,196,15,0.1);  color: #F1C40F; }
-
 </style>
 </head>
 <body>
@@ -283,9 +274,7 @@ html, body {
     </div>
     <div class="sec">积分对比</div>
     <div class="card" id="standings"></div>
-    <div class="sec">与主要对手差距</div>
     <div id="data-updated" style="font-size:10px;color:rgba(234,242,234,0.3);text-align:right;padding:0 16px 6px;"></div>
-    <div class="card" id="gaps" style="margin-bottom:20px"></div>
   </div>
 </div>
 <script>
@@ -502,7 +491,7 @@ function render(){
   document.getElementById('next-location').textContent=NEXT_MATCH.location||'待更新';
   document.getElementById('next-venue').textContent=NEXT_MATCH.venue||'待更新';
   document.getElementById('next-note').textContent=NEXT_MATCH.note||'下一轮';
-  renderBars(s);renderGaps(s);
+  renderBars(s);
 }
 function renderBars(s){
   const all=[
@@ -517,14 +506,6 @@ function renderBars(s){
       ${t.isMe?'▶ ':''}${t.name}<span class="pen-tag ${pc}">${pl}</span></div>
       <div class="minibar"><div class="minibar-fill" style="width:${pct}%;background:${t.color}"></div></div></div>
       <div class="pts${t.isMe?' me':''}">${t.actual>=0?'+':''}${t.actual}</div></div>`;
-  }).join('');
-}
-function renderGaps(s){
-  document.getElementById('gaps').innerHTML=RIVALS.map(r=>{
-    const ra=r.basePts+r.penalty,diff=s.actual-ra;
-    const pc=diff>0?'lead':diff<0?'behind':'tie';
-    const pt=diff>0?'+'+diff+'分':diff<0?diff+'分':'同分';
-    return`<div class="row"><div class="gap-name">${r.name}</div><div class="gap-right"><span class="gap-opp">${ra>=0?'+':''}${ra} PTS</span><span class="gap-tag ${pc}">${pt}</span></div></div>`;
   }).join('');
 }
 loadData();
