@@ -103,26 +103,6 @@ html, body {
 .hstat-val { font-size: 22px; font-weight: 700; color: #FFFFFF; }
 .hstat-lbl { font-size: 10px; color: rgba(234,242,234,0.45); margin-top: 2px; }
 
-/* VERDICT */
-.verdict {
-  margin: 10px 16px 0; border-radius: 8px; padding: 12px 16px;
-  display: flex; justify-content: space-between; align-items: center;
-  border-left: 3px solid;
-}
-.verdict.great { background: rgba(200,168,75,0.1); border-color: #C8A84B; }
-.verdict.good  { background: rgba(52,199,89,0.08); border-color: #34C759; }
-.verdict.ok    { background: rgba(200,168,75,0.07); border-color: #C8A84B; }
-.verdict.warn  { background: rgba(241,196,15,0.07); border-color: #F1C40F; }
-.verdict.bad   { background: rgba(231,76,60,0.08); border-color: #E74C3C; }
-.verdict-label { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
-.verdict-label.great,.verdict-label.ok { color: #E2C46A; }
-.verdict-label.good  { color: #34C759; }
-.verdict-label.warn  { color: #F1C40F; }
-.verdict-label.bad   { color: #E74C3C; }
-.verdict-sub { font-size: 11px; color: rgba(234,242,234,0.45); margin-top: 2px; }
-.vn { font-weight: 700; color: #E2C46A; }
-.verdict-pts { font-size: 22px; font-weight: 700; color: #E2C46A; }
-
 /* NEXT MATCH */
 .next-match {
   margin: 10px 16px 0;
@@ -244,13 +224,6 @@ html, body {
         <div class="hstat"><div class="hstat-val" id="h-l">1</div><div class="hstat-lbl">负</div></div>
         <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
       </div>
-    </div>
-    <div class="verdict bad" id="verdict">
-      <div>
-        <div class="verdict-label bad" id="v-label">需提升战绩</div>
-        <div class="verdict-sub">保级差 <span class="vn" id="v-sub-baoji">28</span> PTS · 亚冠差 <span class="vn" id="v-sub-yaguan">47</span> PTS</div>
-      </div>
-      <div class="verdict-pts" id="v-pts"><span id="v-pts-val">3</span> PTS</div>
     </div>
     <div class="next-match">
       <div class="next-head">
@@ -432,13 +405,6 @@ function calc(){
   const rate=played>0?gp/played:0,proj=Math.round(actual+rate*remain);
   return{played,gp,actual,penalty,remain,wins,draws,losses,gf,ga,gd,proj};
 }
-function verdict(pts){
-  if(pts>=72)return{cls:'great',label:'夺冠热门'};
-  if(pts>=65)return{cls:'good', label:'强力争冠'};
-  if(pts>=58)return{cls:'ok',   label:'争冠竞争者'};
-  if(pts>=50)return{cls:'warn', label:'争亚冠席位'};
-  return           {cls:'bad',  label:'需提升战绩'};
-}
 function render(){
   const s=calc();
   document.getElementById('round-badge').textContent='R'+s.played;
@@ -448,13 +414,6 @@ function render(){
   document.getElementById('h-d').textContent=s.draws;
   document.getElementById('h-l').textContent=s.losses;
   document.getElementById('h-gd').textContent=(s.gd>=0?'+':'')+s.gd;
-  const v=verdict(s.actual);
-  document.getElementById('verdict').className='verdict '+v.cls;
-  const lbl=document.getElementById('v-label');
-  lbl.className='verdict-label '+v.cls; lbl.textContent=v.label;
-  document.getElementById('v-pts-val').textContent=s.actual;
-  document.getElementById('v-sub-baoji').textContent=Math.max(0,30-s.actual);
-  document.getElementById('v-sub-yaguan').textContent=Math.max(0,50-s.actual);
   document.getElementById('next-opponent').textContent=NEXT_MATCH.opponent||'待定';
   document.getElementById('next-kickoff').textContent=NEXT_MATCH.kickoffBjt||'待更新';
   document.getElementById('next-location').textContent=NEXT_MATCH.location||'待更新';
