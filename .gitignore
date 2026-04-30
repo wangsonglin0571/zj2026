@@ -3,5 +3,4 @@ __pycache__/
 .venv/
 
 # Local info / sync config — not for public repo
-SYNC.md
-TECH_DIGEST_PLAYBOOK.md
+.local/
