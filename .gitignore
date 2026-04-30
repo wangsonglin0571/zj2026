@@ -4,3 +4,11 @@ __pycache__/
 
 # Local info / sync config — not for public repo
 .local/
+
+# Local launchd & script — not for public repo
+*.plist
+run_update.sh
+logs/
+
+# Local state tracking
+.state.json
