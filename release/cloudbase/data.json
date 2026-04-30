@@ -1,0 +1,16 @@
+{
+  "updated": "2026-04-19 manual",
+  "zhejiang": {
+    "gamePts": 8,
+    "actual": 3,
+    "penalty": -5
+  },
+  "rivals": [
+    { "name": "成都蓉城", "penalty": 0,  "basePts": 16, "actual": 16, "color": "#3b82f6" },
+    { "name": "北京国安", "penalty": -5, "basePts": 5,  "actual": 0,  "color": "#a855f7" },
+    { "name": "上海海港", "penalty": -5, "basePts": 7,  "actual": 2,  "color": "#06b6d4" },
+    { "name": "山东泰山", "penalty": -6, "basePts": 10, "actual": 4,  "color": "#eab308" },
+    { "name": "上海申花", "penalty": -10,"basePts": 14, "actual": 4,  "color": "#6b7280" }
+  ],
+  "allTeams": []
+}

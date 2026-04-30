@@ -1,0 +1,503 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover, user-scalable=no">
+<link rel="icon" type="image/png" sizes="32x32" href="favicon-32x32.png">
+<link rel="apple-touch-icon" sizes="180x180" href="apple-touch-icon.png">
+<link rel="manifest" href="site.webmanifest">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+<meta name="apple-mobile-web-app-title" content="浙江争冠">
+<meta name="theme-color" content="#0C1F0E">
+<title>浙江队 · 2026争冠</title>
+<style>
+/* 不使用Google Fonts，使用系统字体 */
+:root {
+  --dark:    #0C1F0E;
+  --green1:  #132B15;
+  --green2:  #1A3A1D;
+  --green3:  #22502A;
+  --gold:    #C8A84B;
+  --gold-l:  #E2C46A;
+  --white:   #FFFFFF;
+  --text:    #EAF2EA;
+  --muted:   rgba(234,242,234,0.45);
+  --dim:     rgba(234,242,234,0.2);
+  --border:  rgba(200,168,75,0.15);
+  --border2: rgba(200,168,75,0.28);
+  --green-hi:#34C759;
+  --red:     #E74C3C;
+  --yellow:  #F1C40F;
+  --safe-top: env(safe-area-inset-top,44px);
+  --safe-bot: env(safe-area-inset-bottom,34px);
+  --font-display: -apple-system, "SF Pro Display", "Helvetica Neue", sans-serif;
+  --font-body: -apple-system, "SF Pro Text", "PingFang SC", "Noto Sans CJK SC", sans-serif;
+  --font-num: "SF Pro Display", -apple-system, sans-serif;
+}
+
+* { box-sizing: border-box; margin: 0; padding: 0; -webkit-tap-highlight-color: transparent; }
+html, body {
+  height: 100%;
+  background: #0C1F0E;
+  color: #EAF2EA;
+  font-family: -apple-system, "PingFang SC", "Helvetica Neue", sans-serif;
+  overscroll-behavior: none;
+  -webkit-font-smoothing: antialiased;
+}
+#app { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+.safe-top { height: 0; background: #132B15; flex-shrink: 0; }
+
+/* NAV */
+.nav {
+  flex-shrink: 0;
+  background: #132B15;
+  border-bottom: 2px solid #C8A84B;
+  padding: max(env(safe-area-inset-top), 11px) 18px 12px;
+  display: flex; justify-content: space-between; align-items: center;
+}
+.nav-left { display: flex; align-items: center; gap: 10px; }
+.nav-crest {
+  width: 34px; height: 34px;
+  border-radius: 50% 50% 44% 44%;
+  background: #C8A84B;
+  display: flex; align-items: center; justify-content: center;
+  flex-shrink: 0;
+}
+.nav-crest span { font-size: 14px; font-weight: 800; color: #0C1F0E; }
+.nav-title { font-size: 18px; font-weight: 700; color: #FFFFFF; letter-spacing: 2px; }
+.nav-sub { font-size: 10px; color: #C8A84B; margin-top: 1px; letter-spacing: 1px; }
+.nav-badge {
+  background: #C8A84B; color: #0C1F0E;
+  font-size: 13px; font-weight: 700;
+  padding: 4px 12px; border-radius: 4px; letter-spacing: 1px;
+}
+
+/* TABS */
+.tabs {
+  flex-shrink: 0; display: flex;
+  background: #132B15;
+  border-bottom: 1px solid rgba(200,168,75,0.28);
+}
+.tab {
+  flex: 1; padding: 9px 4px 8px; font-size: 12px;
+  color: rgba(234,242,234,0.45);
+  background: none; border: none;
+  border-bottom: 2px solid transparent;
+  cursor: pointer; text-align: center;
+  font-family: -apple-system, "PingFang SC", sans-serif;
+  transition: all .18s;
+}
+.tab.active { color: #E2C46A; border-bottom-color: #C8A84B; font-weight: 600; }
+
+/* SCROLL */
+.scroll { flex: 1; overflow-y: auto; -webkit-overflow-scrolling: touch; padding-bottom: calc(var(--safe-bot) + 20px); }
+.page { display: none; }
+.page.active { display: block; }
+
+/* HERO */
+.hero {
+  margin: 14px 16px 0;
+  background: linear-gradient(145deg, #1A3A1D 0%, #132B15 100%);
+  border: 1px solid rgba(200,168,75,0.28);
+  border-radius: 12px; padding: 20px;
+  position: relative; overflow: hidden;
+}
+.hero::after {
+  content: '';
+  position: absolute; top: 0; left: 0; right: 0; height: 2px;
+  background: linear-gradient(90deg, transparent, #C8A84B, transparent);
+}
+.hero-top { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 16px; }
+.hero-lbl { font-size: 10px; color: #C8A84B; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 6px; }
+.hero-pts { font-size: 76px; font-weight: 700; line-height: 1; letter-spacing: -3px; color: #FFFFFF; }
+.hero-unit { font-size: 16px; font-weight: 400; color: #C8A84B; letter-spacing: 0; vertical-align: super; margin-left: 2px; }
+.hero-right { text-align: right; padding-top: 6px; }
+.hero-rnum { font-size: 36px; font-weight: 700; color: #E2C46A; line-height: 1; }
+.hero-rlbl { font-size: 10px; color: rgba(234,242,234,0.45); margin-top: 3px; }
+.hero-divider { border-top: 1px solid rgba(200,168,75,0.2); margin-bottom: 14px; }
+.hero-stats { display: flex; }
+.hstat { flex: 1; text-align: center; }
+.hstat + .hstat { border-left: 1px solid rgba(200,168,75,0.15); }
+.hstat-val { font-size: 22px; font-weight: 700; color: #FFFFFF; }
+.hstat-lbl { font-size: 10px; color: rgba(234,242,234,0.45); margin-top: 2px; }
+
+/* VERDICT */
+.verdict {
+  margin: 10px 16px 0; border-radius: 8px; padding: 12px 16px;
+  display: flex; justify-content: space-between; align-items: center;
+  border-left: 3px solid;
+}
+.verdict.great { background: rgba(200,168,75,0.1); border-color: #C8A84B; }
+.verdict.good  { background: rgba(52,199,89,0.08); border-color: #34C759; }
+.verdict.ok    { background: rgba(200,168,75,0.07); border-color: #C8A84B; }
+.verdict.warn  { background: rgba(241,196,15,0.07); border-color: #F1C40F; }
+.verdict.bad   { background: rgba(231,76,60,0.08); border-color: #E74C3C; }
+.verdict-label { font-size: 18px; font-weight: 700; letter-spacing: 0.5px; }
+.verdict-label.great,.verdict-label.ok { color: #E2C46A; }
+.verdict-label.good  { color: #34C759; }
+.verdict-label.warn  { color: #F1C40F; }
+.verdict-label.bad   { color: #E74C3C; }
+.verdict-sub { font-size: 11px; color: rgba(234,242,234,0.45); margin-top: 2px; }
+.verdict-pts { font-size: 22px; font-weight: 700; color: #E2C46A; }
+
+/* SEC + CARD */
+.sec { font-size: 10px; font-weight: 700; color: #C8A84B; text-transform: uppercase; letter-spacing: 2px; padding: 16px 16px 8px; }
+.card { margin: 0 16px; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
+.row { display: flex; align-items: center; gap: 10px; padding: 11px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
+.row:last-child { border-bottom: none; }
+
+/* STANDINGS */
+.rank { font-size: 14px; font-weight: 700; color: rgba(234,242,234,0.45); min-width: 18px; text-align: center; }
+.rank.top { color: #C8A84B; }
+.team-col { flex: 1; }
+.team-nm { font-size: 13px; font-weight: 500; }
+.team-nm.me { color: #E2C46A; font-weight: 700; }
+.pen-tag { font-size: 10px; padding: 1px 5px; border-radius: 3px; margin-left: 5px; }
+.pen-tag.neg  { background: rgba(231,76,60,0.15); color: #E74C3C; }
+.pen-tag.zero { background: rgba(52,199,89,0.12); color: #34C759; }
+.minibar { height: 2px; background: rgba(255,255,255,0.07); border-radius: 2px; margin-top: 5px; overflow: hidden; }
+.minibar-fill { height: 100%; border-radius: 2px; }
+.pts { font-size: 18px; font-weight: 700; color: #EAF2EA; }
+.pts.me { color: #E2C46A; }
+
+/* GAP */
+.gap-name { font-size: 13px; font-weight: 500; flex: 1; }
+.gap-right { display: flex; align-items: center; gap: 8px; }
+.gap-opp { font-size: 11px; color: rgba(234,242,234,0.45); }
+.gap-tag { font-size: 12px; font-weight: 600; padding: 2px 9px; border-radius: 4px; }
+.gap-tag.lead   { background: rgba(52,199,89,0.12); color: #34C759; }
+.gap-tag.behind { background: rgba(231,76,60,0.12); color: #E74C3C; }
+.gap-tag.tie    { background: rgba(241,196,15,0.1);  color: #F1C40F; }
+
+/* RECORD */
+.rec-card { margin: 14px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
+.rec-sec { padding: 13px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
+.rec-sec:last-child { border-bottom: none; }
+.rec-lbl { font-size: 10px; color: #C8A84B; font-weight: 600; letter-spacing: 1.5px; text-transform: uppercase; margin-bottom: 8px; display: block; }
+.opp-inp { width: 100%; background: #0C1F0E; border: 1px solid rgba(200,168,75,0.28); border-radius: 8px; color: #EAF2EA; font-size: 15px; padding: 10px 13px; outline: none; -webkit-appearance: none; font-family: -apple-system, "PingFang SC", sans-serif; }
+.opp-inp:focus { border-color: #C8A84B; }
+.quick-row { display: flex; flex-wrap: wrap; gap: 6px; margin-top: 8px; }
+.quick-btn { padding: 4px 10px; border-radius: 4px; border: 1px solid rgba(200,168,75,0.28); background: #0C1F0E; font-size: 11px; color: rgba(234,242,234,0.45); cursor: pointer; font-family: -apple-system, "PingFang SC", sans-serif; }
+.quick-btn:active { background: #C8A84B; color: #0C1F0E; }
+.score-row { display: flex; align-items: center; gap: 10px; }
+.score-inp { flex: 1; background: #0C1F0E; border: 1px solid rgba(200,168,75,0.28); border-radius: 8px; color: #FFFFFF; font-size: 34px; font-weight: 700; text-align: center; padding: 10px; outline: none; -webkit-appearance: none; }
+.score-inp:focus { border-color: #C8A84B; }
+.score-vs { font-size: 18px; color: rgba(234,242,234,0.45); }
+.res-btns { display: flex; gap: 8px; }
+.res-btn { flex: 1; padding: 12px 4px; border-radius: 8px; border: 1px solid rgba(200,168,75,0.28); background: #0C1F0E; font-size: 14px; font-weight: 600; color: rgba(234,242,234,0.45); cursor: pointer; text-align: center; font-family: -apple-system, "PingFang SC", sans-serif; }
+.res-btn small { display: block; font-size: 10px; font-weight: 400; margin-top: 2px; }
+.res-btn.sel-win  { border-color: #34C759; background: rgba(52,199,89,0.1);  color: #34C759; }
+.res-btn.sel-draw { border-color: #C8A84B; background: rgba(200,168,75,0.1); color: #E2C46A; }
+.res-btn.sel-loss { border-color: #E74C3C; background: rgba(231,76,60,0.1);  color: #E74C3C; }
+.submit-btn { margin: 14px 16px 0; width: calc(100% - 32px); padding: 14px; background: #C8A84B; color: #0C1F0E; border: none; border-radius: 8px; font-size: 15px; font-weight: 700; font-family: -apple-system, "PingFang SC", sans-serif; letter-spacing: 1px; cursor: pointer; -webkit-appearance: none; }
+.submit-btn:active { background: #E2C46A; }
+.submit-btn:disabled { background: #1A3A1D; color: rgba(234,242,234,0.45); }
+.tip { margin: 10px 16px 0; background: rgba(200,168,75,0.05); border: 1px solid rgba(200,168,75,0.15); border-radius: 8px; padding: 9px 13px; font-size: 11px; color: rgba(234,242,234,0.45); }
+
+/* HISTORY */
+.hist-card { margin: 14px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; }
+.hist-hdr { padding: 12px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); display: flex; justify-content: space-between; align-items: center; }
+.hist-hdr-t { font-size: 15px; font-weight: 700; color: #FFFFFF; }
+.clear-btn { font-size: 11px; color: #E74C3C; background: rgba(231,76,60,0.1); border: 1px solid rgba(231,76,60,0.2); padding: 4px 10px; border-radius: 4px; cursor: pointer; font-family: -apple-system, "PingFang SC", sans-serif; }
+.match-row { display: flex; align-items: center; gap: 10px; padding: 10px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
+.match-row:last-child { border-bottom: none; }
+.m-round { font-size: 12px; color: rgba(234,242,234,0.45); min-width: 26px; }
+.res-tag { font-size: 11px; font-weight: 700; padding: 2px 7px; border-radius: 3px; min-width: 24px; text-align: center; }
+.res-tag.win  { background: rgba(52,199,89,0.12);  color: #34C759; }
+.res-tag.draw { background: rgba(200,168,75,0.12); color: #E2C46A; }
+.res-tag.loss { background: rgba(231,76,60,0.1);   color: #E74C3C; }
+.m-body { flex: 1; }
+.m-opp { font-size: 13px; font-weight: 500; }
+.m-score { font-size: 11px; color: rgba(234,242,234,0.45); margin-top: 1px; }
+.m-pts { font-size: 15px; font-weight: 700; }
+.m-pts.win { color: #34C759; } .m-pts.draw { color: #C8A84B; } .m-pts.loss { color: rgba(234,242,234,0.45); }
+.del-btn { background: none; border: none; font-size: 16px; color: rgba(234,242,234,0.2); cursor: pointer; padding: 4px; }
+.del-btn:active { color: #E74C3C; }
+.stats-card { margin: 10px 16px 0; background: #132B15; border: 1px solid rgba(200,168,75,0.15); border-radius: 10px; overflow: hidden; margin-bottom: 4px; }
+.stat-row { display: flex; justify-content: space-between; align-items: center; padding: 10px 16px; border-bottom: 1px solid rgba(200,168,75,0.08); }
+.stat-row:last-child { border-bottom: none; }
+.stat-lbl { font-size: 12px; color: rgba(234,242,234,0.45); }
+.stat-val { font-size: 13px; font-weight: 600; }
+.empty { padding: 32px 20px; text-align: center; color: rgba(234,242,234,0.45); font-size: 12px; }
+</style>
+</head>
+<body>
+<div id="app">
+  <div class="safe-top"></div>
+  <div class="nav">
+    <div class="nav-left">
+      <div class="nav-crest"><span>浙</span></div>
+      <div>
+        <div class="nav-title">ZHEJIANG FC</div>
+        <div class="nav-sub">2026 CSL · 争冠追踪</div>
+      </div>
+    </div>
+    <div style="display:flex;align-items:center;gap:8px;">
+      <div class="nav-badge" id="round-badge">R6</div>
+      <button id="refresh-btn" onclick="manualRefresh()" style="
+        background:none;border:1px solid rgba(200,168,75,0.4);border-radius:6px;
+        color:#C8A84B;font-size:16px;width:32px;height:32px;cursor:pointer;
+        display:flex;align-items:center;justify-content:center;
+        transition:all .2s;">↻</button>
+    </div>
+  </div>
+  <div class="tabs">
+    <button class="tab active" onclick="go('dashboard')">总览</button>
+    <button class="tab" onclick="go('record')">录入</button>
+    <button class="tab" onclick="go('history')">记录</button>
+  </div>
+  <div class="scroll">
+
+    <!-- DASHBOARD -->
+    <div class="page active" id="page-dashboard">
+      <div class="hero">
+        <div class="hero-top">
+          <div>
+            <div class="hero-lbl">实际积分</div>
+            <div class="hero-pts" id="h-pts">2<span class="hero-unit">PTS</span></div>
+          </div>
+          <div class="hero-right">
+            <div class="hero-rnum" id="h-remain">27</div>
+            <div class="hero-rlbl">轮待战</div>
+          </div>
+        </div>
+        <div class="hero-divider"></div>
+        <div class="hero-stats">
+          <div class="hstat"><div class="hstat-val" id="h-w">2</div><div class="hstat-lbl">胜</div></div>
+          <div class="hstat"><div class="hstat-val" id="h-d">1</div><div class="hstat-lbl">平</div></div>
+          <div class="hstat"><div class="hstat-val" id="h-l">1</div><div class="hstat-lbl">负</div></div>
+          <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
+        </div>
+      </div>
+      <div class="verdict ok" id="verdict">
+        <div>
+          <div class="verdict-label ok" id="v-label">争冠竞争者</div>
+          <div class="verdict-sub">模拟目标 · 赛季末积分</div>
+        </div>
+        <div class="verdict-pts" id="v-pts">— PTS</div>
+      </div>
+      <div class="sec">积分对比</div>
+      <div class="card" id="standings"></div>
+      <div class="sec">与主要对手差距</div>
+      <div id="data-updated" style="font-size:10px;color:rgba(234,242,234,0.3);text-align:right;padding:0 16px 6px;"></div>
+      <div class="card" id="gaps" style="margin-bottom:20px"></div>
+    </div>
+
+    <!-- RECORD -->
+    <div class="page" id="page-record">
+      <div class="rec-card">
+        <div class="rec-sec">
+          <span class="rec-lbl">对手</span>
+          <input class="opp-inp" id="inp-opp" type="text" placeholder="输入对手名称" maxlength="10">
+          <div class="quick-row">
+            <button class="quick-btn" onclick="setOpp('成都蓉城')">成都蓉城</button>
+            <button class="quick-btn" onclick="setOpp('北京国安')">北京国安</button>
+            <button class="quick-btn" onclick="setOpp('上海海港')">上海海港</button>
+            <button class="quick-btn" onclick="setOpp('山东泰山')">山东泰山</button>
+            <button class="quick-btn" onclick="setOpp('上海申花')">上海申花</button>
+            <button class="quick-btn" onclick="setOpp('武汉三镇')">武汉三镇</button>
+            <button class="quick-btn" onclick="setOpp('重庆铜梁龙')">重庆铜梁龙</button>
+            <button class="quick-btn" onclick="setOpp('河南队')">河南队</button>
+            <button class="quick-btn" onclick="setOpp('青岛海牛')">青岛海牛</button>
+            <button class="quick-btn" onclick="setOpp('大连英博')">大连英博</button>
+            <button class="quick-btn" onclick="setOpp('辽宁铁人')">辽宁铁人</button>
+            <button class="quick-btn" onclick="setOpp('云南玉昆')">云南玉昆</button>
+            <button class="quick-btn" onclick="setOpp('深圳新鹏城')">深圳新鹏城</button>
+            <button class="quick-btn" onclick="setOpp('青岛西海岸')">青岛西海岸</button>
+            <button class="quick-btn" onclick="setOpp('天津津门虎')">天津津门虎</button>
+          </div>
+        </div>
+        <div class="rec-sec">
+          <span class="rec-lbl">比分（浙江 VS 对手）</span>
+          <div class="score-row">
+            <input class="score-inp" id="inp-gf" type="number" min="0" max="20" value="0" inputmode="numeric">
+            <div class="score-vs">:</div>
+            <input class="score-inp" id="inp-ga" type="number" min="0" max="20" value="0" inputmode="numeric">
+          </div>
+        </div>
+        <div class="rec-sec">
+          <span class="rec-lbl">结果</span>
+          <div class="res-btns">
+            <button class="res-btn" id="btn-win"  onclick="setRes('win')">胜<small>+3 PTS</small></button>
+            <button class="res-btn" id="btn-draw" onclick="setRes('draw')">平<small>+1 PT</small></button>
+            <button class="res-btn" id="btn-loss" onclick="setRes('loss')">负<small>+0 PTS</small></button>
+          </div>
+        </div>
+      </div>
+      <button class="submit-btn" id="submit-btn" onclick="addMatch()" disabled>请先选择结果</button>
+      <div class="tip">Safari → 分享 → 添加到主屏幕，数据本地保存</div>
+      <div style="height:20px"></div>
+    </div>
+
+    <!-- HISTORY -->
+    <div class="page" id="page-history">
+      <div class="hist-card">
+        <div class="hist-hdr">
+          <div class="hist-hdr-t">比赛记录</div>
+          <button class="clear-btn" onclick="clearAll()">重置</button>
+        </div>
+        <div id="hist-list"></div>
+      </div>
+      <div class="sec">赛季统计</div>
+      <div class="stats-card" id="stats-card" style="margin-bottom:20px"></div>
+    </div>
+
+  </div>
+</div>
+<script>
+const TOTAL=30,PEN=-5,KEY='zj2026_v2';
+// 对手积分从 data.json 动态加载，以下为初始 fallback
+let RIVALS=[
+  {name:'成都蓉城',penalty:0,  basePts:16, color:'#3b82f6'},
+  {name:'北京国安',penalty:-5, basePts:5,  color:'#a855f7'},
+  {name:'上海海港',penalty:-5, basePts:7,  color:'#06b6d4'},
+  {name:'山东泰山',penalty:-6, basePts:10, color:'#eab308'},
+  {name:'上海申花',penalty:-10,basePts:14, color:'#6b7280'},
+];
+async function loadData(){
+  try{
+    const r=await fetch('data.json?t='+Date.now());
+    if(!r.ok)return;
+    const d=await r.json();
+    if(d.rivals&&d.rivals.length){RIVALS=d.rivals;}
+    const el=document.getElementById('data-updated');
+    if(el&&d.updated)el.textContent='对手积分更新：'+d.updated;
+    render();
+  }catch(e){render();}
+}
+async function manualRefresh(){
+  const btn=document.getElementById('refresh-btn');
+  btn.style.transform='rotate(360deg)';
+  btn.style.transition='transform 0.6s ease';
+  btn.disabled=true;
+  await loadData();
+  setTimeout(()=>{
+    btn.style.transform='';
+    btn.style.transition='';
+    btn.disabled=false;
+  },800);
+}
+const DEF=[
+  {round:1,opp:'青岛西海岸',gf:2,ga:0,result:'win', pts:3},
+  {round:2,opp:'上海申花',  gf:1,ga:1,result:'draw',pts:1},
+  {round:3,opp:'青岛海牛',  gf:4,ga:1,result:'win', pts:3},
+  {round:4,opp:'重庆铜梁龙',gf:0,ga:1,result:'loss',pts:0},
+  {round:5,opp:'大连英博',  gf:0,ga:2,result:'loss',pts:0},
+  {round:6,opp:'北京国安',  gf:1,ga:1,result:'draw',pts:1},
+];
+let matches=ld(),selRes=null;
+function ld(){try{const r=localStorage.getItem(KEY);if(r){const d=JSON.parse(r);if(d.length>=DEF.length)return d;}return[...DEF]}catch{return[...DEF]}}
+function sv(){try{localStorage.setItem(KEY,JSON.stringify(matches))}catch{}}
+function calc(){
+  const played=matches.length,gp=matches.reduce((s,m)=>s+m.pts,0),actual=gp+PEN,remain=TOTAL-played;
+  const wins=matches.filter(m=>m.result==='win').length,draws=matches.filter(m=>m.result==='draw').length,losses=matches.filter(m=>m.result==='loss').length;
+  const gf=matches.reduce((s,m)=>s+m.gf,0),ga=matches.reduce((s,m)=>s+m.ga,0);
+  const rate=played>0?gp/played:0,proj=Math.round(actual+rate*remain);
+  return{played,gp,actual,remain,wins,draws,losses,gf,ga,proj};
+}
+function verdict(pts){
+  if(pts>=72)return{cls:'great',label:'夺冠热门'};
+  if(pts>=65)return{cls:'good', label:'强力争冠'};
+  if(pts>=58)return{cls:'ok',   label:'争冠竞争者'};
+  if(pts>=50)return{cls:'warn', label:'争亚冠席位'};
+  return           {cls:'bad',  label:'需提升战绩'};
+}
+function render(){
+  const s=calc();sv();
+  document.getElementById('round-badge').textContent='R'+s.played;
+  document.getElementById('h-pts').innerHTML=s.actual+'<span class="hero-unit">PTS</span>';
+  document.getElementById('h-remain').textContent=s.remain;
+  document.getElementById('h-w').textContent=s.wins;
+  document.getElementById('h-d').textContent=s.draws;
+  document.getElementById('h-l').textContent=s.losses;
+  const gd=s.gf-s.ga;
+  document.getElementById('h-gd').textContent=(gd>=0?'+':'')+gd;
+  const fin=s.actual+s.remain*3; // 理论上限（剩余全胜）
+  const v=verdict(s.actual);
+  document.getElementById('verdict').className='verdict '+v.cls;
+  const lbl=document.getElementById('v-label');
+  lbl.className='verdict-label '+v.cls; lbl.textContent=v.label;
+  document.getElementById('v-pts').textContent=(fin>=0?'+':'')+fin+' PTS 上限';
+  renderBars(s);renderGaps(s);renderHistory(s);
+}
+function renderBars(s){
+  const all=[{name:'浙江队',penalty:PEN,gamePts:s.gp,color:'#C8A84B',isMe:true},...RIVALS.map(r=>({...r,gamePts:r.basePts,isMe:false}))]
+    .map(t=>({...t,actual:t.gamePts+t.penalty})).sort((a,b)=>b.actual-a.actual);
+  const mx=Math.max(...all.map(t=>t.actual),1);
+  document.getElementById('standings').innerHTML=all.map((t,i)=>{
+    const pct=Math.max(2,(Math.max(0,t.actual)/mx)*100).toFixed(1);
+    const pc=t.penalty===0?'zero':'neg',pl=t.penalty===0?'0':'−'+Math.abs(t.penalty);
+    return`<div class="row"><div class="rank${i<3?' top':''}"> ${i+1}</div><div class="team-col"><div class="team-nm${t.isMe?' me':''}">
+      ${t.isMe?'▶ ':''}${t.name}<span class="pen-tag ${pc}">${pl}</span></div>
+      <div class="minibar"><div class="minibar-fill" style="width:${pct}%;background:${t.color}"></div></div></div>
+      <div class="pts${t.isMe?' me':''}">${t.actual>=0?'+':''}${t.actual}</div></div>`;
+  }).join('');
+}
+function renderGaps(s){
+  document.getElementById('gaps').innerHTML=RIVALS.map(r=>{
+    const ra=r.basePts+r.penalty,diff=s.actual-ra;
+    const pc=diff>0?'lead':diff<0?'behind':'tie';
+    const pt=diff>0?'+'+diff+'分':diff<0?diff+'分':'同分';
+    return`<div class="row"><div class="gap-name">${r.name}</div><div class="gap-right"><span class="gap-opp">${ra>=0?'+':''}${ra} PTS</span><span class="gap-tag ${pc}">${pt}</span></div></div>`;
+  }).join('');
+}
+function renderHistory(s){
+  const list=document.getElementById('hist-list');
+  if(!matches.length){list.innerHTML='<div class="empty">暂无比赛记录</div>';}
+  else{list.innerHTML=[...matches].sort((a,b)=>b.round-a.round).map(m=>{
+    const i=matches.findIndex(x=>x.round===m.round);
+    const rt=m.result==='win'?'胜':m.result==='draw'?'平':'负';
+    return`<div class="match-row"><div class="m-round">R${m.round}</div><div class="res-tag ${m.result}">${rt}</div>
+      <div class="m-body"><div class="m-opp">${m.opp}</div><div class="m-score">${m.gf} : ${m.ga}</div></div>
+      <div class="m-pts ${m.result}">+${m.pts}</div>
+      <button class="del-btn" onclick="del(${i})">×</button></div>`;
+  }).join('');}
+  const gd=s.gf-s.ga,wr=s.played>0?((s.wins/s.played)*100).toFixed(0):0;
+  document.getElementById('stats-card').innerHTML=`
+    <div class="stat-row"><span class="stat-lbl">已赛 / 总轮</span><span class="stat-val">${s.played} / ${TOTAL}</span></div>
+    <div class="stat-row"><span class="stat-lbl">胜率</span><span class="stat-val">${wr}%</span></div>
+    <div class="stat-row"><span class="stat-lbl">进球 / 失球</span><span class="stat-val">${s.gf} / ${s.ga}</span></div>
+    <div class="stat-row"><span class="stat-lbl">净胜球</span><span class="stat-val" style="color:${gd>=0?'#34C759':'#E74C3C'}">${gd>=0?'+':''}${gd}</span></div>
+    <div class="stat-row"><span class="stat-lbl">比赛积分</span><span class="stat-val">${s.gp}</span></div>
+    <div class="stat-row"><span class="stat-lbl">实际积分（扣5后）</span><span class="stat-val" style="color:#E2C46A">${s.actual}</span></div>`;
+}
+function go(name){
+  document.querySelectorAll('.tab').forEach((t,i)=>t.classList.toggle('active',['dashboard','record','history'][i]===name));
+  document.querySelectorAll('.page').forEach(p=>p.classList.toggle('active',p.id==='page-'+name));
+}
+function setOpp(n){document.getElementById('inp-opp').value=n}
+function setRes(r){
+  selRes=r;
+  ['win','draw','loss'].forEach(x=>document.getElementById('btn-'+x).className='res-btn'+(x===r?' sel-'+x:''));
+  const btn=document.getElementById('submit-btn');
+  btn.disabled=false;
+  btn.textContent=r==='win'?'录入胜场 · +3分':r==='draw'?'录入平局 · +1分':'录入负场 · +0分';
+}
+function syncScore(){
+  const gf=parseInt(document.getElementById('inp-gf').value)||0,ga=parseInt(document.getElementById('inp-ga').value)||0;
+  setRes(gf>ga?'win':gf<ga?'loss':'draw');
+}
+['inp-gf','inp-ga'].forEach(id=>document.getElementById(id).addEventListener('input',syncScore));
+function addMatch(){
+  if(!selRes)return;
+  const s=calc();if(s.played>=TOTAL){alert('已达30轮');return}
+  const round=s.played+1,opp=document.getElementById('inp-opp').value.trim()||'未知对手';
+  const gf=parseInt(document.getElementById('inp-gf').value)||0,ga=parseInt(document.getElementById('inp-ga').value)||0;
+  const pts=selRes==='win'?3:selRes==='draw'?1:0;
+  matches.push({round,opp,gf,ga,result:selRes,pts});
+  matches.sort((a,b)=>a.round-b.round);
+  selRes=null;
+  document.getElementById('inp-opp').value='';
+  document.getElementById('inp-gf').value=0;
+  document.getElementById('inp-ga').value=0;
+  ['win','draw','loss'].forEach(x=>document.getElementById('btn-'+x).className='res-btn');
+  const btn=document.getElementById('submit-btn');btn.disabled=true;btn.textContent='请先选择结果';
+  render();go('dashboard');
+}
+function del(i){if(confirm('删除 R'+matches[i].round+' 记录？')){matches.splice(i,1);render()}}
+function clearAll(){if(confirm('重置为前6轮默认数据？')){matches=[...DEF];render()}}
+loadData();
+</script>
+</body>
+</html>

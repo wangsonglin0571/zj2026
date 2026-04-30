@@ -120,6 +120,7 @@ html, body {
 .verdict-label.warn  { color: #F1C40F; }
 .verdict-label.bad   { color: #E74C3C; }
 .verdict-sub { font-size: 11px; color: rgba(234,242,234,0.45); margin-top: 2px; }
+.vn { font-weight: 700; color: #E2C46A; }
 .verdict-pts { font-size: 22px; font-weight: 700; color: #E2C46A; }
 
 /* NEXT MATCH */
@@ -244,12 +245,12 @@ html, body {
         <div class="hstat"><div class="hstat-val" id="h-gd">+5</div><div class="hstat-lbl">净胜球</div></div>
       </div>
     </div>
-    <div class="verdict ok" id="verdict">
+    <div class="verdict bad" id="verdict">
       <div>
-        <div class="verdict-label ok" id="v-label">争冠竞争者</div>
-        <div class="verdict-sub">自动更新 · 当前积分走势</div>
+        <div class="verdict-label bad" id="v-label">需提升战绩</div>
+        <div class="verdict-sub">保级差 <span class="vn" id="v-sub-baoji">28</span> PTS · 亚冠差 <span class="vn" id="v-sub-yaguan">47</span> PTS</div>
       </div>
-      <div class="verdict-pts" id="v-pts">— PTS</div>
+      <div class="verdict-pts" id="v-pts"><span id="v-pts-val">3</span> PTS</div>
     </div>
     <div class="next-match">
       <div class="next-head">
@@ -447,12 +448,13 @@ function render(){
   document.getElementById('h-d').textContent=s.draws;
   document.getElementById('h-l').textContent=s.losses;
   document.getElementById('h-gd').textContent=(s.gd>=0?'+':'')+s.gd;
-  const fin=s.actual+s.remain*3; // 理论上限（剩余全胜）
   const v=verdict(s.actual);
   document.getElementById('verdict').className='verdict '+v.cls;
   const lbl=document.getElementById('v-label');
   lbl.className='verdict-label '+v.cls; lbl.textContent=v.label;
-  document.getElementById('v-pts').textContent=(fin>=0?'+':'')+fin+' PTS 上限';
+  document.getElementById('v-pts-val').textContent=s.actual;
+  document.getElementById('v-sub-baoji').textContent=Math.max(0,30-s.actual);
+  document.getElementById('v-sub-yaguan').textContent=Math.max(0,50-s.actual);
   document.getElementById('next-opponent').textContent=NEXT_MATCH.opponent||'待定';
   document.getElementById('next-kickoff').textContent=NEXT_MATCH.kickoffBjt||'待更新';
   document.getElementById('next-location').textContent=NEXT_MATCH.location||'待更新';

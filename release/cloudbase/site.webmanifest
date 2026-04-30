@@ -1,0 +1,21 @@
+{
+  "name": "浙江队 · 2026争冠",
+  "short_name": "浙江争冠",
+  "description": "浙江队 2026 赛季争冠追踪与积分查看",
+  "start_url": "./",
+  "display": "standalone",
+  "background_color": "#0C1F0E",
+  "theme_color": "#0C1F0E",
+  "icons": [
+    {
+      "src": "icon-192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    },
+    {
+      "src": "icon-512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
