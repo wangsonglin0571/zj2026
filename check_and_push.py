@@ -34,10 +34,21 @@ ROOT = Path(__file__).resolve().parent
 DATA_FILE = ROOT / "data.json"
 STATE_FILE = ROOT / ".state.json"
 
-# DeepSeek API
-DEEPSEEK_API_KEY = "sk-f9b43d30fcd9449b97b48323bd6ca297"
+# DeepSeek API — 从 tech_feed 共享配置读取
+TECH_FEED_CONFIG = Path.home() / "tech_feed" / "config.py"
 DEEPSEEK_URL = "https://api.deepseek.com/v1/chat/completions"
 DEEPSEEK_MODEL = "deepseek-v4-flash"
+
+def _read_deepseek_key() -> str:
+    """从 tech_feed/config.py 读取 DeepSeek API key"""
+    src = TECH_FEED_CONFIG.read_text(encoding="utf-8")
+    m = re.search(r'DEEPSEEK_API_KEY\s*=\s*["\']([^"\']+)["\']', src)
+    if m:
+        key = m.group(1)
+        if key != "***":
+            return key
+    log.error("DeepSeek API key 未配置")
+    return ""
 
 BEIJING = timezone(timedelta(hours=8))
 
@@ -166,7 +177,7 @@ def build_summary_prompt(data: dict, changes: dict, state: dict) -> str:
     return prompt
 
 
-def call_deepseek(prompt: str, max_retries: int = 2) -> str | None:
+def call_deepseek(prompt: str, max_retries: int = 2):
     """调用 DeepSeek 生成报告"""
     payload = {
         "model": DEEPSEEK_MODEL,
@@ -175,7 +186,7 @@ def call_deepseek(prompt: str, max_retries: int = 2) -> str | None:
         "temperature": 0.7,
     }
     headers = {
-        "Authorization": f"Bearer {DEEPSEEK_API_KEY}",
+        "Authorization": f"Bearer {_read_deepseek_key()}",
         "Content-Type": "application/json",
     }
 
