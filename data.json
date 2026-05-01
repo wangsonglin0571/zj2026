@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-01 14:01 UTC",
+  "updated": "2026-05-01 15:33 UTC",
   "nextMatch": {
     "opponent": "深圳新鹏城",
     "kickoffBjt": "2026-05-02 19:35",
@@ -22,10 +22,10 @@
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 8,
+      "played": 9,
       "penalty": 0,
-      "basePts": 22,
-      "actual": 22,
+      "basePts": 25,
+      "actual": 25,
       "color": "#3b82f6"
     },
     {
@@ -54,7 +54,7 @@
     },
     {
       "name": "上海申花",
-      "played": 8,
+      "played": 9,
       "penalty": 10,
       "basePts": 20,
       "actual": 10,
@@ -64,16 +64,16 @@
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 8,
-      "wins": 7,
+      "played": 9,
+      "wins": 8,
       "draws": 1,
       "losses": 0,
-      "gf": 23,
-      "ga": 7,
-      "gd": 16,
+      "gf": 26,
+      "ga": 9,
+      "gd": 17,
       "penalty": 0,
-      "gamePts": 22,
-      "actual": 22
+      "gamePts": 25,
+      "actual": 25
     },
     {
       "name": "重庆铜梁龙",
@@ -116,13 +116,13 @@
     },
     {
       "name": "上海申花",
-      "played": 8,
+      "played": 9,
       "wins": 6,
       "draws": 2,
-      "losses": 0,
-      "gf": 19,
-      "ga": 8,
-      "gd": 11,
+      "losses": 1,
+      "gf": 21,
+      "ga": 11,
+      "gd": 10,
       "penalty": 10,
       "gamePts": 20,
       "actual": 10
