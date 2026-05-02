@@ -1,22 +1,22 @@
 {
-  "updated": "2026-05-02 13:23 UTC",
+  "updated": "2026-05-02 14:17 UTC",
   "nextMatch": {
-    "opponent": "深圳新鹏城",
-    "kickoffBjt": "2026-05-02 19:35",
-    "note": "中超第9轮",
+    "opponent": "云南玉昆",
+    "kickoffBjt": "2026-05-06 20:00",
+    "note": "中超第10轮",
     "venue": "黄龙体育中心体育场",
     "location": "浙江杭州"
   },
   "zhejiang": {
-    "played": 8,
-    "wins": 2,
+    "played": 9,
+    "wins": 3,
     "draws": 2,
     "losses": 4,
-    "gf": 7,
-    "ga": 12,
-    "gd": -5,
-    "gamePts": 8,
-    "actual": 3,
+    "gf": 9,
+    "ga": 13,
+    "gd": -4,
+    "gamePts": 11,
+    "actual": 6,
     "penalty": 5
   },
   "rivals": [
@@ -30,10 +30,10 @@
     },
     {
       "name": "北京国安",
-      "played": 8,
+      "played": 9,
       "penalty": 5,
-      "basePts": 8,
-      "actual": 3,
+      "basePts": 9,
+      "actual": 4,
       "color": "#a855f7"
     },
     {
@@ -103,16 +103,16 @@
     },
     {
       "name": "云南玉昆",
-      "played": 8,
+      "played": 9,
       "wins": 4,
-      "draws": 0,
+      "draws": 1,
       "losses": 4,
-      "gf": 17,
-      "ga": 14,
+      "gf": 20,
+      "ga": 17,
       "gd": 3,
       "penalty": 0,
-      "gamePts": 12,
-      "actual": 12
+      "gamePts": 13,
+      "actual": 13
     },
     {
       "name": "上海申花",
@@ -129,13 +129,13 @@
     },
     {
       "name": "深圳新鹏城",
-      "played": 8,
+      "played": 9,
       "wins": 3,
       "draws": 0,
-      "losses": 5,
-      "gf": 11,
-      "ga": 15,
-      "gd": -4,
+      "losses": 6,
+      "gf": 12,
+      "ga": 17,
+      "gd": -5,
       "penalty": 0,
       "gamePts": 9,
       "actual": 9
@@ -180,6 +180,19 @@
       "actual": 7
     },
     {
+      "name": "浙江",
+      "played": 9,
+      "wins": 3,
+      "draws": 2,
+      "losses": 4,
+      "gf": 9,
+      "ga": 13,
+      "gd": -4,
+      "penalty": 5,
+      "gamePts": 11,
+      "actual": 6
+    },
+    {
       "name": "上海海港",
       "played": 9,
       "wins": 3,
@@ -206,6 +219,19 @@
       "actual": 5
     },
     {
+      "name": "北京国安",
+      "played": 9,
+      "wins": 2,
+      "draws": 3,
+      "losses": 4,
+      "gf": 12,
+      "ga": 14,
+      "gd": -2,
+      "penalty": 5,
+      "gamePts": 9,
+      "actual": 4
+    },
+    {
       "name": "青岛海牛",
       "played": 9,
       "wins": 3,
@@ -217,32 +243,6 @@
       "penalty": 7,
       "gamePts": 11,
       "actual": 4
-    },
-    {
-      "name": "北京国安",
-      "played": 8,
-      "wins": 2,
-      "draws": 2,
-      "losses": 4,
-      "gf": 9,
-      "ga": 11,
-      "gd": -2,
-      "penalty": 5,
-      "gamePts": 8,
-      "actual": 3
-    },
-    {
-      "name": "浙江",
-      "played": 8,
-      "wins": 2,
-      "draws": 2,
-      "losses": 4,
-      "gf": 7,
-      "ga": 12,
-      "gd": -5,
-      "penalty": 5,
-      "gamePts": 8,
-      "actual": 3
     },
     {
       "name": "武汉三镇",
@@ -366,8 +366,8 @@
       "kickoffBjt": "2026-05-02 19:35",
       "home": "浙江",
       "away": "深圳新鹏城",
-      "score": "-",
-      "finished": false,
+      "score": "2-1",
+      "finished": true,
       "opponent": "深圳新鹏城",
       "isHome": true
     },
