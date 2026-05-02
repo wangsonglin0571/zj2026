@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-02 11:53 UTC",
+  "updated": "2026-05-02 13:23 UTC",
   "nextMatch": {
     "opponent": "深圳新鹏城",
     "kickoffBjt": "2026-05-02 19:35",
@@ -38,7 +38,7 @@
     },
     {
       "name": "上海海港",
-      "played": 8,
+      "played": 9,
       "penalty": 5,
       "basePts": 10,
       "actual": 5,
@@ -181,13 +181,13 @@
     },
     {
       "name": "上海海港",
-      "played": 8,
+      "played": 9,
       "wins": 3,
       "draws": 1,
-      "losses": 4,
-      "gf": 13,
-      "ga": 9,
-      "gd": 4,
+      "losses": 5,
+      "gf": 14,
+      "ga": 12,
+      "gd": 2,
       "penalty": 5,
       "gamePts": 10,
       "actual": 5
@@ -204,6 +204,19 @@
       "penalty": 6,
       "gamePts": 11,
       "actual": 5
+    },
+    {
+      "name": "青岛海牛",
+      "played": 9,
+      "wins": 3,
+      "draws": 2,
+      "losses": 4,
+      "gf": 11,
+      "ga": 13,
+      "gd": -2,
+      "penalty": 7,
+      "gamePts": 11,
+      "actual": 4
     },
     {
       "name": "北京国安",
@@ -243,19 +256,6 @@
       "penalty": 5,
       "gamePts": 8,
       "actual": 3
-    },
-    {
-      "name": "青岛海牛",
-      "played": 8,
-      "wins": 2,
-      "draws": 2,
-      "losses": 4,
-      "gf": 8,
-      "ga": 12,
-      "gd": -4,
-      "penalty": 7,
-      "gamePts": 8,
-      "actual": 1
     },
     {
       "name": "天津津门虎",
