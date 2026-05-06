@@ -13,6 +13,7 @@ import argparse
 import json
 import logging
 import os
+import re
 import sys
 import time
 from datetime import datetime, timezone, timedelta
@@ -179,10 +180,12 @@ def build_summary_prompt(data: dict, changes: dict, state: dict) -> str:
 
 def call_deepseek(prompt: str, max_retries: int = 2):
     """调用 DeepSeek 生成报告"""
+    prompt = prompt + "\n\n请直接输出最终成稿，不要展示思考过程。"
     payload = {
         "model": DEEPSEEK_MODEL,
         "messages": [{"role": "user", "content": prompt}],
-        "max_tokens": 600,
+        # deepseek-v4-flash 会先消耗 reasoning token；600 容易 content 为空。
+        "max_tokens": 2000,
         "temperature": 0.7,
     }
     headers = {
