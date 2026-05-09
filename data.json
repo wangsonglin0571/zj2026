@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-09 12:11 UTC",
+  "updated": "2026-05-09 13:59 UTC",
   "nextMatch": {
     "opponent": "天津津门虎",
     "kickoffBjt": "2026-05-10 19:35",
@@ -22,10 +22,10 @@
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 10,
+      "played": 11,
       "penalty": 0,
-      "basePts": 28,
-      "actual": 28,
+      "basePts": 31,
+      "actual": 31,
       "color": "#3b82f6"
     },
     {
@@ -54,39 +54,39 @@
     },
     {
       "name": "上海申花",
-      "played": 10,
+      "played": 11,
       "penalty": 10,
-      "basePts": 20,
-      "actual": 10,
+      "basePts": 21,
+      "actual": 11,
       "color": "#6b7280"
     }
   ],
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 10,
-      "wins": 9,
+      "played": 11,
+      "wins": 10,
       "draws": 1,
       "losses": 0,
-      "gf": 27,
+      "gf": 30,
       "ga": 9,
-      "gd": 18,
+      "gd": 21,
       "penalty": 0,
-      "gamePts": 28,
-      "actual": 28
+      "gamePts": 31,
+      "actual": 31
     },
     {
       "name": "重庆铜梁龙",
-      "played": 10,
+      "played": 11,
       "wins": 5,
-      "draws": 4,
+      "draws": 5,
       "losses": 1,
-      "gf": 13,
-      "ga": 8,
+      "gf": 15,
+      "ga": 10,
       "gd": 5,
       "penalty": 0,
-      "gamePts": 19,
-      "actual": 19
+      "gamePts": 20,
+      "actual": 20
     },
     {
       "name": "大连英博",
@@ -115,6 +115,19 @@
       "actual": 13
     },
     {
+      "name": "上海申花",
+      "played": 11,
+      "wins": 6,
+      "draws": 3,
+      "losses": 2,
+      "gf": 24,
+      "ga": 17,
+      "gd": 7,
+      "penalty": 10,
+      "gamePts": 21,
+      "actual": 11
+    },
+    {
       "name": "山东泰山",
       "played": 10,
       "wins": 5,
@@ -126,19 +139,6 @@
       "penalty": 6,
       "gamePts": 17,
       "actual": 11
-    },
-    {
-      "name": "上海申花",
-      "played": 10,
-      "wins": 6,
-      "draws": 2,
-      "losses": 2,
-      "gf": 22,
-      "ga": 15,
-      "gd": 7,
-      "penalty": 10,
-      "gamePts": 20,
-      "actual": 10
     },
     {
       "name": "深圳新鹏城",
@@ -233,13 +233,13 @@
     },
     {
       "name": "河南",
-      "played": 10,
+      "played": 11,
       "wins": 3,
       "draws": 3,
-      "losses": 4,
+      "losses": 5,
       "gf": 11,
-      "ga": 11,
-      "gd": 0,
+      "ga": 14,
+      "gd": -3,
       "penalty": 6,
       "gamePts": 12,
       "actual": 6
