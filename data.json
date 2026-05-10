@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-10 14:01 UTC",
+  "updated": "2026-05-10 15:31 UTC",
   "nextMatch": {
     "opponent": "上海海港",
     "kickoffBjt": "2026-05-15 19:35",
@@ -90,13 +90,13 @@
     },
     {
       "name": "大连英博",
-      "played": 10,
+      "played": 11,
       "wins": 6,
       "draws": 0,
-      "losses": 4,
-      "gf": 15,
-      "ga": 17,
-      "gd": -2,
+      "losses": 5,
+      "gf": 16,
+      "ga": 20,
+      "gd": -4,
       "penalty": 0,
       "gamePts": 18,
       "actual": 18
@@ -139,6 +139,19 @@
       "penalty": 10,
       "gamePts": 21,
       "actual": 11
+    },
+    {
+      "name": "青岛海牛",
+      "played": 11,
+      "wins": 5,
+      "draws": 2,
+      "losses": 4,
+      "gf": 17,
+      "ga": 15,
+      "gd": 2,
+      "penalty": 7,
+      "gamePts": 17,
+      "actual": 10
     },
     {
       "name": "浙江",
@@ -203,19 +216,6 @@
       "gd": 2,
       "penalty": 5,
       "gamePts": 12,
-      "actual": 7
-    },
-    {
-      "name": "青岛海牛",
-      "played": 10,
-      "wins": 4,
-      "draws": 2,
-      "losses": 4,
-      "gf": 14,
-      "ga": 14,
-      "gd": 0,
-      "penalty": 7,
-      "gamePts": 14,
       "actual": 7
     },
     {
