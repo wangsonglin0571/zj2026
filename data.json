@@ -1,22 +1,22 @@
 {
-  "updated": "2026-05-10 12:10 UTC",
+  "updated": "2026-05-10 14:00 UTC",
   "nextMatch": {
-    "opponent": "天津津门虎",
-    "kickoffBjt": "2026-05-10 19:35",
-    "note": "中超第11轮",
+    "opponent": "上海海港",
+    "kickoffBjt": "2026-05-15 19:35",
+    "note": "中超第12轮",
     "venue": "黄龙体育中心体育场",
     "location": "浙江杭州"
   },
   "zhejiang": {
-    "played": 10,
+    "played": 11,
     "wins": 4,
-    "draws": 2,
+    "draws": 3,
     "losses": 4,
-    "gf": 11,
-    "ga": 14,
+    "gf": 12,
+    "ga": 15,
     "gd": -3,
-    "gamePts": 14,
-    "actual": 9,
+    "gamePts": 15,
+    "actual": 10,
     "penalty": 5
   },
   "rivals": [
@@ -30,18 +30,18 @@
     },
     {
       "name": "北京国安",
-      "played": 10,
+      "played": 11,
       "penalty": 5,
-      "basePts": 12,
-      "actual": 7,
+      "basePts": 13,
+      "actual": 8,
       "color": "#a855f7"
     },
     {
       "name": "上海海港",
-      "played": 10,
+      "played": 11,
       "penalty": 5,
-      "basePts": 11,
-      "actual": 6,
+      "basePts": 12,
+      "actual": 7,
       "color": "#06b6d4"
     },
     {
@@ -102,6 +102,19 @@
       "actual": 18
     },
     {
+      "name": "云南玉昆",
+      "played": 11,
+      "wins": 5,
+      "draws": 1,
+      "losses": 5,
+      "gf": 23,
+      "ga": 20,
+      "gd": 3,
+      "penalty": 0,
+      "gamePts": 16,
+      "actual": 16
+    },
+    {
       "name": "山东泰山",
       "played": 11,
       "wins": 6,
@@ -115,19 +128,6 @@
       "actual": 14
     },
     {
-      "name": "云南玉昆",
-      "played": 10,
-      "wins": 4,
-      "draws": 1,
-      "losses": 5,
-      "gf": 21,
-      "ga": 19,
-      "gd": 2,
-      "penalty": 0,
-      "gamePts": 13,
-      "actual": 13
-    },
-    {
       "name": "上海申花",
       "played": 11,
       "wins": 6,
@@ -139,6 +139,19 @@
       "penalty": 10,
       "gamePts": 21,
       "actual": 11
+    },
+    {
+      "name": "浙江",
+      "played": 11,
+      "wins": 4,
+      "draws": 3,
+      "losses": 4,
+      "gf": 12,
+      "ga": 15,
+      "gd": -3,
+      "penalty": 5,
+      "gamePts": 15,
+      "actual": 10
     },
     {
       "name": "深圳新鹏城",
@@ -167,27 +180,27 @@
       "actual": 10
     },
     {
-      "name": "浙江",
-      "played": 10,
-      "wins": 4,
-      "draws": 2,
+      "name": "北京国安",
+      "played": 11,
+      "wins": 3,
+      "draws": 4,
       "losses": 4,
-      "gf": 11,
-      "ga": 14,
-      "gd": -3,
+      "gf": 17,
+      "ga": 16,
+      "gd": 1,
       "penalty": 5,
-      "gamePts": 14,
-      "actual": 9
+      "gamePts": 13,
+      "actual": 8
     },
     {
-      "name": "北京国安",
-      "played": 10,
+      "name": "上海海港",
+      "played": 11,
       "wins": 3,
       "draws": 3,
-      "losses": 4,
-      "gf": 15,
-      "ga": 14,
-      "gd": 1,
+      "losses": 5,
+      "gf": 17,
+      "ga": 15,
+      "gd": 2,
       "penalty": 5,
       "gamePts": 12,
       "actual": 7
@@ -207,29 +220,16 @@
     },
     {
       "name": "辽宁铁人",
-      "played": 10,
+      "played": 11,
       "wins": 2,
       "draws": 1,
-      "losses": 7,
-      "gf": 7,
-      "ga": 16,
-      "gd": -9,
+      "losses": 8,
+      "gf": 8,
+      "ga": 18,
+      "gd": -10,
       "penalty": 0,
       "gamePts": 7,
       "actual": 7
-    },
-    {
-      "name": "上海海港",
-      "played": 10,
-      "wins": 3,
-      "draws": 2,
-      "losses": 5,
-      "gf": 15,
-      "ga": 13,
-      "gd": 2,
-      "penalty": 5,
-      "gamePts": 11,
-      "actual": 6
     },
     {
       "name": "河南",
@@ -259,16 +259,16 @@
     },
     {
       "name": "天津津门虎",
-      "played": 10,
+      "played": 11,
       "wins": 2,
-      "draws": 4,
+      "draws": 5,
       "losses": 4,
-      "gf": 14,
-      "ga": 15,
+      "gf": 15,
+      "ga": 16,
       "gd": -1,
       "penalty": 10,
-      "gamePts": 10,
-      "actual": 0
+      "gamePts": 11,
+      "actual": 1
     }
   ],
   "matches": [
@@ -388,8 +388,8 @@
       "kickoffBjt": "2026-05-10 19:35",
       "home": "浙江",
       "away": "天津津门虎",
-      "score": "-",
-      "finished": false,
+      "score": "1-1",
+      "finished": true,
       "opponent": "天津津门虎",
       "isHome": true
     },
