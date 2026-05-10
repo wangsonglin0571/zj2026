@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-10 11:02 UTC",
+  "updated": "2026-05-10 12:10 UTC",
   "nextMatch": {
     "opponent": "天津津门虎",
     "kickoffBjt": "2026-05-10 19:35",
@@ -46,10 +46,10 @@
     },
     {
       "name": "山东泰山",
-      "played": 10,
+      "played": 11,
       "penalty": 6,
-      "basePts": 17,
-      "actual": 11,
+      "basePts": 20,
+      "actual": 14,
       "color": "#eab308"
     },
     {
@@ -102,6 +102,19 @@
       "actual": 18
     },
     {
+      "name": "山东泰山",
+      "played": 11,
+      "wins": 6,
+      "draws": 2,
+      "losses": 3,
+      "gf": 18,
+      "ga": 16,
+      "gd": 2,
+      "penalty": 6,
+      "gamePts": 20,
+      "actual": 14
+    },
+    {
       "name": "云南玉昆",
       "played": 10,
       "wins": 4,
@@ -128,27 +141,27 @@
       "actual": 11
     },
     {
-      "name": "山东泰山",
-      "played": 10,
-      "wins": 5,
-      "draws": 2,
-      "losses": 3,
-      "gf": 16,
-      "ga": 15,
-      "gd": 1,
-      "penalty": 6,
-      "gamePts": 17,
-      "actual": 11
-    },
-    {
       "name": "深圳新鹏城",
-      "played": 10,
+      "played": 11,
       "wins": 3,
       "draws": 1,
-      "losses": 6,
-      "gf": 13,
-      "ga": 18,
-      "gd": -5,
+      "losses": 7,
+      "gf": 14,
+      "ga": 20,
+      "gd": -6,
+      "penalty": 0,
+      "gamePts": 10,
+      "actual": 10
+    },
+    {
+      "name": "青岛西海岸",
+      "played": 11,
+      "wins": 1,
+      "draws": 7,
+      "losses": 3,
+      "gf": 8,
+      "ga": 16,
+      "gd": -8,
       "penalty": 0,
       "gamePts": 10,
       "actual": 10
@@ -164,19 +177,6 @@
       "gd": -3,
       "penalty": 5,
       "gamePts": 14,
-      "actual": 9
-    },
-    {
-      "name": "青岛西海岸",
-      "played": 10,
-      "wins": 1,
-      "draws": 6,
-      "losses": 3,
-      "gf": 7,
-      "ga": 15,
-      "gd": -8,
-      "penalty": 0,
-      "gamePts": 9,
       "actual": 9
     },
     {
@@ -246,16 +246,16 @@
     },
     {
       "name": "武汉三镇",
-      "played": 10,
+      "played": 11,
       "wins": 2,
-      "draws": 2,
+      "draws": 3,
       "losses": 6,
-      "gf": 13,
-      "ga": 21,
+      "gf": 14,
+      "ga": 22,
       "gd": -8,
       "penalty": 5,
-      "gamePts": 8,
-      "actual": 3
+      "gamePts": 9,
+      "actual": 4
     },
     {
       "name": "天津津门虎",
