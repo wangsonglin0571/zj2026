@@ -26,6 +26,28 @@ ZHEJIANG_HOME = {
     "venue": "黄龙体育中心体育场",
     "location": "浙江杭州",
 }
+
+# 球球炮赛程 API 只给主客队和时间，不给球场；下一场如果是客场，
+# 不能沿用上一场/旧 data.json 的黄龙信息。这里维护常用主场映射，
+# 未覆盖时至少显示“<主队>主场”，避免错误显示为浙江主场。
+HOME_VENUES = {
+    "浙江": ZHEJIANG_HOME,
+    "上海海港": {"venue": "上汽浦东足球场", "location": "上海浦东"},
+    "上海申花": {"venue": "上海体育场", "location": "上海"},
+    "山东泰山": {"venue": "济南奥体中心体育场", "location": "山东济南"},
+    "北京国安": {"venue": "北京工人体育场", "location": "北京"},
+    "成都蓉城": {"venue": "凤凰山体育公园专业足球场", "location": "四川成都"},
+    "深圳新鹏城": {"venue": "深圳市体育中心体育场", "location": "广东深圳"},
+    "天津津门虎": {"venue": "天津泰达足球场", "location": "天津"},
+    "河南": {"venue": "郑州航海体育场", "location": "河南郑州"},
+    "大连英博": {"venue": "大连梭鱼湾足球场", "location": "辽宁大连"},
+    "青岛西海岸": {"venue": "青岛西海岸大学城体育场", "location": "山东青岛"},
+    "青岛海牛": {"venue": "青岛青春足球场", "location": "山东青岛"},
+    "武汉三镇": {"venue": "武汉体育中心体育场", "location": "湖北武汉"},
+    "云南玉昆": {"venue": "玉溪高原体育运动中心体育场", "location": "云南玉溪"},
+    "重庆铜梁龙": {"venue": "重庆铜梁龙体育场", "location": "重庆"},
+    "辽宁铁人": {"venue": "沈阳奥体中心体育场", "location": "辽宁沈阳"},
+}
 BEIJING = timezone(timedelta(hours=8))
 
 # 竞争对手（用于排名跟踪）
@@ -158,11 +180,14 @@ def parse_schedule(api_data: dict, teams: list) -> dict:
                             "kickoffBjt": kickoff_bjt.strip(),
                             "note": f"中超第{round_idx}轮",
                         }
-                        if home == "浙江":
-                            nm.update(ZHEJIANG_HOME)
-                        else:
-                            nm["venue"] = ""
-                            nm["location"] = ""
+                        nm["home"] = home
+                        nm["away"] = away
+                        nm["isHome"] = (home == "浙江")
+                        venue_info = HOME_VENUES.get(home, {
+                            "venue": f"{home}主场",
+                            "location": home,
+                        })
+                        nm.update(venue_info)
                         next_match = nm
 
     # 所有对手的 played（从赛程统计）
@@ -245,12 +270,19 @@ def collect_data():
     # 5) 组装输出
     old_data = load_old_data()
     next_match = schedule_info["next_match"]
-    # 保留旧 venue/location 数据（如果新数据为空）
+    # 兼容旧 data.json：只有当仍是同一场比赛时，才回填旧 venue/location。
+    # 如果下一场已从主场变成客场，绝不能把上一场黄龙信息带过去。
     old_next = old_data.get("nextMatch", {})
-    if not next_match.get("venue") and old_next.get("venue"):
-        next_match["venue"] = old_next["venue"]
-    if not next_match.get("location") and old_next.get("location"):
-        next_match["location"] = old_next["location"]
+    same_next_match = (
+        old_next.get("opponent") == next_match.get("opponent")
+        and old_next.get("kickoffBjt") == next_match.get("kickoffBjt")
+        and old_next.get("isHome") == next_match.get("isHome")
+    )
+    if same_next_match:
+        if not next_match.get("venue") and old_next.get("venue"):
+            next_match["venue"] = old_next["venue"]
+        if not next_match.get("location") and old_next.get("location"):
+            next_match["location"] = old_next["location"]
 
     return {
         "updated":   time.strftime("%Y-%m-%d %H:%M UTC", time.gmtime()),
@@ -282,7 +314,9 @@ def print_summary(data, prefix=""):
     zj = data["zhejiang"]
     next_match = data["nextMatch"]
     print(f"{prefix}浙江: 比赛积分{zj['gamePts']} 实际{zj['actual']:+d}")
-    print(f"{prefix}下一场: {next_match['kickoffBjt']} 浙江 vs {next_match['opponent']}")
+    home = next_match.get("home", "浙江" if next_match.get("isHome", True) else next_match.get("opponent", "待定"))
+    away = next_match.get("away", next_match.get("opponent", "待定") if next_match.get("isHome", True) else "浙江")
+    print(f"{prefix}下一场: {next_match['kickoffBjt']} {home} vs {away}")
     for r in data["rivals"]:
         print(f"{prefix}{r['name']}: 已赛{r['played']}轮 {r['actual']:+d}分")
     print(f"{prefix}赛程: 共 {len(data.get('matches', []))} 场")

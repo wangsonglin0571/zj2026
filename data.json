@@ -1,11 +1,14 @@
 {
-  "updated": "2026-05-12 15:23 UTC",
+  "updated": "2026-05-12 16:27 UTC",
   "nextMatch": {
     "opponent": "上海海港",
     "kickoffBjt": "2026-05-15 19:35",
     "note": "中超第12轮",
-    "venue": "黄龙体育中心体育场",
-    "location": "浙江杭州"
+    "home": "上海海港",
+    "away": "浙江",
+    "isHome": false,
+    "venue": "上汽浦东足球场",
+    "location": "上海浦东"
   },
   "zhejiang": {
     "played": 11,
