@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-16 12:38 UTC",
+  "updated": "2026-05-16 14:00 UTC",
   "nextMatch": {
     "opponent": "山东泰山",
     "kickoffBjt": "2026-05-20 20:00",
@@ -49,15 +49,15 @@
     },
     {
       "name": "山东泰山",
-      "played": 11,
+      "played": 12,
       "penalty": 6,
-      "basePts": 20,
-      "actual": 14,
+      "basePts": 23,
+      "actual": 17,
       "color": "#eab308"
     },
     {
       "name": "上海申花",
-      "played": 11,
+      "played": 12,
       "penalty": 10,
       "basePts": 21,
       "actual": 11,
@@ -80,16 +80,29 @@
     },
     {
       "name": "重庆铜梁龙",
-      "played": 11,
+      "played": 12,
       "wins": 5,
       "draws": 5,
-      "losses": 1,
-      "gf": 15,
-      "ga": 10,
-      "gd": 5,
+      "losses": 2,
+      "gf": 16,
+      "ga": 13,
+      "gd": 3,
       "penalty": 0,
       "gamePts": 20,
       "actual": 20
+    },
+    {
+      "name": "云南玉昆",
+      "played": 12,
+      "wins": 6,
+      "draws": 1,
+      "losses": 5,
+      "gf": 24,
+      "ga": 20,
+      "gd": 4,
+      "penalty": 0,
+      "gamePts": 19,
+      "actual": 19
     },
     {
       "name": "大连英博",
@@ -105,30 +118,17 @@
       "actual": 18
     },
     {
-      "name": "云南玉昆",
-      "played": 11,
-      "wins": 5,
-      "draws": 1,
-      "losses": 5,
-      "gf": 23,
-      "ga": 20,
-      "gd": 3,
-      "penalty": 0,
-      "gamePts": 16,
-      "actual": 16
-    },
-    {
       "name": "山东泰山",
-      "played": 11,
-      "wins": 6,
+      "played": 12,
+      "wins": 7,
       "draws": 2,
       "losses": 3,
-      "gf": 18,
-      "ga": 16,
-      "gd": 2,
+      "gf": 21,
+      "ga": 17,
+      "gd": 4,
       "penalty": 6,
-      "gamePts": 20,
-      "actual": 14
+      "gamePts": 23,
+      "actual": 17
     },
     {
       "name": "青岛西海岸",
@@ -145,13 +145,13 @@
     },
     {
       "name": "上海申花",
-      "played": 11,
+      "played": 12,
       "wins": 6,
       "draws": 3,
-      "losses": 2,
+      "losses": 3,
       "gf": 24,
-      "ga": 17,
-      "gd": 7,
+      "ga": 18,
+      "gd": 6,
       "penalty": 10,
       "gamePts": 21,
       "actual": 11
@@ -236,29 +236,29 @@
     },
     {
       "name": "辽宁铁人",
-      "played": 11,
+      "played": 12,
       "wins": 2,
-      "draws": 1,
+      "draws": 2,
       "losses": 8,
-      "gf": 8,
-      "ga": 18,
+      "gf": 10,
+      "ga": 20,
       "gd": -10,
       "penalty": 0,
-      "gamePts": 7,
-      "actual": 7
+      "gamePts": 8,
+      "actual": 8
     },
     {
       "name": "武汉三镇",
-      "played": 11,
+      "played": 12,
       "wins": 2,
-      "draws": 3,
+      "draws": 4,
       "losses": 6,
-      "gf": 14,
-      "ga": 22,
+      "gf": 16,
+      "ga": 24,
       "gd": -8,
       "penalty": 5,
-      "gamePts": 9,
-      "actual": 4
+      "gamePts": 10,
+      "actual": 5
     },
     {
       "name": "天津津门虎",
