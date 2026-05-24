@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-24 14:00 UTC",
+  "updated": "2026-05-24 14:27 UTC",
   "nextMatch": {
     "opponent": "河南",
     "kickoffBjt": "2026-05-30 19:00",
@@ -57,7 +57,7 @@
     },
     {
       "name": "上海申花",
-      "played": 13,
+      "played": 14,
       "penalty": 10,
       "basePts": 22,
       "actual": 12,
@@ -183,14 +183,27 @@
       "actual": 14
     },
     {
+      "name": "深圳新鹏城",
+      "played": 14,
+      "wins": 4,
+      "draws": 2,
+      "losses": 8,
+      "gf": 17,
+      "ga": 23,
+      "gd": -6,
+      "penalty": 0,
+      "gamePts": 14,
+      "actual": 14
+    },
+    {
       "name": "上海申花",
-      "played": 13,
+      "played": 14,
       "wins": 6,
       "draws": 4,
-      "losses": 3,
-      "gf": 26,
-      "ga": 20,
-      "gd": 6,
+      "losses": 4,
+      "gf": 27,
+      "ga": 22,
+      "gd": 5,
       "penalty": 10,
       "gamePts": 22,
       "actual": 12
@@ -220,19 +233,6 @@
       "penalty": 5,
       "gamePts": 17,
       "actual": 12
-    },
-    {
-      "name": "深圳新鹏城",
-      "played": 13,
-      "wins": 3,
-      "draws": 2,
-      "losses": 8,
-      "gf": 15,
-      "ga": 22,
-      "gd": -7,
-      "penalty": 0,
-      "gamePts": 11,
-      "actual": 11
     },
     {
       "name": "青岛海牛",
