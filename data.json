@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-24 06:38 UTC",
+  "updated": "2026-05-24 11:19 UTC",
   "nextMatch": {
     "opponent": "辽宁铁人",
     "kickoffBjt": "2026-05-24 19:35",
@@ -79,6 +79,19 @@
       "actual": 34
     },
     {
+      "name": "重庆铜梁龙",
+      "played": 14,
+      "wins": 6,
+      "draws": 6,
+      "losses": 2,
+      "gf": 17,
+      "ga": 13,
+      "gd": 4,
+      "penalty": 0,
+      "gamePts": 24,
+      "actual": 24
+    },
+    {
       "name": "大连英博",
       "played": 14,
       "wins": 7,
@@ -90,19 +103,6 @@
       "penalty": 0,
       "gamePts": 22,
       "actual": 22
-    },
-    {
-      "name": "重庆铜梁龙",
-      "played": 13,
-      "wins": 5,
-      "draws": 6,
-      "losses": 2,
-      "gf": 16,
-      "ga": 13,
-      "gd": 3,
-      "penalty": 0,
-      "gamePts": 21,
-      "actual": 21
     },
     {
       "name": "云南玉昆",
@@ -236,13 +236,13 @@
     },
     {
       "name": "青岛海牛",
-      "played": 13,
+      "played": 14,
       "wins": 5,
       "draws": 2,
-      "losses": 6,
+      "losses": 7,
       "gf": 20,
-      "ga": 21,
-      "gd": -1,
+      "ga": 22,
+      "gd": -2,
       "penalty": 7,
       "gamePts": 17,
       "actual": 10
