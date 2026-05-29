@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-29 12:49 UTC",
+  "updated": "2026-05-29 14:00 UTC",
   "nextMatch": {
     "opponent": "河南",
     "kickoffBjt": "2026-05-30 19:00",
@@ -41,7 +41,7 @@
     },
     {
       "name": "上海海港",
-      "played": 14,
+      "played": 15,
       "penalty": 5,
       "basePts": 17,
       "actual": 12,
@@ -131,6 +131,19 @@
       "actual": 18
     },
     {
+      "name": "辽宁铁人",
+      "played": 15,
+      "wins": 5,
+      "draws": 2,
+      "losses": 8,
+      "gf": 20,
+      "ga": 23,
+      "gd": -3,
+      "penalty": 0,
+      "gamePts": 17,
+      "actual": 17
+    },
+    {
       "name": "青岛西海岸",
       "played": 14,
       "wins": 3,
@@ -155,19 +168,6 @@
       "penalty": 6,
       "gamePts": 21,
       "actual": 15
-    },
-    {
-      "name": "辽宁铁人",
-      "played": 14,
-      "wins": 4,
-      "draws": 2,
-      "losses": 8,
-      "gf": 17,
-      "ga": 21,
-      "gd": -4,
-      "penalty": 0,
-      "gamePts": 14,
-      "actual": 14
     },
     {
       "name": "浙江",
@@ -210,13 +210,13 @@
     },
     {
       "name": "上海海港",
-      "played": 14,
+      "played": 15,
       "wins": 4,
       "draws": 5,
-      "losses": 5,
-      "gf": 21,
-      "ga": 18,
-      "gd": 3,
+      "losses": 6,
+      "gf": 23,
+      "ga": 21,
+      "gd": 2,
       "penalty": 5,
       "gamePts": 17,
       "actual": 12
