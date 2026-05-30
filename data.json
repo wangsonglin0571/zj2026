@@ -1,5 +1,5 @@
 {
-  "updated": "2026-05-30 11:25 UTC",
+  "updated": "2026-05-30 12:47 UTC",
   "nextMatch": {
     "opponent": "河南",
     "kickoffBjt": "2026-05-30 19:00",
@@ -57,10 +57,10 @@
     },
     {
       "name": "上海申花",
-      "played": 14,
+      "played": 15,
       "penalty": 10,
-      "basePts": 22,
-      "actual": 12,
+      "basePts": 23,
+      "actual": 13,
       "color": "#6b7280"
     }
   ],
@@ -131,6 +131,19 @@
       "actual": 18
     },
     {
+      "name": "青岛西海岸",
+      "played": 15,
+      "wins": 3,
+      "draws": 9,
+      "losses": 3,
+      "gf": 17,
+      "ga": 23,
+      "gd": -6,
+      "penalty": 0,
+      "gamePts": 18,
+      "actual": 18
+    },
+    {
       "name": "辽宁铁人",
       "played": 15,
       "wins": 5,
@@ -139,19 +152,6 @@
       "gf": 20,
       "ga": 23,
       "gd": -3,
-      "penalty": 0,
-      "gamePts": 17,
-      "actual": 17
-    },
-    {
-      "name": "青岛西海岸",
-      "played": 14,
-      "wins": 3,
-      "draws": 8,
-      "losses": 3,
-      "gf": 15,
-      "ga": 21,
-      "gd": -6,
       "penalty": 0,
       "gamePts": 17,
       "actual": 17
@@ -197,16 +197,16 @@
     },
     {
       "name": "上海申花",
-      "played": 14,
+      "played": 15,
       "wins": 6,
-      "draws": 4,
+      "draws": 5,
       "losses": 4,
-      "gf": 27,
-      "ga": 22,
+      "gf": 29,
+      "ga": 24,
       "gd": 5,
       "penalty": 10,
-      "gamePts": 22,
-      "actual": 12
+      "gamePts": 23,
+      "actual": 13
     },
     {
       "name": "上海海港",
