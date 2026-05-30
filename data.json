@@ -1,34 +1,34 @@
 {
-  "updated": "2026-05-30 12:47 UTC",
+  "updated": "2026-05-30 14:00 UTC",
   "nextMatch": {
-    "opponent": "河南",
-    "kickoffBjt": "2026-05-30 19:00",
-    "note": "中超第15轮",
-    "home": "河南",
+    "opponent": "青岛西海岸",
+    "kickoffBjt": "2026-06-28 18:00",
+    "note": "中超第16轮",
+    "home": "青岛西海岸",
     "away": "浙江",
     "isHome": false,
-    "venue": "郑州航海体育场",
-    "location": "河南郑州"
+    "venue": "青岛西海岸大学城体育场",
+    "location": "山东青岛"
   },
   "zhejiang": {
-    "played": 14,
-    "wins": 5,
+    "played": 15,
+    "wins": 6,
     "draws": 4,
     "losses": 5,
-    "gf": 18,
+    "gf": 20,
     "ga": 23,
-    "gd": -5,
-    "gamePts": 19,
-    "actual": 14,
+    "gd": -3,
+    "gamePts": 22,
+    "actual": 17,
     "penalty": 5
   },
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 14,
+      "played": 15,
       "penalty": 0,
-      "basePts": 34,
-      "actual": 34,
+      "basePts": 37,
+      "actual": 37,
       "color": "#3b82f6"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "name": "山东泰山",
-      "played": 14,
+      "played": 15,
       "penalty": 6,
       "basePts": 24,
       "actual": 18,
@@ -67,16 +67,16 @@
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 14,
-      "wins": 11,
+      "played": 15,
+      "wins": 12,
       "draws": 1,
       "losses": 2,
-      "gf": 32,
+      "gf": 33,
       "ga": 13,
-      "gd": 19,
+      "gd": 20,
       "penalty": 0,
-      "gamePts": 34,
-      "actual": 34
+      "gamePts": 37,
+      "actual": 37
     },
     {
       "name": "重庆铜梁龙",
@@ -119,13 +119,13 @@
     },
     {
       "name": "山东泰山",
-      "played": 14,
+      "played": 15,
       "wins": 7,
       "draws": 3,
-      "losses": 4,
+      "losses": 5,
       "gf": 25,
-      "ga": 24,
-      "gd": 1,
+      "ga": 25,
+      "gd": 0,
       "penalty": 6,
       "gamePts": 24,
       "actual": 18
@@ -144,6 +144,19 @@
       "actual": 18
     },
     {
+      "name": "浙江",
+      "played": 15,
+      "wins": 6,
+      "draws": 4,
+      "losses": 5,
+      "gf": 20,
+      "ga": 23,
+      "gd": -3,
+      "penalty": 5,
+      "gamePts": 22,
+      "actual": 17
+    },
+    {
       "name": "辽宁铁人",
       "played": 15,
       "wins": 5,
@@ -158,29 +171,16 @@
     },
     {
       "name": "河南",
-      "played": 14,
+      "played": 15,
       "wins": 6,
       "draws": 3,
-      "losses": 5,
+      "losses": 6,
       "gf": 16,
-      "ga": 16,
-      "gd": 0,
+      "ga": 18,
+      "gd": -2,
       "penalty": 6,
       "gamePts": 21,
       "actual": 15
-    },
-    {
-      "name": "浙江",
-      "played": 14,
-      "wins": 5,
-      "draws": 4,
-      "losses": 5,
-      "gf": 18,
-      "ga": 23,
-      "gd": -5,
-      "penalty": 5,
-      "gamePts": 19,
-      "actual": 14
     },
     {
       "name": "深圳新鹏城",
@@ -435,8 +435,8 @@
       "kickoffBjt": "2026-05-30 19:00",
       "home": "河南",
       "away": "浙江",
-      "score": "-",
-      "finished": false,
+      "score": "0-2",
+      "finished": true,
       "opponent": "河南",
       "isHome": false
     },
