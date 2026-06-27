@@ -1,5 +1,5 @@
 {
-  "updated": "2026-06-27 13:53 UTC",
+  "updated": "2026-06-27 15:19 UTC",
   "nextMatch": {
     "opponent": "青岛西海岸",
     "kickoffBjt": "2026-06-28 18:00",
@@ -33,10 +33,10 @@
     },
     {
       "name": "北京国安",
-      "played": 15,
+      "played": 16,
       "penalty": 5,
-      "basePts": 20,
-      "actual": 15,
+      "basePts": 23,
+      "actual": 18,
       "color": "#a855f7"
     },
     {
@@ -80,16 +80,16 @@
     },
     {
       "name": "重庆铜梁龙",
-      "played": 15,
-      "wins": 6,
+      "played": 16,
+      "wins": 7,
       "draws": 6,
       "losses": 3,
-      "gf": 19,
+      "gf": 20,
       "ga": 16,
-      "gd": 3,
+      "gd": 4,
       "penalty": 0,
-      "gamePts": 24,
-      "actual": 24
+      "gamePts": 27,
+      "actual": 27
     },
     {
       "name": "大连英博",
@@ -129,6 +129,19 @@
       "penalty": 0,
       "gamePts": 21,
       "actual": 21
+    },
+    {
+      "name": "北京国安",
+      "played": 16,
+      "wins": 6,
+      "draws": 5,
+      "losses": 5,
+      "gf": 27,
+      "ga": 23,
+      "gd": 4,
+      "penalty": 5,
+      "gamePts": 23,
+      "actual": 18
     },
     {
       "name": "青岛西海岸",
@@ -181,19 +194,6 @@
       "penalty": 0,
       "gamePts": 17,
       "actual": 17
-    },
-    {
-      "name": "北京国安",
-      "played": 15,
-      "wins": 5,
-      "draws": 5,
-      "losses": 5,
-      "gf": 26,
-      "ga": 23,
-      "gd": 3,
-      "penalty": 5,
-      "gamePts": 20,
-      "actual": 15
     },
     {
       "name": "上海海港",
@@ -249,26 +249,26 @@
     },
     {
       "name": "武汉三镇",
-      "played": 15,
+      "played": 16,
       "wins": 2,
       "draws": 7,
-      "losses": 6,
+      "losses": 7,
       "gf": 22,
-      "ga": 30,
-      "gd": -8,
+      "ga": 31,
+      "gd": -9,
       "penalty": 5,
       "gamePts": 13,
       "actual": 8
     },
     {
       "name": "天津津门虎",
-      "played": 15,
+      "played": 16,
       "wins": 3,
       "draws": 6,
-      "losses": 6,
+      "losses": 7,
       "gf": 19,
-      "ga": 21,
-      "gd": -2,
+      "ga": 22,
+      "gd": -3,
       "penalty": 10,
       "gamePts": 15,
       "actual": 5
