@@ -1,23 +1,23 @@
 {
-  "updated": "2026-06-28 11:49 UTC",
+  "updated": "2026-06-28 13:59 UTC",
   "nextMatch": {
-    "opponent": "青岛西海岸",
-    "kickoffBjt": "2026-06-28 18:00",
-    "note": "中超第16轮",
-    "home": "青岛西海岸",
+    "opponent": "上海申花",
+    "kickoffBjt": "2026-07-05 19:35",
+    "note": "中超第17轮",
+    "home": "上海申花",
     "away": "浙江",
     "isHome": false,
-    "venue": "青岛西海岸大学城体育场",
-    "location": "山东青岛"
+    "venue": "上海体育场",
+    "location": "上海"
   },
   "zhejiang": {
-    "played": 15,
+    "played": 16,
     "wins": 6,
     "draws": 4,
-    "losses": 5,
-    "gf": 20,
-    "ga": 23,
-    "gd": -3,
+    "losses": 6,
+    "gf": 21,
+    "ga": 26,
+    "gd": -5,
     "gamePts": 22,
     "actual": 17,
     "penalty": 5
@@ -57,10 +57,10 @@
     },
     {
       "name": "上海申花",
-      "played": 15,
+      "played": 16,
       "penalty": 10,
-      "basePts": 23,
-      "actual": 13,
+      "basePts": 26,
+      "actual": 16,
       "color": "#6b7280"
     }
   ],
@@ -93,13 +93,13 @@
     },
     {
       "name": "大连英博",
-      "played": 15,
+      "played": 16,
       "wins": 7,
       "draws": 1,
-      "losses": 7,
-      "gf": 21,
-      "ga": 25,
-      "gd": -4,
+      "losses": 8,
+      "gf": 22,
+      "ga": 29,
+      "gd": -7,
       "penalty": 0,
       "gamePts": 22,
       "actual": 22
@@ -131,6 +131,19 @@
       "actual": 21
     },
     {
+      "name": "青岛西海岸",
+      "played": 16,
+      "wins": 4,
+      "draws": 9,
+      "losses": 3,
+      "gf": 20,
+      "ga": 24,
+      "gd": -4,
+      "penalty": 0,
+      "gamePts": 21,
+      "actual": 21
+    },
+    {
       "name": "北京国安",
       "played": 16,
       "wins": 6,
@@ -144,27 +157,14 @@
       "actual": 18
     },
     {
-      "name": "青岛西海岸",
-      "played": 15,
-      "wins": 3,
-      "draws": 9,
-      "losses": 3,
-      "gf": 17,
-      "ga": 23,
-      "gd": -6,
-      "penalty": 0,
-      "gamePts": 18,
-      "actual": 18
-    },
-    {
       "name": "浙江",
-      "played": 15,
+      "played": 16,
       "wins": 6,
       "draws": 4,
-      "losses": 5,
-      "gf": 20,
-      "ga": 23,
-      "gd": -3,
+      "losses": 6,
+      "gf": 21,
+      "ga": 26,
+      "gd": -5,
       "penalty": 5,
       "gamePts": 22,
       "actual": 17
@@ -196,6 +196,19 @@
       "actual": 17
     },
     {
+      "name": "上海申花",
+      "played": 16,
+      "wins": 7,
+      "draws": 5,
+      "losses": 4,
+      "gf": 33,
+      "ga": 25,
+      "gd": 8,
+      "penalty": 10,
+      "gamePts": 26,
+      "actual": 16
+    },
+    {
       "name": "上海海港",
       "played": 16,
       "wins": 5,
@@ -220,19 +233,6 @@
       "penalty": 6,
       "gamePts": 21,
       "actual": 15
-    },
-    {
-      "name": "上海申花",
-      "played": 15,
-      "wins": 6,
-      "draws": 5,
-      "losses": 4,
-      "gf": 29,
-      "ga": 24,
-      "gd": 5,
-      "penalty": 10,
-      "gamePts": 23,
-      "actual": 13
     },
     {
       "name": "青岛海牛",
@@ -446,8 +446,8 @@
       "kickoffBjt": "2026-06-28 18:00",
       "home": "青岛西海岸",
       "away": "浙江",
-      "score": "-",
-      "finished": false,
+      "score": "3-1",
+      "finished": true,
       "opponent": "青岛西海岸",
       "isHome": false
     },
