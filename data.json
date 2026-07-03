@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-03 12:11 UTC",
+  "updated": "2026-07-03 14:52 UTC",
   "nextMatch": {
     "opponent": "上海申花",
     "kickoffBjt": "2026-07-05 19:35",
@@ -92,6 +92,19 @@
       "actual": 27
     },
     {
+      "name": "云南玉昆",
+      "played": 17,
+      "wins": 7,
+      "draws": 3,
+      "losses": 7,
+      "gf": 31,
+      "ga": 29,
+      "gd": 2,
+      "penalty": 0,
+      "gamePts": 24,
+      "actual": 24
+    },
+    {
       "name": "大连英博",
       "played": 16,
       "wins": 7,
@@ -115,19 +128,6 @@
       "gd": 4,
       "penalty": 6,
       "gamePts": 27,
-      "actual": 21
-    },
-    {
-      "name": "云南玉昆",
-      "played": 16,
-      "wins": 6,
-      "draws": 3,
-      "losses": 7,
-      "gf": 29,
-      "ga": 28,
-      "gd": 1,
-      "penalty": 0,
-      "gamePts": 21,
       "actual": 21
     },
     {
@@ -223,13 +223,13 @@
     },
     {
       "name": "河南",
-      "played": 16,
+      "played": 17,
       "wins": 6,
       "draws": 3,
-      "losses": 7,
-      "gf": 17,
-      "ga": 20,
-      "gd": -3,
+      "losses": 8,
+      "gf": 18,
+      "ga": 22,
+      "gd": -4,
       "penalty": 6,
       "gamePts": 21,
       "actual": 15
