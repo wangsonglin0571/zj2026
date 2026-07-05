@@ -1,23 +1,23 @@
 {
-  "updated": "2026-07-05 11:37 UTC",
+  "updated": "2026-07-05 13:50 UTC",
   "nextMatch": {
-    "opponent": "上海申花",
-    "kickoffBjt": "2026-07-05 19:35",
-    "note": "中超第17轮",
-    "home": "上海申花",
-    "away": "浙江",
-    "isHome": false,
-    "venue": "上海体育场",
-    "location": "上海"
+    "opponent": "青岛海牛",
+    "kickoffBjt": "2026-07-11 19:00",
+    "note": "中超第18轮",
+    "home": "浙江",
+    "away": "青岛海牛",
+    "isHome": true,
+    "venue": "黄龙体育中心体育场",
+    "location": "浙江杭州"
   },
   "zhejiang": {
-    "played": 16,
+    "played": 17,
     "wins": 6,
     "draws": 4,
-    "losses": 6,
-    "gf": 21,
-    "ga": 26,
-    "gd": -5,
+    "losses": 7,
+    "gf": 23,
+    "ga": 29,
+    "gd": -6,
     "gamePts": 22,
     "actual": 17,
     "penalty": 5
@@ -25,10 +25,10 @@
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 16,
+      "played": 17,
       "penalty": 0,
-      "basePts": 40,
-      "actual": 40,
+      "basePts": 41,
+      "actual": 41,
       "color": "#3b82f6"
     },
     {
@@ -57,26 +57,26 @@
     },
     {
       "name": "上海申花",
-      "played": 16,
+      "played": 17,
       "penalty": 10,
-      "basePts": 26,
-      "actual": 16,
+      "basePts": 29,
+      "actual": 19,
       "color": "#6b7280"
     }
   ],
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 16,
+      "played": 17,
       "wins": 13,
-      "draws": 1,
+      "draws": 2,
       "losses": 2,
-      "gf": 36,
-      "ga": 15,
+      "gf": 37,
+      "ga": 16,
       "gd": 21,
       "penalty": 0,
-      "gamePts": 40,
-      "actual": 40
+      "gamePts": 41,
+      "actual": 41
     },
     {
       "name": "重庆铜梁龙",
@@ -170,14 +170,27 @@
       "actual": 20
     },
     {
+      "name": "上海申花",
+      "played": 17,
+      "wins": 8,
+      "draws": 5,
+      "losses": 4,
+      "gf": 36,
+      "ga": 27,
+      "gd": 9,
+      "penalty": 10,
+      "gamePts": 29,
+      "actual": 19
+    },
+    {
       "name": "浙江",
-      "played": 16,
+      "played": 17,
       "wins": 6,
       "draws": 4,
-      "losses": 6,
-      "gf": 21,
-      "ga": 26,
-      "gd": -5,
+      "losses": 7,
+      "gf": 23,
+      "ga": 29,
+      "gd": -6,
       "penalty": 5,
       "gamePts": 22,
       "actual": 17
@@ -194,19 +207,6 @@
       "penalty": 0,
       "gamePts": 17,
       "actual": 17
-    },
-    {
-      "name": "上海申花",
-      "played": 16,
-      "wins": 7,
-      "draws": 5,
-      "losses": 4,
-      "gf": 33,
-      "ga": 25,
-      "gd": 8,
-      "penalty": 10,
-      "gamePts": 26,
-      "actual": 16
     },
     {
       "name": "上海海港",
@@ -236,16 +236,16 @@
     },
     {
       "name": "青岛海牛",
-      "played": 16,
+      "played": 17,
       "wins": 6,
-      "draws": 2,
+      "draws": 3,
       "losses": 8,
-      "gf": 26,
-      "ga": 27,
+      "gf": 27,
+      "ga": 28,
       "gd": -1,
       "penalty": 7,
-      "gamePts": 20,
-      "actual": 13
+      "gamePts": 21,
+      "actual": 14
     },
     {
       "name": "天津津门虎",
@@ -457,8 +457,8 @@
       "kickoffBjt": "2026-07-05 19:35",
       "home": "上海申花",
       "away": "浙江",
-      "score": "-",
-      "finished": false,
+      "score": "3-2",
+      "finished": true,
       "opponent": "上海申花",
       "isHome": false
     },
