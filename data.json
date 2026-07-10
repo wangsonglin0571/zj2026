@@ -1,5 +1,5 @@
 {
-  "updated": "2026-07-10 12:28 UTC",
+  "updated": "2026-07-10 15:15 UTC",
   "nextMatch": {
     "opponent": "青岛海牛",
     "kickoffBjt": "2026-07-14 19:35",
@@ -49,10 +49,10 @@
     },
     {
       "name": "山东泰山",
-      "played": 17,
+      "played": 18,
       "penalty": 6,
-      "basePts": 27,
-      "actual": 21,
+      "basePts": 30,
+      "actual": 24,
       "color": "#eab308"
     },
     {
@@ -105,14 +105,27 @@
       "actual": 25
     },
     {
+      "name": "山东泰山",
+      "played": 18,
+      "wins": 9,
+      "draws": 3,
+      "losses": 6,
+      "gf": 34,
+      "ga": 31,
+      "gd": 3,
+      "penalty": 6,
+      "gamePts": 30,
+      "actual": 24
+    },
+    {
       "name": "云南玉昆",
-      "played": 17,
+      "played": 18,
       "wins": 7,
       "draws": 3,
-      "losses": 7,
-      "gf": 31,
-      "ga": 29,
-      "gd": 2,
+      "losses": 8,
+      "gf": 34,
+      "ga": 33,
+      "gd": 1,
       "penalty": 0,
       "gamePts": 24,
       "actual": 24
@@ -141,19 +154,6 @@
       "gd": 6,
       "penalty": 5,
       "gamePts": 26,
-      "actual": 21
-    },
-    {
-      "name": "山东泰山",
-      "played": 17,
-      "wins": 8,
-      "draws": 3,
-      "losses": 6,
-      "gf": 30,
-      "ga": 28,
-      "gd": 2,
-      "penalty": 6,
-      "gamePts": 27,
       "actual": 21
     },
     {
