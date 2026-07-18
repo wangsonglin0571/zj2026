@@ -1,25 +1,25 @@
 {
-  "updated": "2026-07-18 12:29 UTC",
+  "updated": "2026-07-18 14:02 UTC",
   "nextMatch": {
-    "opponent": "重庆铜梁龙",
-    "kickoffBjt": "2026-07-18 19:00",
-    "note": "中超第19轮",
-    "home": "重庆铜梁龙",
-    "away": "浙江",
-    "isHome": false,
-    "venue": "重庆铜梁龙体育场",
-    "location": "重庆"
+    "opponent": "大连英博",
+    "kickoffBjt": "2026-07-26 20:00",
+    "note": "中超第20轮",
+    "home": "浙江",
+    "away": "大连英博",
+    "isHome": true,
+    "venue": "黄龙体育中心体育场",
+    "location": "浙江杭州"
   },
   "zhejiang": {
-    "played": 18,
+    "played": 19,
     "wins": 7,
-    "draws": 4,
+    "draws": 5,
     "losses": 7,
-    "gf": 26,
-    "ga": 31,
+    "gf": 27,
+    "ga": 32,
     "gd": -5,
-    "gamePts": 25,
-    "actual": 20,
+    "gamePts": 26,
+    "actual": 21,
     "penalty": 5
   },
   "rivals": [
@@ -49,7 +49,7 @@
     },
     {
       "name": "山东泰山",
-      "played": 18,
+      "played": 19,
       "penalty": 6,
       "basePts": 30,
       "actual": 24,
@@ -80,13 +80,26 @@
     },
     {
       "name": "重庆铜梁龙",
-      "played": 18,
+      "played": 19,
       "wins": 7,
-      "draws": 7,
+      "draws": 8,
       "losses": 4,
-      "gf": 22,
-      "ga": 20,
+      "gf": 23,
+      "ga": 21,
       "gd": 2,
+      "penalty": 0,
+      "gamePts": 29,
+      "actual": 29
+    },
+    {
+      "name": "大连英博",
+      "played": 18,
+      "wins": 9,
+      "draws": 1,
+      "losses": 8,
+      "gf": 28,
+      "ga": 32,
+      "gd": -4,
       "penalty": 0,
       "gamePts": 28,
       "actual": 28
@@ -100,19 +113,6 @@
       "gf": 36,
       "ga": 35,
       "gd": 1,
-      "penalty": 0,
-      "gamePts": 25,
-      "actual": 25
-    },
-    {
-      "name": "大连英博",
-      "played": 17,
-      "wins": 8,
-      "draws": 1,
-      "losses": 8,
-      "gf": 25,
-      "ga": 31,
-      "gd": -6,
       "penalty": 0,
       "gamePts": 25,
       "actual": 25
@@ -132,13 +132,13 @@
     },
     {
       "name": "山东泰山",
-      "played": 18,
+      "played": 19,
       "wins": 9,
       "draws": 3,
-      "losses": 6,
-      "gf": 34,
-      "ga": 31,
-      "gd": 3,
+      "losses": 7,
+      "gf": 35,
+      "ga": 34,
+      "gd": 1,
       "penalty": 6,
       "gamePts": 30,
       "actual": 24
@@ -157,6 +157,19 @@
       "actual": 22
     },
     {
+      "name": "浙江",
+      "played": 19,
+      "wins": 7,
+      "draws": 5,
+      "losses": 7,
+      "gf": 27,
+      "ga": 32,
+      "gd": -5,
+      "penalty": 5,
+      "gamePts": 26,
+      "actual": 21
+    },
+    {
       "name": "辽宁铁人",
       "played": 18,
       "wins": 6,
@@ -170,27 +183,14 @@
       "actual": 21
     },
     {
-      "name": "浙江",
-      "played": 18,
-      "wins": 7,
-      "draws": 4,
-      "losses": 7,
-      "gf": 26,
-      "ga": 31,
-      "gd": -5,
-      "penalty": 5,
-      "gamePts": 25,
-      "actual": 20
-    },
-    {
       "name": "深圳新鹏城",
-      "played": 18,
+      "played": 19,
       "wins": 6,
       "draws": 2,
-      "losses": 10,
+      "losses": 11,
       "gf": 25,
-      "ga": 31,
-      "gd": -6,
+      "ga": 33,
+      "gd": -8,
       "penalty": 0,
       "gamePts": 20,
       "actual": 20
@@ -248,6 +248,19 @@
       "actual": 14
     },
     {
+      "name": "武汉三镇",
+      "played": 18,
+      "wins": 3,
+      "draws": 7,
+      "losses": 8,
+      "gf": 26,
+      "ga": 34,
+      "gd": -8,
+      "penalty": 5,
+      "gamePts": 16,
+      "actual": 11
+    },
+    {
       "name": "天津津门虎",
       "played": 17,
       "wins": 4,
@@ -258,19 +271,6 @@
       "gd": 0,
       "penalty": 10,
       "gamePts": 18,
-      "actual": 8
-    },
-    {
-      "name": "武汉三镇",
-      "played": 17,
-      "wins": 2,
-      "draws": 7,
-      "losses": 8,
-      "gf": 24,
-      "ga": 34,
-      "gd": -10,
-      "penalty": 5,
-      "gamePts": 13,
       "actual": 8
     }
   ],
@@ -479,8 +479,8 @@
       "kickoffBjt": "2026-07-18 19:00",
       "home": "重庆铜梁龙",
       "away": "浙江",
-      "score": "-",
-      "finished": false,
+      "score": "1-1",
+      "finished": true,
       "opponent": "重庆铜梁龙",
       "isHome": false
     },
