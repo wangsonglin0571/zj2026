@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-02 12:35 UTC",
+  "updated": "2026-08-02 14:38 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 19:35",
@@ -57,7 +57,7 @@
     },
     {
       "name": "上海申花",
-      "played": 19,
+      "played": 20,
       "penalty": 10,
       "basePts": 29,
       "actual": 19,
@@ -93,13 +93,13 @@
     },
     {
       "name": "重庆铜梁龙",
-      "played": 20,
+      "played": 21,
       "wins": 7,
       "draws": 8,
-      "losses": 5,
+      "losses": 6,
       "gf": 23,
-      "ga": 22,
-      "gd": 1,
+      "ga": 24,
+      "gd": -1,
       "penalty": 0,
       "gamePts": 29,
       "actual": 29
@@ -157,6 +157,19 @@
       "actual": 26
     },
     {
+      "name": "辽宁铁人",
+      "played": 20,
+      "wins": 7,
+      "draws": 3,
+      "losses": 10,
+      "gf": 28,
+      "ga": 32,
+      "gd": -4,
+      "penalty": 0,
+      "gamePts": 24,
+      "actual": 24
+    },
+    {
       "name": "浙江",
       "played": 21,
       "wins": 8,
@@ -170,6 +183,19 @@
       "actual": 24
     },
     {
+      "name": "深圳新鹏城",
+      "played": 21,
+      "wins": 7,
+      "draws": 2,
+      "losses": 12,
+      "gf": 30,
+      "ga": 37,
+      "gd": -7,
+      "penalty": 0,
+      "gamePts": 23,
+      "actual": 23
+    },
+    {
       "name": "河南",
       "played": 20,
       "wins": 8,
@@ -181,32 +207,6 @@
       "penalty": 6,
       "gamePts": 28,
       "actual": 22
-    },
-    {
-      "name": "辽宁铁人",
-      "played": 19,
-      "wins": 6,
-      "draws": 3,
-      "losses": 10,
-      "gf": 25,
-      "ga": 31,
-      "gd": -6,
-      "penalty": 0,
-      "gamePts": 21,
-      "actual": 21
-    },
-    {
-      "name": "深圳新鹏城",
-      "played": 20,
-      "wins": 6,
-      "draws": 2,
-      "losses": 12,
-      "gf": 28,
-      "ga": 37,
-      "gd": -9,
-      "penalty": 0,
-      "gamePts": 20,
-      "actual": 20
     },
     {
       "name": "上海海港",
@@ -223,13 +223,13 @@
     },
     {
       "name": "上海申花",
-      "played": 19,
+      "played": 20,
       "wins": 8,
       "draws": 5,
-      "losses": 6,
-      "gf": 36,
-      "ga": 31,
-      "gd": 5,
+      "losses": 7,
+      "gf": 37,
+      "ga": 34,
+      "gd": 3,
       "penalty": 10,
       "gamePts": 29,
       "actual": 19
