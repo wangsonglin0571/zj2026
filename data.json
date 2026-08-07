@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-07 13:14 UTC",
+  "updated": "2026-08-07 14:33 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 19:35",
@@ -33,10 +33,10 @@
     },
     {
       "name": "北京国安",
-      "played": 20,
+      "played": 21,
       "penalty": 5,
-      "basePts": 31,
-      "actual": 26,
+      "basePts": 34,
+      "actual": 29,
       "color": "#a855f7"
     },
     {
@@ -92,6 +92,19 @@
       "actual": 31
     },
     {
+      "name": "北京国安",
+      "played": 21,
+      "wins": 9,
+      "draws": 7,
+      "losses": 5,
+      "gf": 38,
+      "ga": 27,
+      "gd": 11,
+      "penalty": 5,
+      "gamePts": 34,
+      "actual": 29
+    },
+    {
       "name": "重庆铜梁龙",
       "played": 21,
       "wins": 7,
@@ -144,19 +157,6 @@
       "actual": 27
     },
     {
-      "name": "北京国安",
-      "played": 20,
-      "wins": 8,
-      "draws": 7,
-      "losses": 5,
-      "gf": 34,
-      "ga": 27,
-      "gd": 7,
-      "penalty": 5,
-      "gamePts": 31,
-      "actual": 26
-    },
-    {
       "name": "辽宁铁人",
       "played": 20,
       "wins": 7,
@@ -184,13 +184,13 @@
     },
     {
       "name": "深圳新鹏城",
-      "played": 21,
+      "played": 22,
       "wins": 7,
       "draws": 2,
-      "losses": 12,
+      "losses": 13,
       "gf": 30,
-      "ga": 37,
-      "gd": -7,
+      "ga": 41,
+      "gd": -11,
       "penalty": 0,
       "gamePts": 23,
       "actual": 23
