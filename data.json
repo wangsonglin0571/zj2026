@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08 11:33 UTC",
+  "updated": "2026-08-08 12:57 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 延期",
@@ -59,8 +59,8 @@
       "name": "上海申花",
       "played": 20,
       "penalty": 10,
-      "basePts": 29,
-      "actual": 19,
+      "basePts": 32,
+      "actual": 22,
       "color": "#6b7280"
     }
   ],
@@ -196,6 +196,19 @@
       "actual": 23
     },
     {
+      "name": "上海申花",
+      "played": 21,
+      "wins": 9,
+      "draws": 5,
+      "losses": 7,
+      "gf": 38,
+      "ga": 34,
+      "gd": 4,
+      "penalty": 10,
+      "gamePts": 32,
+      "actual": 22
+    },
+    {
       "name": "河南",
       "played": 20,
       "wins": 8,
@@ -219,19 +232,6 @@
       "gd": 3,
       "penalty": 5,
       "gamePts": 24,
-      "actual": 19
-    },
-    {
-      "name": "上海申花",
-      "played": 20,
-      "wins": 8,
-      "draws": 5,
-      "losses": 7,
-      "gf": 37,
-      "ga": 34,
-      "gd": 3,
-      "penalty": 10,
-      "gamePts": 29,
       "actual": 19
     },
     {
@@ -262,13 +262,13 @@
     },
     {
       "name": "青岛海牛",
-      "played": 21,
+      "played": 22,
       "wins": 6,
       "draws": 3,
-      "losses": 12,
+      "losses": 13,
       "gf": 30,
-      "ga": 40,
-      "gd": -10,
+      "ga": 41,
+      "gd": -11,
       "penalty": 7,
       "gamePts": 21,
       "actual": 14
