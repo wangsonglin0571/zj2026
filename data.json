@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08 13:50 UTC",
+  "updated": "2026-08-08 14:36 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 延期",
@@ -25,7 +25,7 @@
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 21,
+      "played": 22,
       "penalty": 0,
       "basePts": 45,
       "actual": 45,
@@ -67,13 +67,13 @@
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 21,
+      "played": 22,
       "wins": 13,
       "draws": 6,
-      "losses": 2,
+      "losses": 3,
       "gf": 42,
-      "ga": 21,
-      "gd": 21,
+      "ga": 22,
+      "gd": 20,
       "penalty": 0,
       "gamePts": 45,
       "actual": 45
@@ -90,6 +90,19 @@
       "penalty": 0,
       "gamePts": 32,
       "actual": 32
+    },
+    {
+      "name": "云南玉昆",
+      "played": 22,
+      "wins": 9,
+      "draws": 4,
+      "losses": 9,
+      "gf": 43,
+      "ga": 41,
+      "gd": 2,
+      "penalty": 0,
+      "gamePts": 31,
+      "actual": 31
     },
     {
       "name": "青岛西海岸",
@@ -129,19 +142,6 @@
       "penalty": 0,
       "gamePts": 29,
       "actual": 29
-    },
-    {
-      "name": "云南玉昆",
-      "played": 21,
-      "wins": 8,
-      "draws": 4,
-      "losses": 9,
-      "gf": 42,
-      "ga": 41,
-      "gd": 1,
-      "penalty": 0,
-      "gamePts": 28,
-      "actual": 28
     },
     {
       "name": "山东泰山",
