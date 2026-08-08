@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-08 12:57 UTC",
+  "updated": "2026-08-08 13:50 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 延期",
@@ -57,7 +57,7 @@
     },
     {
       "name": "上海申花",
-      "played": 20,
+      "played": 21,
       "penalty": 10,
       "basePts": 32,
       "actual": 22,
@@ -77,6 +77,19 @@
       "penalty": 0,
       "gamePts": 45,
       "actual": 45
+    },
+    {
+      "name": "大连英博",
+      "played": 21,
+      "wins": 10,
+      "draws": 2,
+      "losses": 9,
+      "gf": 32,
+      "ga": 36,
+      "gd": -4,
+      "penalty": 0,
+      "gamePts": 32,
+      "actual": 32
     },
     {
       "name": "青岛西海岸",
@@ -118,19 +131,6 @@
       "actual": 29
     },
     {
-      "name": "大连英博",
-      "played": 20,
-      "wins": 9,
-      "draws": 2,
-      "losses": 9,
-      "gf": 31,
-      "ga": 36,
-      "gd": -5,
-      "penalty": 0,
-      "gamePts": 29,
-      "actual": 29
-    },
-    {
       "name": "云南玉昆",
       "played": 21,
       "wins": 8,
@@ -157,19 +157,6 @@
       "actual": 27
     },
     {
-      "name": "辽宁铁人",
-      "played": 20,
-      "wins": 7,
-      "draws": 3,
-      "losses": 10,
-      "gf": 28,
-      "ga": 32,
-      "gd": -4,
-      "penalty": 0,
-      "gamePts": 24,
-      "actual": 24
-    },
-    {
       "name": "浙江",
       "played": 21,
       "wins": 8,
@@ -180,6 +167,19 @@
       "gd": -5,
       "penalty": 5,
       "gamePts": 29,
+      "actual": 24
+    },
+    {
+      "name": "辽宁铁人",
+      "played": 21,
+      "wins": 7,
+      "draws": 3,
+      "losses": 11,
+      "gf": 28,
+      "ga": 33,
+      "gd": -5,
+      "penalty": 0,
+      "gamePts": 24,
       "actual": 24
     },
     {
