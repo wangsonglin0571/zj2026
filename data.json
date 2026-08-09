@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-09 13:00 UTC",
+  "updated": "2026-08-09 13:54 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 延期",
@@ -41,10 +41,10 @@
     },
     {
       "name": "上海海港",
-      "played": 20,
+      "played": 21,
       "penalty": 5,
-      "basePts": 24,
-      "actual": 19,
+      "basePts": 27,
+      "actual": 22,
       "color": "#06b6d4"
     },
     {
@@ -132,13 +132,13 @@
     },
     {
       "name": "重庆铜梁龙",
-      "played": 21,
+      "played": 22,
       "wins": 7,
       "draws": 8,
-      "losses": 6,
-      "gf": 23,
-      "ga": 24,
-      "gd": -1,
+      "losses": 7,
+      "gf": 25,
+      "ga": 27,
+      "gd": -2,
       "penalty": 0,
       "gamePts": 29,
       "actual": 29
@@ -209,6 +209,19 @@
       "actual": 23
     },
     {
+      "name": "上海海港",
+      "played": 21,
+      "wins": 7,
+      "draws": 6,
+      "losses": 8,
+      "gf": 33,
+      "ga": 29,
+      "gd": 4,
+      "penalty": 5,
+      "gamePts": 27,
+      "actual": 22
+    },
+    {
       "name": "上海申花",
       "played": 21,
       "wins": 9,
@@ -220,19 +233,6 @@
       "penalty": 10,
       "gamePts": 32,
       "actual": 22
-    },
-    {
-      "name": "上海海港",
-      "played": 20,
-      "wins": 6,
-      "draws": 6,
-      "losses": 8,
-      "gf": 30,
-      "ga": 27,
-      "gd": 3,
-      "penalty": 5,
-      "gamePts": 24,
-      "actual": 19
     },
     {
       "name": "天津津门虎",
