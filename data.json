@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-15 13:33 UTC",
+  "updated": "2026-08-15 14:27 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 延期",
@@ -11,13 +11,13 @@
     "location": "浙江杭州"
   },
   "zhejiang": {
-    "played": 21,
+    "played": 22,
     "wins": 8,
     "draws": 5,
-    "losses": 8,
-    "gf": 31,
-    "ga": 36,
-    "gd": -5,
+    "losses": 9,
+    "gf": 33,
+    "ga": 39,
+    "gd": -6,
     "gamePts": 29,
     "actual": 24,
     "penalty": 5
@@ -25,15 +25,15 @@
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 22,
+      "played": 23,
       "penalty": 0,
-      "basePts": 45,
-      "actual": 45,
+      "basePts": 48,
+      "actual": 48,
       "color": "#3b82f6"
     },
     {
       "name": "北京国安",
-      "played": 21,
+      "played": 22,
       "penalty": 5,
       "basePts": 37,
       "actual": 32,
@@ -57,26 +57,39 @@
     },
     {
       "name": "上海申花",
-      "played": 21,
+      "played": 22,
       "penalty": 10,
-      "basePts": 32,
-      "actual": 22,
+      "basePts": 35,
+      "actual": 25,
       "color": "#6b7280"
     }
   ],
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 22,
-      "wins": 13,
+      "played": 23,
+      "wins": 14,
       "draws": 6,
       "losses": 3,
-      "gf": 42,
-      "ga": 22,
-      "gd": 20,
+      "gf": 45,
+      "ga": 24,
+      "gd": 21,
       "penalty": 0,
-      "gamePts": 45,
-      "actual": 45
+      "gamePts": 48,
+      "actual": 48
+    },
+    {
+      "name": "云南玉昆",
+      "played": 23,
+      "wins": 10,
+      "draws": 4,
+      "losses": 9,
+      "gf": 46,
+      "ga": 42,
+      "gd": 4,
+      "penalty": 0,
+      "gamePts": 34,
+      "actual": 34
     },
     {
       "name": "山东泰山",
@@ -119,29 +132,16 @@
     },
     {
       "name": "大连英博",
-      "played": 21,
+      "played": 22,
       "wins": 10,
       "draws": 2,
-      "losses": 9,
-      "gf": 32,
-      "ga": 36,
-      "gd": -4,
+      "losses": 10,
+      "gf": 33,
+      "ga": 39,
+      "gd": -6,
       "penalty": 0,
       "gamePts": 32,
       "actual": 32
-    },
-    {
-      "name": "云南玉昆",
-      "played": 22,
-      "wins": 9,
-      "draws": 4,
-      "losses": 9,
-      "gf": 43,
-      "ga": 41,
-      "gd": 2,
-      "penalty": 0,
-      "gamePts": 31,
-      "actual": 31
     },
     {
       "name": "重庆铜梁龙",
@@ -183,14 +183,27 @@
       "actual": 25
     },
     {
+      "name": "上海申花",
+      "played": 22,
+      "wins": 10,
+      "draws": 5,
+      "losses": 7,
+      "gf": 42,
+      "ga": 35,
+      "gd": 7,
+      "penalty": 10,
+      "gamePts": 35,
+      "actual": 25
+    },
+    {
       "name": "浙江",
-      "played": 21,
+      "played": 22,
       "wins": 8,
       "draws": 5,
-      "losses": 8,
-      "gf": 31,
-      "ga": 36,
-      "gd": -5,
+      "losses": 9,
+      "gf": 33,
+      "ga": 39,
+      "gd": -6,
       "penalty": 5,
       "gamePts": 29,
       "actual": 24
@@ -210,29 +223,16 @@
     },
     {
       "name": "河南",
-      "played": 21,
+      "played": 22,
       "wins": 8,
       "draws": 5,
-      "losses": 8,
-      "gf": 26,
-      "ga": 25,
-      "gd": 1,
+      "losses": 9,
+      "gf": 27,
+      "ga": 29,
+      "gd": -2,
       "penalty": 6,
       "gamePts": 29,
       "actual": 23
-    },
-    {
-      "name": "上海申花",
-      "played": 21,
-      "wins": 9,
-      "draws": 5,
-      "losses": 7,
-      "gf": 38,
-      "ga": 34,
-      "gd": 4,
-      "penalty": 10,
-      "gamePts": 32,
-      "actual": 22
     },
     {
       "name": "天津津门虎",
@@ -523,8 +523,8 @@
       "kickoffBjt": "2026-08-15 19:35",
       "home": "浙江",
       "away": "成都蓉城",
-      "score": "-",
-      "finished": false,
+      "score": "2-3",
+      "finished": true,
       "opponent": "成都蓉城",
       "isHome": true
     },
