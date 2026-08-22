@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-22 13:34 UTC",
+  "updated": "2026-08-22 14:26 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 延期",
@@ -11,21 +11,21 @@
     "location": "浙江杭州"
   },
   "zhejiang": {
-    "played": 22,
+    "played": 23,
     "wins": 8,
-    "draws": 5,
+    "draws": 6,
     "losses": 9,
-    "gf": 33,
-    "ga": 39,
+    "gf": 34,
+    "ga": 40,
     "gd": -6,
-    "gamePts": 29,
-    "actual": 24,
+    "gamePts": 30,
+    "actual": 25,
     "penalty": 5
   },
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 23,
+      "played": 24,
       "penalty": 0,
       "basePts": 48,
       "actual": 48,
@@ -33,10 +33,10 @@
     },
     {
       "name": "北京国安",
-      "played": 23,
+      "played": 24,
       "penalty": 5,
-      "basePts": 40,
-      "actual": 35,
+      "basePts": 41,
+      "actual": 36,
       "color": "#a855f7"
     },
     {
@@ -49,7 +49,7 @@
     },
     {
       "name": "山东泰山",
-      "played": 23,
+      "played": 24,
       "penalty": 6,
       "basePts": 39,
       "actual": 33,
@@ -57,7 +57,7 @@
     },
     {
       "name": "上海申花",
-      "played": 23,
+      "played": 24,
       "penalty": 10,
       "basePts": 38,
       "actual": 28,
@@ -80,55 +80,42 @@
     },
     {
       "name": "北京国安",
-      "played": 23,
+      "played": 24,
       "wins": 11,
-      "draws": 7,
+      "draws": 8,
       "losses": 5,
-      "gf": 45,
-      "ga": 29,
+      "gf": 48,
+      "ga": 32,
       "gd": 16,
       "penalty": 5,
-      "gamePts": 40,
-      "actual": 35
-    },
-    {
-      "name": "云南玉昆",
-      "played": 23,
-      "wins": 10,
-      "draws": 4,
-      "losses": 9,
-      "gf": 46,
-      "ga": 42,
-      "gd": 4,
-      "penalty": 0,
-      "gamePts": 34,
-      "actual": 34
-    },
-    {
-      "name": "山东泰山",
-      "played": 23,
-      "wins": 12,
-      "draws": 3,
-      "losses": 8,
-      "gf": 42,
-      "ga": 38,
-      "gd": 4,
-      "penalty": 6,
-      "gamePts": 39,
-      "actual": 33
+      "gamePts": 41,
+      "actual": 36
     },
     {
       "name": "青岛西海岸",
-      "played": 23,
-      "wins": 7,
+      "played": 24,
+      "wins": 8,
       "draws": 12,
       "losses": 4,
-      "gf": 26,
+      "gf": 28,
       "ga": 29,
-      "gd": -3,
+      "gd": -1,
       "penalty": 0,
-      "gamePts": 33,
-      "actual": 33
+      "gamePts": 36,
+      "actual": 36
+    },
+    {
+      "name": "云南玉昆",
+      "played": 24,
+      "wins": 10,
+      "draws": 5,
+      "losses": 9,
+      "gf": 49,
+      "ga": 45,
+      "gd": 4,
+      "penalty": 0,
+      "gamePts": 35,
+      "actual": 35
     },
     {
       "name": "大连英博",
@@ -141,6 +128,19 @@
       "gd": -6,
       "penalty": 0,
       "gamePts": 33,
+      "actual": 33
+    },
+    {
+      "name": "山东泰山",
+      "played": 24,
+      "wins": 12,
+      "draws": 3,
+      "losses": 9,
+      "gf": 42,
+      "ga": 40,
+      "gd": 2,
+      "penalty": 6,
+      "gamePts": 39,
       "actual": 33
     },
     {
@@ -170,6 +170,19 @@
       "actual": 28
     },
     {
+      "name": "深圳新鹏城",
+      "played": 24,
+      "wins": 8,
+      "draws": 3,
+      "losses": 13,
+      "gf": 33,
+      "ga": 43,
+      "gd": -10,
+      "penalty": 0,
+      "gamePts": 27,
+      "actual": 27
+    },
+    {
       "name": "上海海港",
       "played": 23,
       "wins": 8,
@@ -183,30 +196,17 @@
       "actual": 26
     },
     {
-      "name": "深圳新鹏城",
+      "name": "浙江",
       "played": 23,
       "wins": 8,
-      "draws": 2,
-      "losses": 13,
-      "gf": 32,
-      "ga": 42,
-      "gd": -10,
-      "penalty": 0,
-      "gamePts": 26,
-      "actual": 26
-    },
-    {
-      "name": "浙江",
-      "played": 22,
-      "wins": 8,
-      "draws": 5,
+      "draws": 6,
       "losses": 9,
-      "gf": 33,
-      "ga": 39,
+      "gf": 34,
+      "ga": 40,
       "gd": -6,
       "penalty": 5,
-      "gamePts": 29,
-      "actual": 24
+      "gamePts": 30,
+      "actual": 25
     },
     {
       "name": "辽宁铁人",
@@ -534,8 +534,8 @@
       "kickoffBjt": "2026-08-22 19:35",
       "home": "深圳新鹏城",
       "away": "浙江",
-      "score": "-",
-      "finished": false,
+      "score": "1-1",
+      "finished": true,
       "opponent": "深圳新鹏城",
       "isHome": false
     },
