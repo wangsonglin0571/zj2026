@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23 13:35 UTC",
+  "updated": "2026-08-23 14:27 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 延期",
@@ -105,6 +105,19 @@
       "actual": 36
     },
     {
+      "name": "大连英博",
+      "played": 24,
+      "wins": 11,
+      "draws": 3,
+      "losses": 10,
+      "gf": 35,
+      "ga": 40,
+      "gd": -5,
+      "penalty": 0,
+      "gamePts": 36,
+      "actual": 36
+    },
+    {
       "name": "云南玉昆",
       "played": 24,
       "wins": 10,
@@ -116,19 +129,6 @@
       "penalty": 0,
       "gamePts": 35,
       "actual": 35
-    },
-    {
-      "name": "大连英博",
-      "played": 23,
-      "wins": 10,
-      "draws": 3,
-      "losses": 10,
-      "gf": 34,
-      "ga": 40,
-      "gd": -6,
-      "penalty": 0,
-      "gamePts": 33,
-      "actual": 33
     },
     {
       "name": "山东泰山",
@@ -145,13 +145,13 @@
     },
     {
       "name": "重庆铜梁龙",
-      "played": 23,
+      "played": 24,
       "wins": 7,
       "draws": 9,
-      "losses": 7,
+      "losses": 8,
       "gf": 25,
-      "ga": 27,
-      "gd": -2,
+      "ga": 28,
+      "gd": -3,
       "penalty": 0,
       "gamePts": 30,
       "actual": 30
