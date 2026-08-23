@@ -1,5 +1,5 @@
 {
-  "updated": "2026-08-23 12:48 UTC",
+  "updated": "2026-08-23 13:35 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-08-08 延期",
@@ -41,10 +41,10 @@
     },
     {
       "name": "上海海港",
-      "played": 23,
+      "played": 24,
       "penalty": 5,
-      "basePts": 31,
-      "actual": 26,
+      "basePts": 34,
+      "actual": 29,
       "color": "#06b6d4"
     },
     {
@@ -157,6 +157,19 @@
       "actual": 30
     },
     {
+      "name": "上海海港",
+      "played": 24,
+      "wins": 9,
+      "draws": 7,
+      "losses": 8,
+      "gf": 39,
+      "ga": 33,
+      "gd": 6,
+      "penalty": 5,
+      "gamePts": 34,
+      "actual": 29
+    },
+    {
       "name": "上海申花",
       "played": 24,
       "wins": 11,
@@ -183,19 +196,6 @@
       "actual": 27
     },
     {
-      "name": "上海海港",
-      "played": 23,
-      "wins": 8,
-      "draws": 7,
-      "losses": 8,
-      "gf": 37,
-      "ga": 32,
-      "gd": 5,
-      "penalty": 5,
-      "gamePts": 31,
-      "actual": 26
-    },
-    {
       "name": "浙江",
       "played": 23,
       "wins": 8,
@@ -210,29 +210,29 @@
     },
     {
       "name": "辽宁铁人",
-      "played": 22,
+      "played": 23,
       "wins": 7,
-      "draws": 3,
+      "draws": 4,
       "losses": 12,
-      "gf": 29,
-      "ga": 35,
+      "gf": 33,
+      "ga": 39,
       "gd": -6,
       "penalty": 0,
-      "gamePts": 24,
-      "actual": 24
+      "gamePts": 25,
+      "actual": 25
     },
     {
       "name": "河南",
-      "played": 22,
+      "played": 23,
       "wins": 8,
-      "draws": 5,
+      "draws": 6,
       "losses": 9,
-      "gf": 27,
-      "ga": 29,
+      "gf": 31,
+      "ga": 33,
       "gd": -2,
       "penalty": 6,
-      "gamePts": 29,
-      "actual": 23
+      "gamePts": 30,
+      "actual": 24
     },
     {
       "name": "天津津门虎",
@@ -262,13 +262,13 @@
     },
     {
       "name": "青岛海牛",
-      "played": 23,
+      "played": 24,
       "wins": 6,
       "draws": 3,
-      "losses": 14,
-      "gf": 31,
-      "ga": 44,
-      "gd": -13,
+      "losses": 15,
+      "gf": 32,
+      "ga": 46,
+      "gd": -14,
       "penalty": 7,
       "gamePts": 21,
       "actual": 14
