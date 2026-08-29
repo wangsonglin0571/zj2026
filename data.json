@@ -1,34 +1,34 @@
 {
-  "updated": "2026-08-29 11:05 UTC",
+  "updated": "2026-08-29 14:00 UTC",
   "nextMatch": {
-    "opponent": "云南玉昆",
-    "kickoffBjt": "2026-08-29 19:00",
-    "note": "中超第25轮",
-    "home": "浙江",
-    "away": "云南玉昆",
-    "isHome": true,
-    "venue": "黄龙体育中心体育场",
-    "location": "浙江杭州"
+    "opponent": "天津津门虎",
+    "kickoffBjt": "2026-09-06 20:00",
+    "note": "中超第26轮",
+    "home": "天津津门虎",
+    "away": "浙江",
+    "isHome": false,
+    "venue": "天津泰达足球场",
+    "location": "天津"
   },
   "zhejiang": {
-    "played": 23,
-    "wins": 8,
+    "played": 24,
+    "wins": 9,
     "draws": 6,
     "losses": 9,
-    "gf": 34,
+    "gf": 40,
     "ga": 40,
-    "gd": -6,
-    "gamePts": 30,
-    "actual": 25,
+    "gd": 0,
+    "gamePts": 33,
+    "actual": 28,
     "penalty": 5
   },
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 24,
+      "played": 25,
       "penalty": 0,
-      "basePts": 48,
-      "actual": 48,
+      "basePts": 51,
+      "actual": 51,
       "color": "#3b82f6"
     },
     {
@@ -67,16 +67,16 @@
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 24,
-      "wins": 14,
+      "played": 25,
+      "wins": 15,
       "draws": 6,
       "losses": 4,
-      "gf": 49,
-      "ga": 29,
-      "gd": 20,
+      "gf": 51,
+      "ga": 30,
+      "gd": 21,
       "penalty": 0,
-      "gamePts": 48,
-      "actual": 48
+      "gamePts": 51,
+      "actual": 51
     },
     {
       "name": "北京国安",
@@ -89,6 +89,19 @@
       "gd": 16,
       "penalty": 5,
       "gamePts": 42,
+      "actual": 37
+    },
+    {
+      "name": "青岛西海岸",
+      "played": 25,
+      "wins": 8,
+      "draws": 13,
+      "losses": 4,
+      "gf": 29,
+      "ga": 30,
+      "gd": -1,
+      "penalty": 0,
+      "gamePts": 37,
       "actual": 37
     },
     {
@@ -105,19 +118,6 @@
       "actual": 37
     },
     {
-      "name": "青岛西海岸",
-      "played": 24,
-      "wins": 8,
-      "draws": 12,
-      "losses": 4,
-      "gf": 28,
-      "ga": 29,
-      "gd": -1,
-      "penalty": 0,
-      "gamePts": 36,
-      "actual": 36
-    },
-    {
       "name": "山东泰山",
       "played": 25,
       "wins": 13,
@@ -132,13 +132,13 @@
     },
     {
       "name": "云南玉昆",
-      "played": 24,
+      "played": 25,
       "wins": 10,
       "draws": 5,
-      "losses": 9,
+      "losses": 10,
       "gf": 49,
-      "ga": 45,
-      "gd": 4,
+      "ga": 51,
+      "gd": -2,
       "penalty": 0,
       "gamePts": 35,
       "actual": 35
@@ -158,16 +158,16 @@
     },
     {
       "name": "重庆铜梁龙",
-      "played": 24,
+      "played": 25,
       "wins": 7,
-      "draws": 9,
+      "draws": 10,
       "losses": 8,
-      "gf": 25,
-      "ga": 28,
+      "gf": 26,
+      "ga": 29,
       "gd": -3,
       "penalty": 0,
-      "gamePts": 30,
-      "actual": 30
+      "gamePts": 31,
+      "actual": 31
     },
     {
       "name": "上海申花",
@@ -180,6 +180,19 @@
       "gd": 4,
       "penalty": 10,
       "gamePts": 38,
+      "actual": 28
+    },
+    {
+      "name": "浙江",
+      "played": 24,
+      "wins": 9,
+      "draws": 6,
+      "losses": 9,
+      "gf": 40,
+      "ga": 40,
+      "gd": 0,
+      "penalty": 5,
+      "gamePts": 33,
       "actual": 28
     },
     {
@@ -196,43 +209,43 @@
       "actual": 27
     },
     {
-      "name": "浙江",
-      "played": 23,
+      "name": "河南",
+      "played": 24,
       "wins": 8,
-      "draws": 6,
+      "draws": 7,
       "losses": 9,
-      "gf": 34,
-      "ga": 40,
-      "gd": -6,
-      "penalty": 5,
-      "gamePts": 30,
+      "gf": 32,
+      "ga": 34,
+      "gd": -2,
+      "penalty": 6,
+      "gamePts": 31,
       "actual": 25
     },
     {
       "name": "辽宁铁人",
-      "played": 23,
+      "played": 24,
       "wins": 7,
       "draws": 4,
-      "losses": 12,
-      "gf": 33,
-      "ga": 39,
-      "gd": -6,
+      "losses": 13,
+      "gf": 34,
+      "ga": 41,
+      "gd": -7,
       "penalty": 0,
       "gamePts": 25,
       "actual": 25
     },
     {
-      "name": "河南",
-      "played": 23,
-      "wins": 8,
-      "draws": 6,
+      "name": "天津津门虎",
+      "played": 24,
+      "wins": 7,
+      "draws": 8,
       "losses": 9,
-      "gf": 31,
-      "ga": 33,
-      "gd": -2,
-      "penalty": 6,
-      "gamePts": 30,
-      "actual": 24
+      "gf": 33,
+      "ga": 31,
+      "gd": 2,
+      "penalty": 10,
+      "gamePts": 29,
+      "actual": 19
     },
     {
       "name": "武汉三镇",
@@ -246,19 +259,6 @@
       "penalty": 5,
       "gamePts": 24,
       "actual": 19
-    },
-    {
-      "name": "天津津门虎",
-      "played": 23,
-      "wins": 7,
-      "draws": 7,
-      "losses": 9,
-      "gf": 32,
-      "ga": 30,
-      "gd": 2,
-      "penalty": 10,
-      "gamePts": 28,
-      "actual": 18
     },
     {
       "name": "青岛海牛",
@@ -545,8 +545,8 @@
       "kickoffBjt": "2026-08-29 19:00",
       "home": "浙江",
       "away": "云南玉昆",
-      "score": "-",
-      "finished": false,
+      "score": "6-0",
+      "finished": true,
       "opponent": "云南玉昆",
       "isHome": true
     },
