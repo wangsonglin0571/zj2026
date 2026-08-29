@@ -172,9 +172,13 @@ def parse_schedule(api_data: dict, teams: list) -> dict:
                 match_data["isHome"] = (home == "浙江")
                 zj_matches.append(match_data)
 
-                # 找下一场未开始的比赛
+                # 找下一场未开始的比赛。
+                # 球球炮会把已延期但未定新日期的旧比赛保留为 is_finish=0，
+                # 例如 2026-08-08 浙江 vs 武汉三镇显示“延期”。这类比赛不能
+                # 挡住真正下一场已确定开球时间的比赛。
                 if not is_finish and next_match is None:
-                    if opponent not in ("", "待更新"):
+                    is_postponed_without_time = "延期" in (time_str or "") or "延期" in (kickoff_bjt or "")
+                    if opponent not in ("", "待更新") and not is_postponed_without_time:
                         nm = {
                             "opponent": opponent,
                             "kickoffBjt": kickoff_bjt.strip(),
