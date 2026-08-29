@@ -274,7 +274,8 @@ let LAST_UPDATED_RAW='';
 let LAST_MANUAL_STATUS='';
 const DATA_SOURCES={
   site:'data.json',
-  repo:'https://raw.githubusercontent.com/wangsonglin0571/zj2026/main/data.json',
+  // raw.githubusercontent.com 有 CDN 延迟，手动刷新也走当前 GitHub Pages 发布数据。
+  repo:'data.json',
 };
 async function fetchData(preferRepo=false){
   const order=preferRepo
