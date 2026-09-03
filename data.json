@@ -1,14 +1,14 @@
 {
-  "updated": "2026-09-03 02:00 UTC",
+  "updated": "2026-09-03 07:51 UTC",
   "nextMatch": {
-    "opponent": "天津津门虎",
-    "kickoffBjt": "2026-09-06 20:00",
-    "note": "中超第26轮",
-    "home": "天津津门虎",
-    "away": "浙江",
-    "isHome": false,
-    "venue": "天津泰达足球场",
-    "location": "天津"
+    "opponent": "武汉三镇",
+    "kickoffBjt": "2026-09-18 19:35",
+    "note": "中超第22轮",
+    "home": "浙江",
+    "away": "武汉三镇",
+    "isHome": true,
+    "venue": "黄龙体育中心体育场",
+    "location": "浙江杭州"
   },
   "zhejiang": {
     "played": 24,
@@ -508,8 +508,8 @@
     },
     {
       "round": 22,
-      "date": "2026-08-08",
-      "kickoffBjt": "2026-08-08 延期",
+      "date": "2026-09-18",
+      "kickoffBjt": "2026-09-18 19:35",
       "home": "浙江",
       "away": "武汉三镇",
       "score": "-",
