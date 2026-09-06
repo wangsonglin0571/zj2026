@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06 13:29 UTC",
+  "updated": "2026-09-06 14:00 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-09-18 19:35",
@@ -11,13 +11,13 @@
     "location": "浙江杭州"
   },
   "zhejiang": {
-    "played": 24,
+    "played": 25,
     "wins": 9,
     "draws": 6,
-    "losses": 9,
-    "gf": 40,
-    "ga": 40,
-    "gd": 0,
+    "losses": 10,
+    "gf": 41,
+    "ga": 42,
+    "gd": -1,
     "gamePts": 33,
     "actual": 28,
     "penalty": 5
@@ -25,10 +25,10 @@
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 25,
+      "played": 26,
       "penalty": 0,
-      "basePts": 51,
-      "actual": 51,
+      "basePts": 52,
+      "actual": 52,
       "color": "#3b82f6"
     },
     {
@@ -67,16 +67,16 @@
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 25,
+      "played": 26,
       "wins": 15,
-      "draws": 6,
+      "draws": 7,
       "losses": 4,
       "gf": 51,
       "ga": 30,
       "gd": 21,
       "penalty": 0,
-      "gamePts": 51,
-      "actual": 51
+      "gamePts": 52,
+      "actual": 52
     },
     {
       "name": "大连英博",
@@ -184,13 +184,13 @@
     },
     {
       "name": "浙江",
-      "played": 24,
+      "played": 25,
       "wins": 9,
       "draws": 6,
-      "losses": 9,
-      "gf": 40,
-      "ga": 40,
-      "gd": 0,
+      "losses": 10,
+      "gf": 41,
+      "ga": 42,
+      "gd": -1,
       "penalty": 5,
       "gamePts": 33,
       "actual": 28
@@ -210,16 +210,16 @@
     },
     {
       "name": "河南",
-      "played": 24,
+      "played": 25,
       "wins": 8,
-      "draws": 7,
+      "draws": 8,
       "losses": 9,
       "gf": 32,
       "ga": 34,
       "gd": -2,
       "penalty": 6,
-      "gamePts": 31,
-      "actual": 25
+      "gamePts": 32,
+      "actual": 26
     },
     {
       "name": "辽宁铁人",
@@ -235,6 +235,19 @@
       "actual": 25
     },
     {
+      "name": "天津津门虎",
+      "played": 25,
+      "wins": 8,
+      "draws": 8,
+      "losses": 9,
+      "gf": 35,
+      "ga": 32,
+      "gd": 3,
+      "penalty": 10,
+      "gamePts": 32,
+      "actual": 22
+    },
+    {
       "name": "武汉三镇",
       "played": 24,
       "wins": 5,
@@ -246,19 +259,6 @@
       "penalty": 5,
       "gamePts": 25,
       "actual": 20
-    },
-    {
-      "name": "天津津门虎",
-      "played": 24,
-      "wins": 7,
-      "draws": 8,
-      "losses": 9,
-      "gf": 33,
-      "ga": 31,
-      "gd": 2,
-      "penalty": 10,
-      "gamePts": 29,
-      "actual": 19
     },
     {
       "name": "青岛海牛",
@@ -556,8 +556,8 @@
       "kickoffBjt": "2026-09-06 20:00",
       "home": "天津津门虎",
       "away": "浙江",
-      "score": "-",
-      "finished": false,
+      "score": "2-1",
+      "finished": true,
       "opponent": "天津津门虎",
       "isHome": false
     },
