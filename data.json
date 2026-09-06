@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-06 07:42 UTC",
+  "updated": "2026-09-06 13:29 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-09-18 19:35",
@@ -57,10 +57,10 @@
     },
     {
       "name": "上海申花",
-      "played": 25,
+      "played": 26,
       "penalty": 10,
-      "basePts": 38,
-      "actual": 28,
+      "basePts": 41,
+      "actual": 31,
       "color": "#6b7280"
     }
   ],
@@ -105,6 +105,19 @@
       "actual": 38
     },
     {
+      "name": "云南玉昆",
+      "played": 26,
+      "wins": 11,
+      "draws": 5,
+      "losses": 10,
+      "gf": 54,
+      "ga": 51,
+      "gd": 3,
+      "penalty": 0,
+      "gamePts": 38,
+      "actual": 38
+    },
+    {
       "name": "青岛西海岸",
       "played": 26,
       "wins": 8,
@@ -131,19 +144,6 @@
       "actual": 37
     },
     {
-      "name": "云南玉昆",
-      "played": 25,
-      "wins": 10,
-      "draws": 5,
-      "losses": 10,
-      "gf": 49,
-      "ga": 51,
-      "gd": -2,
-      "penalty": 0,
-      "gamePts": 35,
-      "actual": 35
-    },
-    {
       "name": "上海海港",
       "played": 26,
       "wins": 10,
@@ -157,30 +157,30 @@
       "actual": 33
     },
     {
-      "name": "重庆铜梁龙",
-      "played": 25,
-      "wins": 7,
-      "draws": 10,
-      "losses": 8,
-      "gf": 26,
-      "ga": 29,
-      "gd": -3,
-      "penalty": 0,
-      "gamePts": 31,
+      "name": "上海申花",
+      "played": 26,
+      "wins": 12,
+      "draws": 5,
+      "losses": 9,
+      "gf": 52,
+      "ga": 46,
+      "gd": 6,
+      "penalty": 10,
+      "gamePts": 41,
       "actual": 31
     },
     {
-      "name": "上海申花",
-      "played": 25,
-      "wins": 11,
-      "draws": 5,
+      "name": "重庆铜梁龙",
+      "played": 26,
+      "wins": 7,
+      "draws": 10,
       "losses": 9,
-      "gf": 49,
-      "ga": 45,
-      "gd": 4,
-      "penalty": 10,
-      "gamePts": 38,
-      "actual": 28
+      "gf": 27,
+      "ga": 32,
+      "gd": -5,
+      "penalty": 0,
+      "gamePts": 31,
+      "actual": 31
     },
     {
       "name": "浙江",
@@ -223,13 +223,13 @@
     },
     {
       "name": "辽宁铁人",
-      "played": 24,
+      "played": 25,
       "wins": 7,
       "draws": 4,
-      "losses": 13,
+      "losses": 14,
       "gf": 34,
-      "ga": 41,
-      "gd": -7,
+      "ga": 46,
+      "gd": -12,
       "penalty": 0,
       "gamePts": 25,
       "actual": 25
