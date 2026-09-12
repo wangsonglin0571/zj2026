@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12 07:44 UTC",
+  "updated": "2026-09-12 13:27 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-09-18 19:35",
@@ -223,29 +223,29 @@
     },
     {
       "name": "辽宁铁人",
-      "played": 25,
+      "played": 26,
       "wins": 7,
       "draws": 4,
-      "losses": 14,
+      "losses": 15,
       "gf": 34,
-      "ga": 46,
-      "gd": -12,
+      "ga": 47,
+      "gd": -13,
       "penalty": 0,
       "gamePts": 25,
       "actual": 25
     },
     {
       "name": "天津津门虎",
-      "played": 25,
-      "wins": 8,
+      "played": 26,
+      "wins": 9,
       "draws": 8,
       "losses": 9,
-      "gf": 35,
+      "gf": 36,
       "ga": 32,
-      "gd": 3,
+      "gd": 4,
       "penalty": 10,
-      "gamePts": 32,
-      "actual": 22
+      "gamePts": 35,
+      "actual": 25
     },
     {
       "name": "武汉三镇",
