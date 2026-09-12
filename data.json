@@ -1,5 +1,5 @@
 {
-  "updated": "2026-09-12 13:27 UTC",
+  "updated": "2026-09-12 14:00 UTC",
   "nextMatch": {
     "opponent": "武汉三镇",
     "kickoffBjt": "2026-09-18 19:35",
@@ -210,16 +210,16 @@
     },
     {
       "name": "河南",
-      "played": 25,
+      "played": 26,
       "wins": 8,
-      "draws": 8,
+      "draws": 9,
       "losses": 9,
-      "gf": 32,
-      "ga": 34,
+      "gf": 33,
+      "ga": 35,
       "gd": -2,
       "penalty": 6,
-      "gamePts": 32,
-      "actual": 26
+      "gamePts": 33,
+      "actual": 27
     },
     {
       "name": "辽宁铁人",
@@ -249,16 +249,16 @@
     },
     {
       "name": "武汉三镇",
-      "played": 24,
+      "played": 25,
       "wins": 5,
-      "draws": 10,
+      "draws": 11,
       "losses": 9,
-      "gf": 37,
-      "ga": 41,
+      "gf": 38,
+      "ga": 42,
       "gd": -4,
       "penalty": 5,
-      "gamePts": 25,
-      "actual": 20
+      "gamePts": 26,
+      "actual": 21
     },
     {
       "name": "青岛海牛",
