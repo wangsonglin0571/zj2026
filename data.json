@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-10 09:32 UTC",
+  "updated": "2026-10-10 15:47 UTC",
   "nextMatch": {
     "opponent": "山东泰山",
     "kickoffBjt": "2026-10-17 20:00",
@@ -25,7 +25,7 @@
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 26,
+      "played": 27,
       "penalty": 0,
       "basePts": 52,
       "actual": 52,
@@ -57,23 +57,23 @@
     },
     {
       "name": "上海申花",
-      "played": 26,
+      "played": 27,
       "penalty": 10,
-      "basePts": 41,
-      "actual": 31,
+      "basePts": 44,
+      "actual": 34,
       "color": "#6b7280"
     }
   ],
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 26,
+      "played": 27,
       "wins": 15,
       "draws": 7,
-      "losses": 4,
+      "losses": 5,
       "gf": 51,
-      "ga": 30,
-      "gd": 21,
+      "ga": 31,
+      "gd": 20,
       "penalty": 0,
       "gamePts": 52,
       "actual": 52
@@ -105,19 +105,6 @@
       "actual": 40
     },
     {
-      "name": "云南玉昆",
-      "played": 26,
-      "wins": 11,
-      "draws": 5,
-      "losses": 10,
-      "gf": 54,
-      "ga": 51,
-      "gd": 3,
-      "penalty": 0,
-      "gamePts": 38,
-      "actual": 38
-    },
-    {
       "name": "青岛西海岸",
       "played": 26,
       "wins": 8,
@@ -126,6 +113,19 @@
       "gf": 31,
       "ga": 32,
       "gd": -1,
+      "penalty": 0,
+      "gamePts": 38,
+      "actual": 38
+    },
+    {
+      "name": "云南玉昆",
+      "played": 27,
+      "wins": 11,
+      "draws": 5,
+      "losses": 11,
+      "gf": 55,
+      "ga": 58,
+      "gd": -3,
       "penalty": 0,
       "gamePts": 38,
       "actual": 38
@@ -158,16 +158,16 @@
     },
     {
       "name": "上海申花",
-      "played": 26,
-      "wins": 12,
+      "played": 27,
+      "wins": 13,
       "draws": 5,
       "losses": 9,
-      "gf": 52,
-      "ga": 46,
-      "gd": 6,
+      "gf": 59,
+      "ga": 47,
+      "gd": 12,
       "penalty": 10,
-      "gamePts": 41,
-      "actual": 31
+      "gamePts": 44,
+      "actual": 34
     },
     {
       "name": "重庆铜梁龙",
@@ -209,6 +209,19 @@
       "actual": 29
     },
     {
+      "name": "天津津门虎",
+      "played": 27,
+      "wins": 10,
+      "draws": 8,
+      "losses": 9,
+      "gf": 37,
+      "ga": 32,
+      "gd": 5,
+      "penalty": 10,
+      "gamePts": 38,
+      "actual": 28
+    },
+    {
       "name": "河南",
       "played": 27,
       "wins": 8,
@@ -232,19 +245,6 @@
       "gd": -13,
       "penalty": 0,
       "gamePts": 25,
-      "actual": 25
-    },
-    {
-      "name": "天津津门虎",
-      "played": 26,
-      "wins": 9,
-      "draws": 8,
-      "losses": 9,
-      "gf": 36,
-      "ga": 32,
-      "gd": 4,
-      "penalty": 10,
-      "gamePts": 35,
       "actual": 25
     },
     {
