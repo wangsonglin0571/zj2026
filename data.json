@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-16 07:57 UTC",
+  "updated": "2026-10-16 14:00 UTC",
   "nextMatch": {
     "opponent": "山东泰山",
     "kickoffBjt": "2026-10-17 20:00",
@@ -183,6 +183,19 @@
       "actual": 32
     },
     {
+      "name": "天津津门虎",
+      "played": 28,
+      "wins": 11,
+      "draws": 8,
+      "losses": 9,
+      "gf": 38,
+      "ga": 32,
+      "gd": 6,
+      "penalty": 10,
+      "gamePts": 41,
+      "actual": 31
+    },
+    {
       "name": "浙江",
       "played": 27,
       "wins": 10,
@@ -209,27 +222,14 @@
       "actual": 29
     },
     {
-      "name": "天津津门虎",
-      "played": 27,
-      "wins": 10,
-      "draws": 8,
-      "losses": 9,
-      "gf": 37,
-      "ga": 32,
-      "gd": 5,
-      "penalty": 10,
-      "gamePts": 38,
-      "actual": 28
-    },
-    {
       "name": "河南",
-      "played": 27,
+      "played": 28,
       "wins": 8,
       "draws": 10,
-      "losses": 9,
+      "losses": 10,
       "gf": 35,
-      "ga": 37,
-      "gd": -2,
+      "ga": 38,
+      "gd": -3,
       "penalty": 6,
       "gamePts": 34,
       "actual": 28
