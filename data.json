@@ -1,23 +1,23 @@
 {
-  "updated": "2026-10-17 13:32 UTC",
+  "updated": "2026-10-17 14:00 UTC",
   "nextMatch": {
-    "opponent": "山东泰山",
-    "kickoffBjt": "2026-10-17 20:00",
-    "note": "中超第28轮",
-    "home": "山东泰山",
+    "opponent": "辽宁铁人",
+    "kickoffBjt": "2026-10-24 15:30",
+    "note": "中超第29轮",
+    "home": "辽宁铁人",
     "away": "浙江",
     "isHome": false,
-    "venue": "济南奥体中心体育场",
-    "location": "山东济南"
+    "venue": "沈阳奥体中心体育场",
+    "location": "辽宁沈阳"
   },
   "zhejiang": {
-    "played": 27,
+    "played": 28,
     "wins": 10,
     "draws": 6,
-    "losses": 11,
+    "losses": 12,
     "gf": 47,
-    "ga": 47,
-    "gd": 0,
+    "ga": 52,
+    "gd": -5,
     "gamePts": 36,
     "actual": 31,
     "penalty": 5
@@ -49,10 +49,10 @@
     },
     {
       "name": "山东泰山",
-      "played": 27,
+      "played": 28,
       "penalty": 6,
-      "basePts": 44,
-      "actual": 38,
+      "basePts": 47,
+      "actual": 41,
       "color": "#eab308"
     },
     {
@@ -105,6 +105,19 @@
       "actual": 41
     },
     {
+      "name": "山东泰山",
+      "played": 28,
+      "wins": 14,
+      "draws": 5,
+      "losses": 9,
+      "gf": 52,
+      "ga": 44,
+      "gd": 8,
+      "penalty": 6,
+      "gamePts": 47,
+      "actual": 41
+    },
+    {
       "name": "云南玉昆",
       "played": 28,
       "wins": 11,
@@ -128,19 +141,6 @@
       "gd": -5,
       "penalty": 0,
       "gamePts": 38,
-      "actual": 38
-    },
-    {
-      "name": "山东泰山",
-      "played": 27,
-      "wins": 13,
-      "draws": 5,
-      "losses": 9,
-      "gf": 47,
-      "ga": 44,
-      "gd": 3,
-      "penalty": 6,
-      "gamePts": 44,
       "actual": 38
     },
     {
@@ -197,13 +197,13 @@
     },
     {
       "name": "浙江",
-      "played": 27,
+      "played": 28,
       "wins": 10,
       "draws": 6,
-      "losses": 11,
+      "losses": 12,
       "gf": 47,
-      "ga": 47,
-      "gd": 0,
+      "ga": 52,
+      "gd": -5,
       "penalty": 5,
       "gamePts": 36,
       "actual": 31
@@ -578,8 +578,8 @@
       "kickoffBjt": "2026-10-17 20:00",
       "home": "山东泰山",
       "away": "浙江",
-      "score": "-",
-      "finished": false,
+      "score": "5-0",
+      "finished": true,
       "opponent": "山东泰山",
       "isHome": false
     },
