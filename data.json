@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18 07:50 UTC",
+  "updated": "2026-10-18 13:51 UTC",
   "nextMatch": {
     "opponent": "辽宁铁人",
     "kickoffBjt": "2026-10-24 15:30",
@@ -33,10 +33,10 @@
     },
     {
       "name": "北京国安",
-      "played": 27,
+      "played": 28,
       "penalty": 5,
-      "basePts": 46,
-      "actual": 41,
+      "basePts": 49,
+      "actual": 44,
       "color": "#a855f7"
     },
     {
@@ -57,10 +57,10 @@
     },
     {
       "name": "上海申花",
-      "played": 27,
+      "played": 28,
       "penalty": 10,
-      "basePts": 44,
-      "actual": 34,
+      "basePts": 47,
+      "actual": 37,
       "color": "#6b7280"
     }
   ],
@@ -93,16 +93,16 @@
     },
     {
       "name": "北京国安",
-      "played": 27,
-      "wins": 12,
+      "played": 28,
+      "wins": 13,
       "draws": 10,
       "losses": 5,
-      "gf": 52,
+      "gf": 53,
       "ga": 33,
-      "gd": 19,
+      "gd": 20,
       "penalty": 5,
-      "gamePts": 46,
-      "actual": 41
+      "gamePts": 49,
+      "actual": 44
     },
     {
       "name": "山东泰山",
@@ -132,16 +132,29 @@
     },
     {
       "name": "青岛西海岸",
-      "played": 27,
+      "played": 28,
       "wins": 8,
       "draws": 14,
-      "losses": 5,
+      "losses": 6,
       "gf": 31,
-      "ga": 36,
-      "gd": -5,
+      "ga": 37,
+      "gd": -6,
       "penalty": 0,
       "gamePts": 38,
       "actual": 38
+    },
+    {
+      "name": "上海申花",
+      "played": 28,
+      "wins": 14,
+      "draws": 5,
+      "losses": 9,
+      "gf": 62,
+      "ga": 48,
+      "gd": 14,
+      "penalty": 10,
+      "gamePts": 47,
+      "actual": 37
     },
     {
       "name": "上海海港",
@@ -155,19 +168,6 @@
       "penalty": 5,
       "gamePts": 41,
       "actual": 36
-    },
-    {
-      "name": "上海申花",
-      "played": 27,
-      "wins": 13,
-      "draws": 5,
-      "losses": 9,
-      "gf": 59,
-      "ga": 47,
-      "gd": 12,
-      "penalty": 10,
-      "gamePts": 44,
-      "actual": 34
     },
     {
       "name": "重庆铜梁龙",
@@ -249,13 +249,13 @@
     },
     {
       "name": "武汉三镇",
-      "played": 27,
+      "played": 28,
       "wins": 5,
       "draws": 12,
-      "losses": 10,
-      "gf": 40,
-      "ga": 47,
-      "gd": -7,
+      "losses": 11,
+      "gf": 41,
+      "ga": 50,
+      "gd": -9,
       "penalty": 5,
       "gamePts": 27,
       "actual": 22
