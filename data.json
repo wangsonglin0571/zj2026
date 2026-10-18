@@ -1,5 +1,5 @@
 {
-  "updated": "2026-10-18 13:51 UTC",
+  "updated": "2026-10-18 14:00 UTC",
   "nextMatch": {
     "opponent": "辽宁铁人",
     "kickoffBjt": "2026-10-24 15:30",
@@ -25,7 +25,7 @@
   "rivals": [
     {
       "name": "成都蓉城",
-      "played": 27,
+      "played": 28,
       "penalty": 0,
       "basePts": 52,
       "actual": 52,
@@ -41,10 +41,10 @@
     },
     {
       "name": "上海海港",
-      "played": 27,
+      "played": 28,
       "penalty": 5,
-      "basePts": 41,
-      "actual": 36,
+      "basePts": 44,
+      "actual": 39,
       "color": "#06b6d4"
     },
     {
@@ -67,13 +67,13 @@
   "allTeams": [
     {
       "name": "成都蓉城",
-      "played": 27,
+      "played": 28,
       "wins": 15,
       "draws": 7,
-      "losses": 5,
+      "losses": 6,
       "gf": 51,
-      "ga": 31,
-      "gd": 20,
+      "ga": 34,
+      "gd": 17,
       "penalty": 0,
       "gamePts": 52,
       "actual": 52
@@ -118,6 +118,19 @@
       "actual": 41
     },
     {
+      "name": "上海海港",
+      "played": 28,
+      "wins": 12,
+      "draws": 8,
+      "losses": 8,
+      "gf": 47,
+      "ga": 35,
+      "gd": 12,
+      "penalty": 5,
+      "gamePts": 44,
+      "actual": 39
+    },
+    {
       "name": "云南玉昆",
       "played": 28,
       "wins": 11,
@@ -155,19 +168,6 @@
       "penalty": 10,
       "gamePts": 47,
       "actual": 37
-    },
-    {
-      "name": "上海海港",
-      "played": 27,
-      "wins": 11,
-      "draws": 8,
-      "losses": 8,
-      "gf": 44,
-      "ga": 35,
-      "gd": 9,
-      "penalty": 5,
-      "gamePts": 41,
-      "actual": 36
     },
     {
       "name": "重庆铜梁龙",
